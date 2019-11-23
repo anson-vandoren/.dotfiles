@@ -3,7 +3,6 @@ brew "mas"
 
 # Install apps from Mac App Store
 mas "Monosnap", id: 540348655  # screenshot capture/edit
-mas "Xcode", id: 497799835
 
 cask "1Password"    # password management
 cask "aerial"       # aerial video screensaver from Apple TV
