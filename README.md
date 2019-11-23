@@ -1,53 +1,14 @@
-# Setting up dotfiles management
+# Managing machine configuration
 
-Thanks to a [HN post](https://news.ycombinator.com/item?id=11070797) and a post facto [blog post](https://www.anand-iyer.com/blog/2018/a-simpler-way-to-manage-your-dotfiles.html) for publicizing this method.
+Welcome to my dotfiles repo. I tend to switch machines frequently, and like to minimize the
+amount of headaches I need to go through to get a new one set up the way I like it. This repo
+contains my efforts to automate as much of that process as I can, and document as much as possible.
 
-## Setting it up
+Note that it is ill-advised to blindly use my exact dotfiles. It is highly unlikely they will be
+suitable for anyone else as-is. Instead, I recommend reading through the files I have to see what
+makes sense for your situation. I've tried to list why I made the choices I did so you can see
+if it fits your needs. If you have suggestions or spot anything wrong, feel free to open an issue
+or PR.
 
-### Make a bare git repo
-
-```bash
-$ mkdir $HOME/.dotfiles
-$ git init --bare $HOME/.dotfiles
-```
-
-### Make a convenient alias for git to this repo
-
-Add the line below to `.bashrc` or `.zshrc`
-
-`alias dotfiles='usr/local/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'`
-
-### Don't show all untracked files (since it will show ALL files no matter your path)
-
-`dotfiles config --local status.showUntrackedFiles no`
-
-### Create a new repository on GitHub (or wherever), and add the remote
-
-`dotfiles remote add origin git@github.com:anson-vandoren/.dotfiles.git`
-
-### Add files and push
-
-```bash
-$ cd $HOME
-$ dotfiles add .vimrc
-$ dotfiles commit -m "Adding .vimrc"
-$ dotfiles push
-```
-
-## Setting up a new machine
-
-### Try to just clone the repo as-is (note, this may fail)
-
-`git clone --separate-git-dir=$HOME/.dotfiles https://github.com/anson-vandoren/.dotfiles.git ~`
-
-### If this fails:
-
-The `git clone` may fail if your new machine already has some configuration files in the $HOME directory
-that match the files you have in your repo. If this happens, just clone into a new temporary directory,
-copy the config to $HOME from there, and then delete temporary directory when finished
-
-```bash
-$ git clone --separate-git-dir=$HOME/.dotfiles https://github.com/anson-vandoren/.dotfiles.git tmpdotfiles
-$ rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
-$ rm -r tmpdotfiles
-```
+## Table of Contents
+- [Managing dotfiles with git](https://github.com/anson-vandoren/.dotfiles/dotfile_docs/dotfile_management.md)
