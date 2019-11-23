@@ -53,3 +53,10 @@ $ git clone --separate-git-dir=$HOME/.dotfiles https://github.com/anson-vandoren
 $ rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
 $ rm -r tmpdotfiles
 ```
+
+## Pulling in your private configurations
+
+There are some configuration you may not want part of a public dotfiles repo. I keep those in a `.extra` file
+which I store as a secret gist on GitHub, and my `.zshrc` file sources the `.extra` file at the end.
+
+You can see an anonymous version of my `.extra` file [in this gist](https://gist.github.com/anson-vandoren/adb48de6130eeacf27ec8f545d839cf6)
