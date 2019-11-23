@@ -47,4 +47,8 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # Use current directory as default search scope in Finder
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
+# Use column view for all Finder windows by default
+defaults write com.apple.finder FXPreferredViewStyle Clmv
 
+# Remove all default Dock apps on new machine
+defaults write com.apple.dock persistent-apps -array
