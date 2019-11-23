@@ -1,4 +1,3 @@
-
 # Internal utility functions
 
 # returns whether the given command is executable or aliased.
@@ -8,9 +7,6 @@ _has() {
 
 # let tmux know 256 colors are available
 export TERM="xterm-256color"
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/anson/.oh-my-zsh"
@@ -67,7 +63,6 @@ fi
 ### User Configuration ###
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.env.sh
-source ~/.extra
 ### End User Configuration ###
 eval "$(pyenv init -)"
 
