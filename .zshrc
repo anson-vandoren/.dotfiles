@@ -67,6 +67,7 @@ fi
 ### User Configuration ###
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.env.sh
+source ~/.extra
 ### End User Configuration ###
 eval "$(pyenv init -)"
 

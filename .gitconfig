@@ -1,9 +1,9 @@
 [user]
-	email = anson.vandoren@gmail.com
-    name = Anson VanDoren
+    # name = enter your name here
+    # email = enter your email here
     # GPG keyId below from `gpg --list-secret-keys --keyid-format LONG`
     # Allows for signed commits
-	signingKey = 2D1DA5118D1BC5BD
+    # signingkey = enter your gpg keyId here
 
 [alias]
     # View abbreviated SHA, description, and history graph of the latest 20 commits
