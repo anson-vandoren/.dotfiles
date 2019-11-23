@@ -15,8 +15,9 @@ export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/anson/.oh-my-zsh"
 
-# use gnu-sed instead of sed
+# use gnu tools instead of macOS ones
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 
 ZSH_THEME="robbyrussell"
 

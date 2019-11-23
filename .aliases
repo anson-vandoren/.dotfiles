@@ -4,7 +4,9 @@
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias .....="cd ../../../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+alias .5="cd ../../../../.."
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -23,3 +25,12 @@ alias path='echo -e ${PATH//:/\\n}'
 # start hot-reloading local server
 export LOCAL_IP=`ipconfig getifaddr en0`
 alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
+
+# add some sane defaults to oft-used commands
+alias cp='cp -iv'  # ask before overwriting, and show each file copied
+alias mv='mv -iv'  # ask before overwriting, and show each file copied
+alias la='ls -FGlAhp'   # see `man ls | grep -E "\-[FGlAhp]"` for details
+alias less='less -FSRXc'    # clean up less
+
+# integrate Finder with terminal
+alias f='open -a Finder ./'
