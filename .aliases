@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+# Easier navigation up directory tree
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# make it easier to edit common configuration files
+alias zshrc="vim ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec ${SHELL} -l"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+# start hot-reloading local server
+export LOCAL_IP=`ipconfig getifaddr en0`
+alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
