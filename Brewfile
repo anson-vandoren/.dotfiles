@@ -5,7 +5,6 @@ brew "mas"
 mas "Monosnap", id: 540348655  # screenshot capture/edit
 
 cask "1Password"    # password management
-cask "aerial"       # aerial video screensaver from Apple TV
 cask "brave-browser"    # privacy-centric browser based on Chromium
 cask "caskroom/fonts/font-hack-nerd-font"  # font for terminal and coding
 cask "docker"   # container management
