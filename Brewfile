@@ -5,10 +5,12 @@ brew "mas"
 mas "Monosnap", id: 540348655  # screenshot capture/edit
 
 cask "1Password"    # password management
+cask "backblaze"    # remote file backup
 cask "brave-browser"    # privacy-centric browser based on Chromium
 cask "caskroom/fonts/font-hack-nerd-font"  # font for terminal and coding
 cask "docker"   # container management
 cask "firefox"  # browser
+cask "google-backup-and-sync"   # new version of Google Drive locally
 cask "iterm2"   # terminal replacement
 cask "jetbrains-toolbox"    # installer for JetBrains IDEs
 cask "karabiner-elements"   # keyboard remapper
