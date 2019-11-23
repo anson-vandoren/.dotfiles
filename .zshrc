@@ -16,8 +16,9 @@ export TERM="xterm-256color"
 export ZSH="/Users/anson/.oh-my-zsh"
 
 # use gnu tools instead of macOS ones
-PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+for util in gnu-sed grep coreutils findutils; do
+    PATH="$(brew --prefix)/opt/$util/libexec/gnubin:$PATH"
+done
 
 ZSH_THEME="robbyrussell"
 

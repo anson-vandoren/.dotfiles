@@ -12,6 +12,7 @@ or PR.
 
 ## Table of Contents
 
+- [Performing basic macOS setup](https://github.com/anson-vandoren/.dotfiles/blob/master/dotfile_docs/macos_setup.md)
 - Install `homebrew` from the official [instructions](https://brew.sh/)
 - [Creating and using a brewfile](https://github.com/anson-vandoren/.dotfiles/blob/master/dotfile_docs/brewfile.md)
 - [Managing dotfiles with git](https://github.com/anson-vandoren/.dotfiles/blob/master/dotfile_docs/dotfile_management.md)

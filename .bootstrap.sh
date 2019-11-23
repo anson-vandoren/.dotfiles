@@ -1,10 +1,18 @@
+#!/usr/bin/env sh
+
 # install Xcode tools needed for Homebrew
 echo "Installing Xcode tools"
 xcode-select --install
 
 # install Homebrew
-echo "Installing Homebrew"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if test ! $(which brew); then
+    echo "Installing Homebrew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+echo "Updating Homebrew"
+brew update
+brew upgrade --all
 
 # install zsh
 echo "Installing zsh"

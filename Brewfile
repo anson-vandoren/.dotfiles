@@ -19,14 +19,17 @@ cask "qlcolorcode"  # formatting for QuickLook color syntax
 cask "qlmarkdown"   # formatting for QuickLook markdown
 cask "quicklook-csv"    # show .csv files in QuickLook
 cask "quicklook-json"   # format .json files in QuickLook
+case "sizeup"   # window management (paid)
 cask "suspicious-package"   # inspect .pkg files with QuickLook before running
 cask "visual-studio-code"   # IDE/text editor
 cask "webpquicklook"    # show .webp images in QuickLook
 
 brew "black"    # python code formatter
 brew "cjbassi/gotop/gotop"  # graphical top command (process monitor)
+brew "coreutils"            # gnu core utilities
 brew "ctags"    # build tags for quick vim navigation through code
 brew "drone/drone/drone"    # Drone.io CI/CD
+brew "findutils"    # GNU `find`, `locate`, `updatedb`, `xargs`
 brew "fzf"      # fuzzy finder for terminal and vim
 brew "git"      # version control
 brew "gnu-sed"  # GNU version of sed that supports more standard options 
