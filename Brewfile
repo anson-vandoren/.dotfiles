@@ -25,6 +25,7 @@ cask "suspicious-package"   # inspect .pkg files with QuickLook before running
 cask "visual-studio-code"   # IDE/text editor
 cask "webpquicklook"    # show .webp images in QuickLook
 
+brew "black"    # python code formatter
 brew "cjbassi/gotop/gotop"  # graphical top command (process monitor)
 brew "ctags"    # build tags for quick vim navigation through code
 brew "drone/drone/drone"    # Drone.io CI/CD
@@ -41,6 +42,7 @@ brew "node"     # node.js for server-side javascript. If multiple versions neede
 brew "numpy"    # python library for numeric analysis
 brew "opencv"   # imaging library
 brew "openssh"  # replace default macOS SSH
+brew "prettier" # code formatter for HTML/CSS/JS
 brew "python"   # python3
 brew "the_silver_searcher"  # code searching tool, similar to ack, but faster
 brew "tldr"     # human-readable, community-driven man page replacement
