@@ -23,15 +23,6 @@ export fpath=(/usr/local/share/zsh-completions $fpath)
 # turn on zsh syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# set zsh theme and customize
-POWERLEVEL9K_MODE='nerdfont-complete'
-source ~/powerlevel9k/powerlevel9k.zsh-theme
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time date)
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
-POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
 
 ################################
 # Basic terminal configuration #
@@ -104,3 +95,17 @@ bindkey -v
 
 # remove duplicates from PATH
 typeset -U path
+
+
+# set zsh theme and customize
+POWERLEVEL9K_MODE='nerdfont-complete'
+source ~/powerlevel9k/powerlevel9k.zsh-theme
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time date)
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
+
+# enable fuzzy finding with fzf via hotkeys
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
