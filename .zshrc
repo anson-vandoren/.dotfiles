@@ -1,6 +1,12 @@
-# Internal utility functions
 
-source .exports
+###################################
+# Manage other command-line tools #
+###################################
+
+# use gnu tools instead of macOS ones
+for util in gnu-sed grep coreutils; do
+    export PATH="$(brew --prefix)/opt/$util/libexec/gnubin:$PATH"
+done
 
 # returns whether the given command is executable or aliased.
 _has() {
@@ -44,6 +50,7 @@ POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
 source ~/.env.sh
 source ~/.aliases
 source ~/.functions
+source ~/.exports
 
 ################################
 # Manage programming languages #
@@ -67,14 +74,6 @@ export NVM_DIR="$HOME/.nvm"
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 
-###################################
-# Manage other command-line tools #
-###################################
-
-# use gnu tools instead of macOS ones
-for util in gnu-sed grep coreutils; do
-    export PATH="$(brew --prefix)/opt/$util/libexec/gnubin:$PATH"
-done
 
 # add path for homebrew sbins
 export PATH="$PATH:/usr/local/sbin"
