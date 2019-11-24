@@ -67,3 +67,15 @@ alias config='/usr/local/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # lock the screen
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]));"'
+
+# search google from terminal
+search_google () {
+    for term in $@; do
+        search="$search%20$term"
+    done
+        brave "https://google.com/search?q=$search"
+}
+alias google=search_google

@@ -13,3 +13,6 @@ export GPG_TTY=$(tty)
 for util in gnu-sed grep coreutils; do
     export PATH="$(brew --prefix)/opt/$util/libexec/gnubin:$PATH"
 done
+
+# omit duplicates and commands that begin with space from history
+export HISTCONTROL='ignoreboth';
