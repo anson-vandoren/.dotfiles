@@ -1,13 +1,4 @@
-#!/bin/sh
-
-# set preferred editor
-export EDITOR='vim'
-
-# let tmux know 256 colors are available
-export TERM="xterm-256color"
-
-# Fix GPG for git commit signing
-export GPG_TTY=$(tty)
+#!/bin/env zsh
 
 # make folders for vim
 for folder in ~/.vim/backups ~/.vim/swaps ~/.vim/undo; do

@@ -1,5 +1,7 @@
 # Internal utility functions
 
+source .exports
+
 # returns whether the given command is executable or aliased.
 _has() {
     return $( whence "$1" > /dev/null 2>&1 )
@@ -70,9 +72,12 @@ export PATH=$GOPATH/bin:$PATH
 ###################################
 
 # use gnu tools instead of macOS ones
-for util in gnu-sed grep findutils; do
+for util in gnu-sed grep coreutils; do
     export PATH="$(brew --prefix)/opt/$util/libexec/gnubin:$PATH"
 done
+
+# add path for homebrew sbins
+export PATH="$PATH:/usr/local/sbin"
 
 # fzf and ag setup
 # fzf via Homebrew
