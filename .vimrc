@@ -12,6 +12,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-eunuch'
 " optional fzf if not already installed
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'
@@ -58,7 +59,7 @@ nnoremap <C-H> <C-W><C-H>
 nmap ; :Buffers<CR>
 nmap <Leader>6 :Files<CR>
 " set up ag/ack
-nmap <Leader>a :Ag<CR>
+nmap <Leader>a :Rg<CR>
 
 " --------------------------- vim-go ------------------------------
 " next/previous error
@@ -174,5 +175,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 :hi ErrorMsg ctermfg=Black guifg=Black
 :hi Error ctermfg=Black guifg=Black
 
-" make ack use ag
-let g:ackprg = 'ag --nogroup --nocolor --column'
+" make ack use ripgrep
+let g:ackprg = 'rg --vimgrep --no-heading'
+if executable("rg")
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,:%f:%l:%m
+endif

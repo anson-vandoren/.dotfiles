@@ -83,3 +83,6 @@ alias cat=bat
 
 # use pretty ping
 alias ping=prettyping
+
+# make ag use global ignore file
+alias ag='ag --path-to-ignore ~/.ignore'

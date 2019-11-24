@@ -60,7 +60,6 @@ export PATH=$GOPATH/bin:$PATH
 # add path for homebrew sbins
 export PATH="$PATH:/usr/local/sbin"
 
-# fzf and ag setup
 # fzf via Homebrew
 if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
     source /usr/local/opt/fzf/shell/key-bindings.zsh
@@ -74,9 +73,9 @@ if [ -e ~/.fzf ]; then
     source ~/.fzf/shell/completion.zsh
 fi
 
-# fzf + ag configuration
-if _has fzf && _has ag; then
-    export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+# fzf + ripgrep configuration
+if _has fzf && _has rg; then
+    export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_DEFAULT_OPTS='
