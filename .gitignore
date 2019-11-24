@@ -17,3 +17,6 @@ Thumbs.db
 
 # credentials that should never be committed
 ~/.aws
+
+# .gitconfig separated into two files to keep email/name out of public dotfiles repo
+~/.gitconfig_private
