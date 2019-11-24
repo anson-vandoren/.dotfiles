@@ -24,15 +24,15 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
 
+# list all files colorized, including hidden
+# see `man ls | grep -E "\-[FGlAhp]"` for details
+alias la="ls -FlAhp ${colorflag}"
+
 # ask before overwriting, and show each file copied
 alias cp='cp -iv'
 
 # ask before overwriting, and show each file copied
 alias mv='mv -iv'
-
-# list all files colorized, including hidden
-# see `man ls | grep -E "\-[FGlAhp]"` for details
-alias la="ls -FlAhp ${colorflag}"
 
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'

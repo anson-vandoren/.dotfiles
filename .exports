@@ -1,6 +1,6 @@
 #!/bin/env zsh
 
-# set preferred editor
+# set default editor
 export EDITOR='vim'
 
 # let tmux know 256 colors are available
@@ -8,3 +8,8 @@ export TERM="xterm-256color"
 
 # Fix GPG for git commit signing
 export GPG_TTY=$(tty)
+
+# use gnu tools instead of macOS ones
+for util in gnu-sed grep coreutils; do
+    export PATH="$(brew --prefix)/opt/$util/libexec/gnubin:$PATH"
+done

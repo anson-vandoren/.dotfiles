@@ -1,13 +1,3 @@
-
-###################################
-# Manage other command-line tools #
-###################################
-
-# use gnu tools instead of macOS ones
-for util in gnu-sed grep coreutils; do
-    export PATH="$(brew --prefix)/opt/$util/libexec/gnubin:$PATH"
-done
-
 # returns whether the given command is executable or aliased.
 _has() {
     return $( whence "$1" > /dev/null 2>&1 )
@@ -47,10 +37,12 @@ POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
 # Basic terminal configuration #
 ################################
 
-source ~/.env.sh
-source ~/.aliases
-source ~/.functions
-source ~/.exports
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,exports,aliases,functions,extra}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
 
 ################################
 # Manage programming languages #
@@ -73,7 +65,6 @@ export NVM_DIR="$HOME/.nvm"
 # Go setup
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
-
 
 # add path for homebrew sbins
 export PATH="$PATH:/usr/local/sbin"
@@ -102,6 +93,14 @@ if _has fzf && _has ag; then
     --color info:108,prompt:109,spinner:108,pointer:168,marker:168
     '
 fi
+
+# make folders for vim
+for folder in ~/.vim/backups ~/.vim/swaps ~/.vim/undo; do
+    [ ! -d "$folder" ] && mkdir -p $folder
+done
+
+# use vim keybindings in shell
+bindkey -v
 
 # remove duplicates from PATH
 typeset -U path
