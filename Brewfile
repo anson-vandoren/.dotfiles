@@ -60,6 +60,7 @@ brew "vim"      # better than emacs
 brew "watchman" # used for watching for changes in large numbers of files
 brew "webpack"  # web development bundler
 brew "yarn"     # package manager for javascript, similar to npm
+brew "z"        # jump around - 'frecency' replacement for `cd`
 brew "zsh"      # shell replacement
 brew "zsh-completions"          # terminal completions for zshell
 brew "zsh-syntax-highlighting"  # colorful zshell
