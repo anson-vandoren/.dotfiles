@@ -57,6 +57,10 @@ $ rm -r tmpdotfiles
 ## Pulling in your private configurations
 
 There are some configuration you may not want part of a public dotfiles repo. I keep those in a `.extra` file
-which I store as a secret gist on GitHub, and my `.zshrc` file sources the `.extra` file at the end.
+which I store as a secret gist on GitHub and download and source separately on a new machine.
 
 You can see an anonymous version of my `.extra` file [in this gist](https://gist.github.com/anson-vandoren/adb48de6130eeacf27ec8f545d839cf6)
+
+To keep from 'polluting' my `.gitconfig` file, the gist outputs to a `.gitconfig_private` file instead, and I use
+an `[include]` block in my normal `.gitconfig` file to pull those variables in. Then I can check in my 
+`.gitconfig` file to the public repo, and ignore the `.gitconfig_private` one.
