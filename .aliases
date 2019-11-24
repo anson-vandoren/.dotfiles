@@ -73,9 +73,16 @@ alias urlencode='python -c "import sys, urllib.parse as ul; print(ul.quote_plus(
 
 # search google from terminal
 search_google () {
+    search=""
     for term in $@; do
         search="$search%20$term"
     done
         brave "https://google.com/search?q=$search"
 }
 alias google=search_google
+
+# use bat instead of cat
+alias cat=bat
+
+# use pretty ping
+alias ping=prettyping

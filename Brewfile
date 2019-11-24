@@ -21,11 +21,12 @@ cask "qlcolorcode"  # formatting for QuickLook color syntax
 cask "qlmarkdown"   # formatting for QuickLook markdown
 cask "quicklook-csv"    # show .csv files in QuickLook
 cask "quicklook-json"   # format .json files in QuickLook
-case "sizeup"   # window management (paid)
+cask "sizeup"   # window management (paid)
 cask "suspicious-package"   # inspect .pkg files with QuickLook before running
 cask "visual-studio-code"   # IDE/text editor
 cask "webpquicklook"    # show .webp images in QuickLook
 
+brew "bat"      # replacement for cat
 brew "black"    # python code formatter
 brew "cjbassi/gotop/gotop"  # graphical top command (process monitor)
 brew "coreutils"            # gnu core utilities
@@ -43,10 +44,12 @@ brew "hub"      # CLI for creating new repos in GitHub
 brew "hugo"     # static site generator (used for ansonvandoren.com)
 brew "jq"       # json parser on command line
 brew "node"     # node.js for server-side javascript. If multiple versions needed, use nvm instead
+brew "noti"     # get notifications on completion of long-running tasks
 brew "numpy"    # python library for numeric analysis
 brew "opencv"   # imaging library
 brew "openssh"  # replace default macOS SSH
 brew "prettier" # code formatter for HTML/CSS/JS
+brew "prettyping"   # a more welcoming ping
 brew "python"   # python3
 brew "ssh-copy-id"          # to send ssh credentials
 brew "the_silver_searcher"  # code searching tool, similar to ack, but faster
