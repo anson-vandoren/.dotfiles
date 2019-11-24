@@ -110,6 +110,9 @@ POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
 # enable fuzzy finding with fzf via hotkeys
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# enable z - jump around
+. /usr/local/etc/profile.d/z.sh
+
 # clean up history searching
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST

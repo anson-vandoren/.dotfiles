@@ -16,3 +16,12 @@ function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
 
+# no arguments: `git status`
+# with arguments: acts like `git`
+config() {
+    if [[ $# -gt 0 ]]; then
+        /usr/local/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME $@
+    else
+        /usr/local/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status
+    fi
+}

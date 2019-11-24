@@ -62,9 +62,6 @@ alias path='echo -e ${PATH//:/\\n}'
 # integrate Finder with terminal
 alias f='open -a Finder ./'
 
-# set up alias for dotfiles
-alias config='/usr/local/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-
 # lock the screen
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
