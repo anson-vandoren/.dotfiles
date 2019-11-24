@@ -29,6 +29,9 @@ alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000
 # add some sane defaults to oft-used commands
 alias cp='cp -iv'  # ask before overwriting, and show each file copied
 alias mv='mv -iv'  # ask before overwriting, and show each file copied
+# GNU ls doesn't colorize ls like darwin version does
+# If you want to use GNU ls, uncomment line below and comment the next one
+# ls --color=auto &> /dev/null && alias ls='ls --color=auto -FlAhp' ||
 alias la='ls -FGlAhp'   # see `man ls | grep -E "\-[FGlAhp]"` for details
 alias less='less -FSRXc'    # clean up less
 

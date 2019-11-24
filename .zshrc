@@ -12,21 +12,18 @@ export TERM="xterm-256color"
 export ZSH="/Users/anson/.oh-my-zsh"
 
 # use gnu tools instead of macOS ones
-for util in gnu-sed grep coreutils findutils; do
+for util in gnu-sed grep findutils; do
     PATH="$(brew --prefix)/opt/$util/libexec/gnubin:$PATH"
 done
 
 ZSH_THEME="robbyrussell"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(osx)
 
 source $ZSH/oh-my-zsh.sh
 
