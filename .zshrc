@@ -41,6 +41,7 @@ POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
 
 source ~/.env.sh
 source ~/.aliases
+source ~/.functions
 
 ################################
 # Manage programming languages #
