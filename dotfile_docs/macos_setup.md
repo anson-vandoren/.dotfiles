@@ -136,3 +136,17 @@ Create a new admin account that will be your daily driver
     - Keep folders on top when sorting by name -> On
     - When performing a search -> Search the Current Folder
 
+
+## Changing defaults
+
+There are many less accessible settings in macOS that can be changed. Many dotfiles have
+a `.macos` or `.osx` file that has lines similar to `defaults write ...` to change these.
+
+If you want to experiment with these, but keep a backup, you can (before making changes)
+run `defaults read > before_settings` to get all current values to a file. After making some
+changes, you can run `defaults read > after settings`, and then `diff before_settings after_settings`
+to see what's different. This can also be useful if you want to script a change that you know
+how to make from System Preferences, but aren't sure where it actually writes to the settings.
+Just save out the values, make the change in System Preferences, then save again and compare.
+
+A very thorough example of what you can do here can be found [here](https://github.com/mathiasbynens/dotfiles/blob/master/.macos)
