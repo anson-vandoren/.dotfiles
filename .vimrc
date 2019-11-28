@@ -7,7 +7,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'andys8/vim-elm-syntax', {'for': ['elm']}
 Plug 'scrooloose/nerdcommenter'
 Plug 'ambv/black'
-Plug 'chrisbra/csv.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug '/usr/local/opt/fzf'
@@ -170,6 +169,14 @@ autocmd FileType Python nnoremap <buffer> <F5> :w<CR>:exec '!clear; python' shel
 
 " disable auto comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" add some useful abbreviations for common typos
+" shift still held down when opening a file from $HOME:
+ab ~? ~/
+" shift still held down with not-equal
+ab !+ !=
+" fix stupid print typo in Go
+ab Pringln Println
 
 " make error messages easier to read
 :hi ErrorMsg ctermfg=Black guifg=Black
