@@ -25,3 +25,12 @@ config() {
         /usr/local/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status
     fi
 }
+
+# same as above, but for normal git
+g() {
+    if [[ $# -gt 0 ]]; then
+        git $@
+    else
+        git status
+    fi
+}
