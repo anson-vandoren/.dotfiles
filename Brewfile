@@ -7,6 +7,7 @@ mas "Monosnap", id: 540348655  # screenshot capture/edit
 cask "1Password"    # password management
 cask "backblaze"    # remote file backup
 cask "brave-browser"    # privacy-centric browser based on Chromium
+cask "caret"    # clean minimal Markdown editor
 cask "caskroom/fonts/font-hack-nerd-font"  # font for terminal and coding
 cask "docker"   # container management
 cask "firefox"  # browser
