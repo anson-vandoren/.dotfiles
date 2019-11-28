@@ -16,3 +16,6 @@ done
 
 # omit duplicates and commands that begin with space from history
 export HISTCONTROL='ignoreboth';
+
+# allow Go to pull from private repos
+export GOPRIVATE="github.com/anson-vandoren"
