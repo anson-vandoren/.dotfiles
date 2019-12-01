@@ -68,7 +68,7 @@
 	gpgsign = true
 
 [gpg]
-	program = /usr/local/bin/gpg
+	program = /usr/bin/gpg
 
 [color "diff-highlight"]
 	oldNormal = red bold

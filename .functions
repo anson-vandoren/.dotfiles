@@ -20,9 +20,9 @@ function tre() {
 # with arguments: acts like `git`
 config() {
     if [[ $# -gt 0 ]]; then
-        /usr/local/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME $@
+        git --git-dir=$HOME/.dotfiles --work-tree=$HOME $@
     else
-        /usr/local/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status
+        git --git-dir=$HOME/.dotfiles --work-tree=$HOME status
     fi
 }
 
