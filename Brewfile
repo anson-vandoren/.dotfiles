@@ -58,6 +58,7 @@ brew "tldr"     # human-readable, community-driven man page replacement
 brew "tmux"     # terminal multiplexer for easy use of tabs/windows/spaces in terminal
 brew "tree"     # like `ls`, but shows hierarchical tree
 brew "vim"      # better than emacs
+brew "watchexec"    # watch a file or directory and run command on change
 brew "watchman" # used for watching for changes in large numbers of files
 brew "webpack"  # web development bundler
 brew "yarn"     # package manager for javascript, similar to npm
