@@ -1,12 +1,13 @@
 " Set compatibility to Vim only (not vi backward-compatible)
 set nocompatible
 
+
 " Specify directory for plugins
 call plug#begin('~/.vim/plugged')
 
 Plug 'andys8/vim-elm-syntax', {'for': ['elm']}
 Plug 'scrooloose/nerdcommenter'
-Plug 'ambv/black'
+Plug 'Chiel92/vim-autoformat'
 Plug 'vimwiki/vimwiki'
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug '/usr/local/opt/fzf'

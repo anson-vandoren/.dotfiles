@@ -8,7 +8,7 @@ _has() {
 ############
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/anson/.oh-my-zsh"
+export ZSH="/home/anson/.oh-my-zsh"
 
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -21,7 +21,7 @@ source $ZSH/oh-my-zsh.sh
 export fpath=(/usr/local/share/zsh-completions $fpath)
 
 # turn on zsh syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 ################################
@@ -47,7 +47,7 @@ fi
 # set up virtualenvwrapper for managing local python environments
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/src
-source /usr/local/bin/virtualenvwrapper.sh
+source ~/.local/bin/virtualenvwrapper.sh
 
 # start nvm for managing node versions
 export NVM_DIR="$HOME/.nvm"
@@ -97,8 +97,9 @@ typeset -U path
 
 
 # set zsh theme and customize
+ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
-source ~/powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time date)
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
@@ -110,7 +111,7 @@ POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # enable z - jump around
-. /usr/local/etc/profile.d/z.sh
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 # clean up history searching
 setopt EXTENDED_HISTORY
