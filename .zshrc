@@ -125,3 +125,6 @@ setopt HIST_BEEP
 
 # add DigitalOcean command completion
 source <(doctl completion zsh)
+
+# enable linuxbrew
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)

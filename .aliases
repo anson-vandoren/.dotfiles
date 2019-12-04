@@ -78,6 +78,9 @@ search_google () {
 }
 alias google=search_google
 
+# alias for configuration files in git
+alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
 # use bat instead of cat
 alias cat=bat
 

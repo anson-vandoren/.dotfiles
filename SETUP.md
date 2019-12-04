@@ -63,6 +63,14 @@ Set config to not show untracked
 `sudo apt install zsh`
 `sudo chsh -s /usr/bin/zsh anson`
 
+## install homebrew for linux
+`sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"`
+`sudo apt install build-essential`
+`echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >>~/.profile`
+`eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)`
+`brew install gcc`
 
-
-
+## add directories for vim
+```bash
+$ mkdir ~/.vim/swaps
+```
