@@ -87,6 +87,8 @@ May need to install `prettier`, `black`, etc first via linuxbrew
 ## terminal color schemes in Elementary OS
 install with [Gogh](https://mayccoll.github.io/Gogh/)
 `bash -c "$(wget -qO- https://git.io/vQgMr)"`
-select color schemd 48 (frontend-delight)
+select color scheme 48 (frontend-delight)
 
+## pull in elementaryOS dconf settings
+`cat .config/.elementary-dconf.ini | dconf load /`
 
