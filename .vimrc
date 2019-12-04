@@ -1,7 +1,6 @@
 " Set compatibility to Vim only (not vi backward-compatible)
 set nocompatible
 
-
 " Specify directory for plugins
 call plug#begin('~/.vim/plugged')
 

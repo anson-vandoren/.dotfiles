@@ -73,4 +73,20 @@ Set config to not show untracked
 ## add directories for vim
 ```bash
 $ mkdir ~/.vim/swaps
+$ mkdir ~/.vim/backups
+$ mkdir ~/.vim/undo
 ```
+
+## install vim-plug (if not already from dotfiles)
+```bash
+$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+Start vim and run `:PlugInstall`
+May need to install `prettier`, `black`, etc first via linuxbrew
+
+## terminal color schemes in Elementary OS
+install with [Gogh](https://mayccoll.github.io/Gogh/)
+`bash -c "$(wget -qO- https://git.io/vQgMr)"`
+select color schemd 48 (frontend-delight)
+
+
