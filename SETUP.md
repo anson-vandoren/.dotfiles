@@ -91,4 +91,11 @@ select color scheme 48 (frontend-delight)
 
 ## pull in elementaryOS dconf settings
 `cat .config/.elementary-dconf.ini | dconf load /`
+or
+`dconf load / < .config/.elementary-dconf.ini`
+
+to save them out again:
+`dconf dump / > .config/.elementary-dconf.ini`
+
+may need to be edited to exclude non-needed
 
