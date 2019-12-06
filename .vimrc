@@ -69,6 +69,7 @@ map <C-m> :cprevious<CR>
 nnoremap <leader>x :cclose<CR>
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <leader>l <Plug>(go-lint)
 let g:go_list_type = "quickfix"
 let g:go_test_timeout = '10s'  " default value is 10sec
 
@@ -205,4 +206,11 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " set netrw file browser style
+" show directory tree
 let g:netrw_liststyle = 3
+" remove top banner
+let g:netrw_banner = 0
+" open files in horizontal split
+let g:netrw_browse_split = 1
+" open netrw with 25% of page
+let g:netrw_winsize = 25
