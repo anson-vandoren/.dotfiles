@@ -70,8 +70,11 @@ nnoremap <leader>x :cclose<CR>
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>l <Plug>(go-lint)
+autocmd FileType go nmap <leader>i <Plug>(go-info)
 let g:go_list_type = "quickfix"
 let g:go_test_timeout = '10s'  " default value is 10sec
+let g:go_auto_type_info = 1
+let g:go_auto_sameids = 1
 
 " build or compile tests based on file name
 function! s:build_go_files()
@@ -101,7 +104,7 @@ set showmatch   " show matching brackets when typing the first
 set hlsearch    " highlight search terms
 set gdefault    " add the g flag to search/replace by default
 " clear search box with ,<space>
-nnoremap <leader><space> :noh<cr>
+nnoremap <leader><space> :noh<cr>:GoSameIdsClear<cr>
 " make tab key match bracket pairs in visual and normal modes
 nnoremap <tab> %
 vnoremap <tab> %
