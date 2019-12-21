@@ -91,6 +91,10 @@ alias ag='ag --path-to-ignore ~/.ignore'
 alias weather='curl v2.wttr.in'
 
 # get help on bash commands
-cheat () {
+how_in() {
+    where "$1"; shift
+    IFS=+ curl "cht.sh/$where/$*"
+}
+cheat() {
     curl "cheat.sh/$1"
 }
