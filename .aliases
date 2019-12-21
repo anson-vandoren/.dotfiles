@@ -86,3 +86,11 @@ alias ping=prettyping
 
 # make ag use global ignore file
 alias ag='ag --path-to-ignore ~/.ignore'
+
+# get weather report
+alias weather='curl v2.wttr.in'
+
+# get help on bash commands
+cheat () {
+    curl "cheat.sh/$1"
+}
