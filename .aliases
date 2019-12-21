@@ -99,4 +99,4 @@ cheat() {
     curl "cheat.sh/$1"
 }
 
-alias fuckthis="git commit -m $(curl http://whatthecommit.com/index.txt)"
+alias fuckthis='git commit -m "$(curl http://whatthecommit.com/index.txt)"'
