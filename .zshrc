@@ -3,6 +3,8 @@ _has() {
     return $( whence "$1" > /dev/null 2>&1 )
 }
 
+export TERM="xterm-256color"
+
 # Start SSH agent
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_rsa
@@ -14,15 +16,23 @@ ssh-add ~/.ssh/id_rsa
 # Path to your oh-my-zsh installation.
 export ZSH="/home/anson/.oh-my-zsh"
 
+
+# set zsh theme and customize
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time date)
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
+
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=()
 
 source $ZSH/oh-my-zsh.sh
-
-# set path for function definitions
-export fpath=(/usr/local/share/zsh-completions $fpath)
 
 # turn on zsh syntax highlighting
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -101,16 +111,6 @@ bindkey -v
 typeset -U path
 
 
-# set zsh theme and customize
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE='nerdfont-complete'
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time date)
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
-POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
 
 # enable fuzzy finding with fzf via hotkeys
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -127,9 +127,6 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
-
-# add DigitalOcean command completion
-source <(doctl completion zsh)
 
 # enable linuxbrew
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
