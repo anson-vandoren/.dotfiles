@@ -17,23 +17,23 @@ $ git init --bare $HOME/.dotfiles
 
 Add the line below to `.bashrc` or `.zshrc`
 
-`alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'`
+`alias config='/usr/local/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'`
 
 ### Don't show all untracked files (since it will show ALL files no matter your path)
 
-`dotfiles config --local status.showUntrackedFiles no`
+`config config --local status.showUntrackedFiles no`
 
 ### Create a new repository on GitHub (or wherever), and add the remote
 
-`dotfiles remote add origin git@github.com:anson-vandoren/.dotfiles.git`
+`config remote add origin git@github.com:anson-vandoren/.dotfiles.git`
 
 ### Add files and push
 
 ```bash
 $ cd $HOME
-$ dotfiles add .vimrc
-$ dotfiles commit -m "Adding .vimrc"
-$ dotfiles push
+$ config add .vimrc
+$ config commit -m "Adding .vimrc"
+$ config push
 ```
 
 ## Setting up a new machine
