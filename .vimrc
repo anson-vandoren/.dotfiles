@@ -14,7 +14,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " optional fzf if not already installed
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'
 
 call plug#end()

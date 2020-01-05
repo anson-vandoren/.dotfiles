@@ -21,7 +21,7 @@ source $ZSH/oh-my-zsh.sh
 export fpath=(/usr/local/share/zsh-completions $fpath)
 
 # turn on zsh syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 ################################
