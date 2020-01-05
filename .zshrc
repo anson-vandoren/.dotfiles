@@ -5,10 +5,6 @@ _has() {
 
 export TERM="xterm-256color"
 
-# Start SSH agent
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/id_rsa
-
 #############
 # Setup zsh #
 ############
