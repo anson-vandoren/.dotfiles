@@ -3,6 +3,10 @@ _has() {
     return $( whence "$1" > /dev/null 2>&1 )
 }
 
+# Start SSH agent
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
+
 #############
 # Setup zsh #
 ############
@@ -40,6 +44,7 @@ done;
 ################################
 
 # start pyenv for managing python versions
+export PATH="/home/anson/.pyenv/bin:$PATH"
 if _has pyenv; then
     eval "$(pyenv init -)"
 fi
