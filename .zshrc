@@ -3,6 +3,10 @@ _has() {
     return $( whence "$1" > /dev/null 2>&1 )
 }
 
+
+# enable linuxbrew
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
 export TERM="xterm-256color"
 
 # make caps lock useful
@@ -110,8 +114,6 @@ bindkey -v
 # remove duplicates from PATH
 typeset -U path
 
-
-
 # enable fuzzy finding with fzf via hotkeys
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -128,5 +130,4 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 
-# enable linuxbrew
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+source /home/anson/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
