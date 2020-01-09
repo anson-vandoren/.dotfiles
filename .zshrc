@@ -5,6 +5,10 @@ _has() {
 
 export TERM="xterm-256color"
 
+# make caps lock useful
+setxkbmap -option ctrl:swapcaps
+xcape -e 'Control_L=Escape'
+
 #############
 # Setup zsh #
 ############

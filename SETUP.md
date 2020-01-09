@@ -6,7 +6,7 @@
 add to zshrc (or .profile? or .xinitrc?):
 
 - `setxkbmap -option ctrl:swapcaps`
-- `xcape -e 'Control_L=Escape`
+- `xcape -e 'Control_L=Escape'`
 
 ## install basics
 
@@ -115,3 +115,29 @@ or
 to save them again:
 `dconf dump / > .config/.elementary-dconf.ini`
 may need to be edited to exclude non-needed
+
+## install oh-my-zsh
+
+`sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+
+copy dotfiles .zshrc over the oh-my-zsh new file:
+`mv .zshrc.pre-oh-my-zsh .zshrc`
+
+## install pyenv
+
+`brew install pyenv`
+
+install pyenv build deps
+`sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \ libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \ xz-utils tk-dev libffi-dev liblzma-dev python-openssl git`
+
+install zsh-syntax-highlighting and zsh-completions
+`git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
+`git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions`
+
+## install virtualenvwrapper
+
+Install pip (`sudo apt install python3-pip`) if needed
+`pip3 install virtualenvwrapper`
+
+### powerline fonts
+[see instructions here](https://medium.com/@ilovepixelart/elementary-os-5-0-juno-oh-my-zsh-16a0cf0284b1)

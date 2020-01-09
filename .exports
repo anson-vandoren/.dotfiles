@@ -14,3 +14,7 @@ export HISTCONTROL='ignoreboth';
 
 # allow Go to pull from private repos
 export GOPRIVATE="github.com/anson-vandoren"
+
+# set pyenv paths
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
