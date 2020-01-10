@@ -41,6 +41,9 @@ source $ZSH/oh-my-zsh.sh
 # turn on zsh syntax highlighting
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# add more zsh completions
+fpath=(~/.oh-my-zsh/custom/plugins/zsh-completions/src $fpath)
+
 
 ################################
 # Basic terminal configuration #
