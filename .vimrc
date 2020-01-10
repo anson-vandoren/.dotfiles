@@ -16,6 +16,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " optional fzf if not already installed
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'
+Plug 'psf/black'
 
 call plug#end()
 
