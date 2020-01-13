@@ -10,6 +10,7 @@ eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 export TERM="xterm-256color"
 
 # make caps lock useful
+pkill xcape
 setxkbmap -option ctrl:swapcaps
 xcape -e 'Control_L=Escape'
 
