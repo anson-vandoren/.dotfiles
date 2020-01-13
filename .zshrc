@@ -77,7 +77,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Go setup
-export GOPATH=$HOME/go
+export GOPATH=$HOME/src/go
 export PATH=$GOPATH/bin:$PATH
 
 # add path for homebrew sbins
