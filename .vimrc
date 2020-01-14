@@ -16,9 +16,9 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " optional fzf if not already installed
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'
-Plug 'psf/black'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
+Plug 'axiros/axblack'
 
 call plug#end()
 
@@ -162,9 +162,13 @@ autocmd BufNewFile,BufRead *.py
 autocmd Filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype css setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
 " Autoformat with Black
 autocmd BufWritePre *.py execute ':Black'
+
+" Recognize .gohtml files as html-ish
+au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
 
 " Map F5 to save and then run current Python buffer
 autocmd FileType Python nnoremap <buffer> <F5> :w<CR>:exec '!clear; python' shellescape(@%, 1)<cr>
