@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'andys8/vim-elm-syntax', {'for': ['elm']}
 Plug 'scrooloose/nerdcommenter'
-Plug 'Chiel92/vim-autoformat'
 Plug 'vimwiki/vimwiki'
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug '/usr/local/opt/fzf'
@@ -18,8 +17,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
-Plug 'axiros/axblack'
-
+Plug 'ambv/black'
+Plug 'alvan/vim-closetag'
 call plug#end()
 
 " Set vimwiki to use Markdown
@@ -165,7 +164,7 @@ autocmd Filetype css setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
 " Autoformat with Black
-autocmd BufWritePre *.py execute ':Black'
+"autocmd BufWritePre *.py execute ':Black'
 
 " Recognize .gohtml files as html-ish
 au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
@@ -209,4 +208,6 @@ command! -nargs=* -bang Rg call RipgrepFzf(<q-args>, <bang>0)
 
 " set Prettier to run on save
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml PrettierAsync
+" only use Prettier on HTML files that aren't templates
+autocmd FileType html autocmd BufWritePre <buffer> PrettierAsync
