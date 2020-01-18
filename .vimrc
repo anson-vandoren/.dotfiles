@@ -19,6 +19,7 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ambv/black'
 Plug 'alvan/vim-closetag'
+Plug 'cespare/vim-toml'
 call plug#end()
 
 " Set vimwiki to use Markdown
