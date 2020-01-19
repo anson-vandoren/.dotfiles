@@ -1,0 +1,1 @@
+/mnt/c/Users/anson/Desktop/CapsLock.ahk
