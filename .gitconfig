@@ -37,6 +37,7 @@
 
     # Amend the currently staged files to the latest commit
     amend = commit --amend --reuse-message=HEAD
+    ctags = !.git/hooks/ctags
 
 [core]
     excludesfile = ~/.gitignore
@@ -74,4 +75,7 @@
 	oldNormal = red bold
 	oldHighlight = red bold 52
 	newNormal = green bold
-	newHighlight = green bold 22
+    newHighlight = green bold 22
+
+[init]
+    templatedir = ~/.git_template
