@@ -53,3 +53,11 @@ for key, app in pairs(applicationHotkeys) do
         hs.application.launchOrFocus(app)
     end)
 end
+
+-- set up keyboard mouse scrolling
+hs.hotkey.bind(hyper, "n", function()
+    hs.eventtap.scrollWheel({0, 3}, {}, "line")
+end)
+hs.hotkey.bind(hyper, "m", function()
+    hs.eventtap.scrollWheel({0, -3}, {}, "line")
+end)

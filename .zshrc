@@ -124,3 +124,8 @@ setopt HIST_BEEP
 
 # add DigitalOcean command completion
 source <(doctl completion zsh)
+
+# make libffi and gcc work
+export LDFLAGS="-L/usr/local/opt/libffi/lib"
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+
