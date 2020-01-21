@@ -17,6 +17,9 @@ Plug 'jiangmiao/auto-pairs'
 " optional fzf if not already installed
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-surround'
+Plug 'alvan/vim-closetag'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
@@ -161,12 +164,16 @@ endif
 autocmd BufNewFile,BufRead *.py
     \ set fileformat=unix
 
-autocmd Filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd Filetype css setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype html setlocal softtabstop=2 shiftwidth=2 expandtab
+autocmd Filetype htmldjango setlocal softtabstop=2 shiftwidth=2 expandtab
+autocmd Filetype javascript setlocal softtabstop=2 shiftwidth=2 expandtab
+autocmd Filetype css setlocal softtabstop=2 shiftwidth=2 expandtab
+autocmd Filetype Python setlocal softtabstop=4 shiftwidth=4 expandtab
 
 " Autoformat with Black
 autocmd BufWritePre *.py execute ':Black'
+" recognize .gohtml files as html-ish
+autocmd BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
 
 " Map F5 to save and then run current Python buffer
 autocmd FileType Python nnoremap <buffer> <F5> :w<CR>:exec '!clear; python' shellescape(@%, 1)<cr>
@@ -207,7 +214,9 @@ command! -nargs=* -bang Rg call RipgrepFzf(<q-args>, <bang>0)
 
 " set Prettier to run on save
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml, PrettierAsync
+" only use Prettier on HTML files that aren't templates
+autocmd FileType html autocmd BufWritePre <buffer> PrettierAsync
 
 " set netrw file browser style
 " show directory tree
