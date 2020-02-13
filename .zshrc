@@ -129,3 +129,9 @@ source <(doctl completion zsh)
 export LDFLAGS="-L/usr/local/opt/libffi/lib"
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc'; fi
