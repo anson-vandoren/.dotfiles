@@ -120,10 +120,6 @@ set formatoptions=qrn1
 " Use the OS clipboard by default
 set clipboard=unnamed
 
-" Allow cursor keys in insert mode
-" Not valid in nvim
-"set esckeys
-
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
