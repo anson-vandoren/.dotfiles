@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{config, pkgs, ... }:
 
 {
   # Let Home Manager install and manage itself.
@@ -40,6 +40,11 @@
       pkgs.gnugrep
       pkgs.exa
       pkgs.prettyping
+      pkgs.gotop
+      pkgs.gitAndTools.hub
+      pkgs._1password
+      pkgs.highlight
+      pkgs.black
   ];
 
   programs.command-not-found.enable = true;
