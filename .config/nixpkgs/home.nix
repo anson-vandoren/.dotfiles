@@ -15,5 +15,32 @@
   home.stateVersion = "20.03";
 
   # Add utilities
-  programs.bat.enable = true;
+  nixpkgs.config.allowUnfree = true;
+  home.packages = [
+      pkgs.htop
+      pkgs.bat
+      pkgs.wget
+      pkgs.gnupg
+      pkgs.vscode
+      pkgs.watchexec
+      pkgs.jq
+      pkgs.hugo
+      pkgs.asciinema
+      pkgs.avrdude
+      pkgs.binutils
+      pkgs.coreutils
+      pkgs.doctl
+      pkgs.ctags
+      pkgs.elmPackages.elm
+      pkgs.elmPackages.elm-format
+      pkgs.elmPackages.elm-live
+      pkgs.fd
+      pkgs.findutils
+      pkgs.gawk
+      pkgs.gnugrep
+      pkgs.exa
+      pkgs.prettyping
+  ];
+
+  programs.command-not-found.enable = true;
 }

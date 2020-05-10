@@ -140,3 +140,5 @@ if [ -f '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/completion.zsh
 
 if [ -e /Users/anson/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/anson/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
+# Home Manager for nix
+. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
