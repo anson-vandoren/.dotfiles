@@ -107,10 +107,12 @@ POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
 POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
 
 # enable fuzzy finding with fzf via hotkeys
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -n "${commands[fzf-share]}"  ]; then
+    source "$(fzf-share)/key-bindings.zsh"
+    source "$(fzf-share)/completion.zsh"
+fi
 
-# enable z - jump around
-. /usr/local/etc/profile.d/z.sh
 
 # clean up history searching
 setopt EXTENDED_HISTORY
@@ -135,3 +137,5 @@ if [ -f '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/path.zsh.inc' 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc'; fi
+
+if [ -e /Users/anson/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/anson/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
