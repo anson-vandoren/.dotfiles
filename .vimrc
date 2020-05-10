@@ -121,7 +121,8 @@ set formatoptions=qrn1
 set clipboard=unnamed
 
 " Allow cursor keys in insert mode
-set esckeys
+" Not valid in nvim
+"set esckeys
 
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
