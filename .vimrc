@@ -20,6 +20,7 @@ Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'cespare/vim-toml'
+Plug 'alaviss/nim.nvim'
 
 call plug#end()
 
