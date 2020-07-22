@@ -1,2 +1,60 @@
+#!/usr/bin/env zsh
+
+# Easier navigation up directory tree
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+alias .5="cd ../../../../.."
+
+alias top=htop
+
+alias ls=exa
+alias la="ls -Flah"
+
+# ask before overwriting, and show each file copied
+alias cp='cp -iv'
+
+# ask before overwriting, and show each file copied
+alias mv='mv -iv'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+
+# make it easier to edit common configuration files
+alias zshrc="$EDITOR ~/.zshrc"
+alias vimrc="$EDITOR ~/.vimrc"
+
+# Reload the shell (i.e. invoke as a login shell)
+# note: $SHELL is not necessarily the current shell, hence not using it here
+#alias reload="exec ${SHELL} -l"
+alias reload="exec $( readlink /proc/$$/exe ) -l"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+# use bat instead of cat
+alias cat=bat
+
+# use pretty ping
+alias ping=prettyping
+
+# make ag use global ignore file
+alias ag='ag --path-to-ignore ~/.ignore'
+
+# get weather report
+alias weather='curl v2.wttr.in'
+
+# get help on bash commands
+how_in() {
+    where "$1"; shift
+    IFS=+ curl "cht.sh/$where/$*"
+}
+cheat() {
+    curl "cheat.sh/$1"
+}
+
 alias fd=fdfind
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
