@@ -28,6 +28,7 @@ set wildmode=list:longest
 set cursorline      " underline current line
 set backspace=indent,eol,start  " Allow backspace through indents, lines, etc.
 set ttyfast  	    " speed up scrolling
+set clipboard=unnamedplus
 
 " ----------------------- TABS -------------------
 set tabstop=4      " show existing tab with 4 spaces width
@@ -125,4 +126,3 @@ if has("autocmd")
     " get rid of the stupid extra comment on next line
     autocmd FileType * set formatoptions-=r
 endif
-
