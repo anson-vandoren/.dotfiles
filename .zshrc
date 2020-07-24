@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # returns whether the given command is executable or aliased.
 _has() {
     return $( whence "$1" > /dev/null 2>&1 )
@@ -8,7 +15,8 @@ _has() {
 ############
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/anson/.oh-my-zsh"
+export ZSH="/home/anson/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -21,7 +29,7 @@ source $ZSH/oh-my-zsh.sh
 export fpath=(/usr/local/share/zsh-completions $fpath)
 
 # turn on zsh syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 ################################
@@ -47,7 +55,7 @@ fi
 # set up virtualenvwrapper for managing local python environments
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/src
-source /usr/local/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 # start nvm for managing node versions
 export NVM_DIR="$HOME/.nvm"
@@ -56,15 +64,6 @@ export NVM_DIR="$HOME/.nvm"
 # Go setup
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
-
-# add path for homebrew sbins
-export PATH="$PATH:/usr/local/sbin"
-
-# fzf via Homebrew
-if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
-    source /usr/local/opt/fzf/shell/key-bindings.zsh
-    source /usr/local/opt/fzf/shell/completion.zsh
-fi
 
 # fzf via local installation
 if [ -e ~/.fzf ]; then
@@ -95,22 +94,8 @@ bindkey -v
 # remove duplicates from PATH
 typeset -U path
 
-
-# set zsh theme and customize
-POWERLEVEL9K_MODE='nerdfont-complete'
-source ~/powerlevel9k/powerlevel9k.zsh-theme
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time date)
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
-POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
-
 # enable fuzzy finding with fzf via hotkeys
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# enable z - jump around
-. /usr/local/etc/profile.d/z.sh
 
 # clean up history searching
 setopt EXTENDED_HISTORY
@@ -122,16 +107,5 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 
-# add DigitalOcean command completion
-source <(doctl completion zsh)
-
-# make libffi and gcc work
-export LDFLAGS="-L/usr/local/opt/libffi/lib"
-export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc'; fi
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
