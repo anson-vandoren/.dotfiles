@@ -110,7 +110,7 @@ setopt HIST_BEEP
 
 
 # turn on zsh syntax highlighting - should be near the end
-source /home/anson/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # set up Tilix terminal
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
