@@ -22,7 +22,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=()
+plugins=(ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
