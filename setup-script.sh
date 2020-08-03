@@ -17,11 +17,20 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 echo "Installing python2/3 & their pips"
 sudo apt install python python3 python-pip python3-pip
 
+echo "installing curl & rsync"
+sudo apt install curl rsync
+
 # install fonts & powerlevel10k
 
-# mkd .fonts
-# copy fonts
-# `fc-cache -fv`
+echo "installing MesloLGS fonts"
+mkdir -p $HOME/.fonts
+curl -LO https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+curl -LO https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+curl -LO https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+curl -LO https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
+mv ./MesloLGS*.ttf $HOME/.fonts/
+fc-cache -fv
+
 
 echo "Installinv nvim"
 sudo apt install neovim
