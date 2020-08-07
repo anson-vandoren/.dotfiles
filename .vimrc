@@ -10,9 +10,13 @@ Plug 'tpope/vim-eunuch'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
+Plug 'vimwiki/vimwiki'
 
 
 call plug#end()
+
+" set vimwiki to use Markdown
+let g:vimwiki_list = [{'path': '~/notes', 'syntax': 'markdown', 'ext': '.md'}]
 
 " Turn off modelines (prevent some possible vulnerabilities, and not needed by
 " me)
@@ -44,6 +48,10 @@ let mapleader = ","
 " move up and down by displayed lines, not file lines
 nnoremap j gj
 nnoremap k gk
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " ------------------- SEARCH ---------------------
 nnoremap / /\v
