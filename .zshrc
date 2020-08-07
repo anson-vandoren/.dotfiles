@@ -21,7 +21,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=()
+plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,6 +48,8 @@ done;
 ################################
 
 # start pyenv for managing python versions
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 if _has pyenv; then
     eval "$(pyenv init -)"
 fi
