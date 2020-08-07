@@ -57,6 +57,7 @@ cheat() {
 }
 
 alias fuckthis='git commit -m "$(curl http://whatthecommit.com/index.txt)"'
+alias fuckit=fuckthis
 
 # use nvim if available
 if type nvim > /dev/null 2>&1; then
