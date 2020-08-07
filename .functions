@@ -3,6 +3,12 @@
 # Create a folder and move into it in one command
 mkd() { mkdir -p "$@" && cd "$_"; }
 
+# CD and list directory
+cdd() { cd "$@" && ls; }
+
+# watch current folder for python file changes and run a script if so
+pywatch() { fd ".+\.py" | entr python "$@" }
+
 # no arguments: `git status`
 # with arguments: acts like `git`
 config() {
