@@ -19,6 +19,8 @@ alias cp='cp -iv'
 # ask before overwriting, and show each file copied
 alias mv='mv -iv'
 
+#alias c++=clang++-9
+
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

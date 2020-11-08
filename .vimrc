@@ -134,3 +134,6 @@ if has("autocmd")
     " get rid of the stupid extra comment on next line
     autocmd FileType * set formatoptions-=r
 endif
+
+" Allow saving of files as sudo when I forget to start vim as sudo
+cmap w!! w !sudo tee > /dev/null %
