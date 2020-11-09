@@ -48,13 +48,14 @@ done;
 ################################
 
 # start pyenv for managing python versions
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 if _has pyenv; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
 fi
 
 # set up virtualenvwrapper for managing local python environments
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/src
 source $HOME/.local/bin/virtualenvwrapper.sh
