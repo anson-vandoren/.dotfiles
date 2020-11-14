@@ -16,3 +16,4 @@ or PR.
 - Install `homebrew` from the official [instructions](https://brew.sh/)
 - [Creating and using a brewfile](https://github.com/anson-vandoren/.dotfiles/blob/master/dotfile_docs/brewfile.md)
 - [Managing dotfiles with git](https://github.com/anson-vandoren/.dotfiles/blob/master/dotfile_docs/dotfile_management.md)
+- [Manual setup on WSL](https://github.com/anson-vandoren/.dotfiles/blob/master/dotfile_docs/WSL-setup.md)
