@@ -200,7 +200,7 @@ For possible error messages, [this may be helpful](https://gist.github.com/dixne
 ## Bat (`cat` replacement with better formatting)
 
 ```sh
-$ sudo apt install bad
+$ sudo apt install bat
 $ mkdir -p ~/.local/bin
 $ ln -s /usr/bin/batcat ~/.local/bin/bat
 ```
