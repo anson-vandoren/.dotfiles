@@ -11,6 +11,7 @@ Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'vimwiki/vimwiki'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 
 call plug#end()

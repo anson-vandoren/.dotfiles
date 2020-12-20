@@ -3,3 +3,6 @@ export PATH=$PATH:$HOME/bin
 
 # allow Yarn executables to be used globally
 export PATH="$PATH:`yarn global bin`"
+
+# add support for Go
+export PATH=$PATH:/usr/local/go/bin
