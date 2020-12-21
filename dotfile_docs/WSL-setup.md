@@ -83,7 +83,7 @@ with `sudo apt install git` first.
 ## Clone the dotfiles repo on the WSL branch
 
 ```bash
-$ git clone -b WSL1 --separate-git-dir=$HOME/.dotfiles https://github.com/anson-vandoren/.dotfiles.git tmpdotfiles
+$ git clone -b WSL --separate-git-dir=$HOME/.dotfiles https://github.com/anson-vandoren/.dotfiles.git tmpdotfiles
 $ rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
 $ rm -r tmpdotfiles
 ```
@@ -254,6 +254,12 @@ $ sudo apt install fzf
 ```
 
 # Setup VIM
+
+## Install NEOvim
+
+```sh
+$ sudo apt install neovim
+```
 
 ## Install `vim-plug`
 
