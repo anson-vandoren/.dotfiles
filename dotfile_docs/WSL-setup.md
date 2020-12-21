@@ -83,7 +83,7 @@ with `sudo apt install git` first.
 ## Clone the dotfiles repo on the WSL branch
 
 ```bash
-$ git clone -b WSL1 --separate-git-dir=$HOME/.dotfiles https://github.com/anson-vandoren/.dotfiles.git tmpdotfiles
+$ git clone -b WSL --separate-git-dir=$HOME/.dotfiles https://github.com/anson-vandoren/.dotfiles.git tmpdotfiles
 $ rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
 $ rm -r tmpdotfiles
 ```
@@ -200,7 +200,7 @@ For possible error messages, [this may be helpful](https://gist.github.com/dixne
 ## Bat (`cat` replacement with better formatting)
 
 ```sh
-$ sudo apt install bad
+$ sudo apt install bat
 $ mkdir -p ~/.local/bin
 $ ln -s /usr/bin/batcat ~/.local/bin/bat
 ```
@@ -254,6 +254,12 @@ $ sudo apt install fzf
 ```
 
 # Setup VIM
+
+## Install NEOvim
+
+```sh
+$ sudo apt install neovim
+```
 
 ## Install `vim-plug`
 
