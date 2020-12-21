@@ -65,6 +65,10 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# Yarn path can't be added until after nvm
+# allow Yarn executables to be used globally
+export PATH="$PATH:`yarn global bin`"
+
 # Go setup
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
@@ -115,3 +119,5 @@ setopt HIST_BEEP
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
+
+
