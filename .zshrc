@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # returns whether the given command is executable or aliased.
 _has() {
     return $( whence "$1" > /dev/null 2>&1 )
@@ -8,14 +15,16 @@ _has() {
 ############
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/anson/.oh-my-zsh"
+export ZSH="/Users/ansonvandoren/.oh-my-zsh"
 
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=()
 
+ZSH_THEME="powerlevel10k/powerlevel10k"
 source $ZSH/oh-my-zsh.sh
+
 
 # set path for function definitions
 export fpath=(/usr/local/share/zsh-completions $fpath)
@@ -47,7 +56,7 @@ fi
 # set up virtualenvwrapper for managing local python environments
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/src
-source /usr/local/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 # start nvm for managing node versions
 export NVM_DIR="$HOME/.nvm"
@@ -95,17 +104,6 @@ bindkey -v
 # remove duplicates from PATH
 typeset -U path
 
-
-# set zsh theme and customize
-POWERLEVEL9K_MODE='nerdfont-complete'
-source ~/powerlevel9k/powerlevel9k.zsh-theme
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time date)
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
-POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
-
 # enable fuzzy finding with fzf via hotkeys
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -122,9 +120,6 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 
-# add DigitalOcean command completion
-source <(doctl completion zsh)
-
 # make libffi and gcc work
 export LDFLAGS="-L/usr/local/opt/libffi/lib"
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
@@ -135,3 +130,6 @@ if [ -f '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/path.zsh.inc' 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc'; fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
