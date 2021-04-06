@@ -12,7 +12,8 @@ Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'vimwiki/vimwiki'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'elixir-editors/vim-elixir'
 
 call plug#end()
 
