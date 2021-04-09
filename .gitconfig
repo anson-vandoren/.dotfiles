@@ -1,4 +1,6 @@
 [user]
+	name = Anson VanDoren
+	email = anson@silanano.com
     # name = enter your name here
     # email = enter your email here
     # GPG keyId below from `gpg --list-secret-keys --keyid-format LONG`
@@ -8,8 +10,8 @@
 [include]
     path = ~/.gitconfig_private
 
-[url "ssh://git@github.com"]
-    insteadOf = https://github.com
+;[url "ssh://git@github.com"]
+    ;insteadOf = https://github.com
 
 [alias]
     # View abbreviated SHA, description, and history graph of the latest 20 commits
@@ -79,3 +81,4 @@
 
 [init]
     templatedir = ~/.git_template
+	defaultBranch = main

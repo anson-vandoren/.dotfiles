@@ -133,3 +133,6 @@ if [ -f '/Users/anson/Downloads/google-cloud-sdk/google-cloud-sdk/completion.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Created by `pipx` on 2021-03-12 23:52:14
+export PATH="$PATH:/Users/ansonvandoren/.local/bin"
