@@ -1,7 +1,13 @@
+# Install dotfiles from repo
+
+[Link here](https://github.com/anson-vandoren/.dotfiles/blob/solus/dotfile_docs/dotfile_management.md)
+
+Note that some things may break, so you might want to do this later on instead...
+
 # Install utilities
 
 ```sh
-$ sudo eopkg install git neovim
+$ sudo eopkg install git neovim tmux
 $ sudo eopkg install -c system.devel
 ```
 
@@ -62,6 +68,37 @@ $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/instal
 
 # Install Powerlevel10k
 
+```sh
+$ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+Then make sure it's enabled in .zshrc, then `exec $SHELL` to get the setup wizard and run through it
+
+# Create gpg key
+
+```sh
+$ gpg --ful-generate-key
+```
+
+Make sure key size is >= 4096 bits, use GitHub email address.
+
+Clone & source the private/secret .extra gist, verify GPG key is correct. This
+will generate the `.gitconfig_private` file that is sourced in the `.gitconfig`
+file from the dotfiles repo.
+
+## Add gpg key to GitHub
+
+```sh
+$ gpg --list-secret-keys --keyid-format LONG
+/Users/hubot/.gnupg/secring.gpg
+------------------------------------
+sec   4096R/3AA5C34371567BD2 2016-03-10 [expires: 2017-03-10]
+uid                          Hubot 
+ssb   4096R/42B317FD4BA89E7A 2016-03-10
+$ gpg --armor --export 42B317FD4BA89E7A
+```
+
+...and upload it on GitHub.
 
 # Install other useful things
 
