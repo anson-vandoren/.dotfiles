@@ -69,7 +69,7 @@
 	gpgsign = true
 
 [gpg]
-	program = /usr/local/bin/gpg
+	program = /usr/bin/gpg
 
 [color "diff-highlight"]
 	oldNormal = red bold
@@ -78,4 +78,5 @@
     newHighlight = green bold 22
 
 [init]
-    templatedir = ~/.git_template
+	templatedir = ~/.git_template
+	defaultBranch = main
