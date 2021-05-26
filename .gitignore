@@ -1,3 +1,7 @@
+# private gitconfig data
+.extra
+~/.gitconfig_private
+
 # Compiled Python files
 *.pyc
 
@@ -13,10 +17,5 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
-.vscode/
-
 # credentials that should never be committed
 ~/.aws
-
-# .gitconfig separated into two files to keep email/name out of public dotfiles repo
-~/.gitconfig_private
