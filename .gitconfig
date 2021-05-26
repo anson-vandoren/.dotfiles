@@ -37,7 +37,6 @@
 
     # Amend the currently staged files to the latest commit
     amend = commit --amend --reuse-message=HEAD
-    ctags = !.git/hooks/ctags
 
 [core]
     excludesfile = ~/.gitignore
