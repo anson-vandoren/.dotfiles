@@ -24,7 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # Source external files
-for file in ~/.{exports.aliases,functions,extra}; do
+for file in ~/.{exports,aliases,functions,extra}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 
