@@ -53,12 +53,38 @@ $ pyenv install 3.10.0b1
 $ pyenv global 3.10.0b1
 ```
 
+### Install some python packages globally
+
+```sh
+$ pip install --upgrade pip
+$ pip install --user black
+$ pip install --user virtualenvwrapper
+```
+
+> NOTE: this installs both packages in ~/.local/bin/ which needs to be added to `$PATH`
+
+# Install rust
+
+```sh
+$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
 # Install `zsh` and `oh-my-zsh`
 
 ```sh
 $ sudo eopkg install zsh
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
+## Zsh plugins
+
+```sh
+$ git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH/custom/plugins/zsh-vi-mode
+$ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+Then add `plugins+=(zsh-vi-mode zsh-completions zsh-syntax-highlighting)` to `.zshrc`
 
 # Install fonts
 
@@ -105,6 +131,28 @@ $ gpg --armor --export 42B317FD4BA89E7A
 ```sh
 $ sudo eopkg install hugo
 $ npm install -g diff-so-fancy
+$ npm install -g tldr
+$ sudo eopkg install bat fd ripgrep silver-searcher exa
+$ sudo eopkg install httpie jq yarn
+$ cargo install watchexec-cli
+```
+
+## Install fzf from git to get completions and keybindings
+
+```sh
+$ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+$ ~/.fzf/install
+```
+
+Then let the installer update shell config files
+
+
+## Install GoTop (graphical process monitor)
+
+```sh
+$ wget https://github.com/xxxserxxx/gotop/releases/download/v4.1.1/gotop_v4.1.1_linux_amd64.tgz
+$ tar -xzf gotop_v4.1.1_linux_amd64.tgz
+$ mv ./gotop ~/.local/bin
 ```
 
 
