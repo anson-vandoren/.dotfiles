@@ -119,7 +119,7 @@ $ gpg --list-secret-keys --keyid-format LONG
 /Users/hubot/.gnupg/secring.gpg
 ------------------------------------
 sec   4096R/3AA5C34371567BD2 2016-03-10 [expires: 2017-03-10]
-uid                          Hubot 
+uid                          Hubot
 ssb   4096R/42B317FD4BA89E7A 2016-03-10
 $ gpg --armor --export 42B317FD4BA89E7A
 ```
@@ -146,7 +146,6 @@ $ ~/.fzf/install
 
 Then let the installer update shell config files
 
-
 ## Install GoTop (graphical process monitor)
 
 ```sh
@@ -154,7 +153,6 @@ $ wget https://github.com/xxxserxxx/gotop/releases/download/v4.1.1/gotop_v4.1.1_
 $ tar -xzf gotop_v4.1.1_linux_amd64.tgz
 $ mv ./gotop ~/.local/bin
 ```
-
 
 # Install software from Software Center
 
@@ -183,3 +181,14 @@ $ gsettings set org.gnome.desktop.peripherals.keyboard delay 250
 ```sh
 $ sudo curl https://data.trezor.io/udev/51-trezor.rules -o /etc/udev/rules.d/51-trezor.rules
 ```
+
+# Setup vim
+
+# Install `vim-plug`
+
+```sh
+$ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+Start vim and `:PlugInstall`
