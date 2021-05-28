@@ -1,6 +1,6 @@
 # private gitconfig data
 .extra
-~/.gitconfig_private
+.gitconfig_private
 
 # Compiled Python files
 *.pyc
@@ -18,4 +18,27 @@ Thumbs.db
 .Trashes
 
 # credentials that should never be committed
-~/.aws
+.aws/
+
+.cache/
+.mozilla/
+.gnupg
+.zsh_history
+.ssh/known_hosts
+
+# don't need bash files
+.bash_history
+.bash_logout
+.bashrc
+
+# don't need plenty of other files in the home folder
+.Xauthority
+.dmrc
+.esd_auth
+.gdbinit
+.zcompdump*
+.xsession-errors*
+.python_history
+.cargo
+.rustup
+.pki
