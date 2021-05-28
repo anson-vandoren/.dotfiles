@@ -3,3 +3,25 @@
 if _has nvim; then
     alias vim=nvim
 fi
+
+alias top=gotop
+
+alias ls=exa
+alias la="ls -Flah"
+
+# ask before overwriting, and show each file copied
+alias cp='cp -iv'
+alias mv='mv -iv'
+
+alias zshrc="$EDITOR ~/.zshrc"
+alias vimrc="$EDITOR ~/.vimrc"
+
+alias reload="exec ${SHELL} -l"
+
+# print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+alias cat=bat
+
+alias fuckthis='git commit -m "$curl http://whatthecommit.com/index.txt)"'
+alias fuckit=fuckthis
