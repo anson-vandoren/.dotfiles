@@ -17,7 +17,13 @@ _has() {
 #############
 export ZSH="/home/anson/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git zsh-vi-mode zsh-completions zsh-syntax-highlighting)
+plugins=(
+    bgnotify
+    git
+    zsh-completions
+    zsh-syntax-highlighting
+    zsh-vi-mode
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -51,9 +57,6 @@ export NVM_DIR="$HOME/.nvm"
 # Other utilities & tools #
 ###########################
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # fzf with ripgrep
 if _has fzf && _has rg; then
     export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/"'
@@ -65,13 +68,15 @@ if _has fzf && _has rg; then
     '
 fi
 
+# fzf, must be done after zsh-vi-mode plugin is done loading, otherwise
+# it gets clobbered
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
+
+
 # make folders for vim
 for folder in ~/.vim/backups ~/.vim/swaps ~/.vim/undo; do
     [ ! -d "$folder" ] && mkdir -p folder
 done
-
-# use vim keybindings in shell
-bindkey -v
 
 # remove duplicates from PATH
 typeset -U path
@@ -88,4 +93,3 @@ setopt HIST_BEEP
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
