@@ -4,26 +4,33 @@ set nocompatible
 " specify directory for plugins
 call plug#begin('~/.vim/plugged')
 
+Plug 'alvan/vim-closetag'
 Plug 'ambv/black'
 Plug 'andys8/vim-elm-syntax', {'for': ['elm']}
-Plug 'scrooloose/nerdcommenter'
-Plug 'vimwiki/vimwiki'
-Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-eunuch'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'jiangmiao/auto-pairs'
-Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-surround'
-Plug 'alvan/vim-closetag'
 Plug 'cespare/vim-toml'
 Plug 'elixir-editors/vim-elixir'
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
 " set vimwiki to use Markdown
 let g:vimwiki_list = [{'path': '~/notes', 'syntax': 'markdown', 'ext': 'md'}]
+
+" set airline theme
+let g:airline_theme='molokai'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " turn off modelines to prevent some vulnerabilities
 set modelines=0
