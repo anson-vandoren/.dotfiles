@@ -1,50 +1,17 @@
-#!/bin/env zsh
+#!/usr/bin/env zsh
 
-# Create a folder and move into it in one command
+# Create a folder and move into it with one command
 mkd() { mkdir -p "$@" && cd "$_"; }
 
-# fh - repeat history
-fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
-}
-
-# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
-# the `.git` directory, listing directories first. The output gets piped into
-# `less` with options to preserve color and line numbers, unless the output is
-# small enough for one screen.
-function tre() {
-	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
-}
+# cd then list directory contents
+cdd() { cd "$@" && ls; }
 
 # no arguments: `git status`
 # with arguments: acts like `git`
 config() {
     if [[ $# -gt 0 ]]; then
-        /usr/local/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME $@
+        /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME $@
     else
-        /usr/local/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status
+	/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status
     fi
 }
-
-# same as above, but for normal git
-g() {
-    if [[ $# -gt 0 ]]; then
-        git $@
-    else
-        git status
-    fi
-}
-
-# countdown timer
-countdown() {
-    # hide cursor
-    tput civis
-    date1=$((`date +%s` + $1));
-    while [ "$date1" -ge `date +%s` ]; do
-        echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
-        sleep 0.5
-    done
-    # show cursor
-    tput cnorm
-}
-
