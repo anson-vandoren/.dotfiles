@@ -75,7 +75,7 @@ zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
 # make folders for vim
 for folder in ~/.vim/backups ~/.vim/swaps ~/.vim/undo; do
-    [ ! -d "$folder" ] && mkdir -p folder
+    [ ! -d "$folder" ] && mkdir -p $folder
 done
 
 # remove duplicates from PATH

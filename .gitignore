@@ -42,3 +42,14 @@ Thumbs.db
 .cargo
 .rustup
 .pki
+.local/
+.java/
+.fzf/
+.fzf.zsh
+.vim/plugged/
+.config/monitors*
+.config/autostart
+.config/balena*
+.config/BraveSoftware/
+.config/autokey/
+.config/dconf
