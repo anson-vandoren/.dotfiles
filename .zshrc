@@ -22,7 +22,7 @@ plugins=(
     git
     zsh-completions
     zsh-syntax-highlighting
-    zsh-vi-mode
+    #zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -70,8 +70,7 @@ fi
 
 # fzf, must be done after zsh-vi-mode plugin is done loading, otherwise
 # it gets clobbered
-zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
-
+#zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
 # make folders for vim
 for folder in ~/.vim/backups ~/.vim/swaps ~/.vim/undo; do
@@ -80,6 +79,9 @@ done
 
 # remove duplicates from PATH
 typeset -U path
+
+# vi mode
+bindkey -v
 
 # clean up history searching
 setopt EXTENDED_HISTORY
@@ -93,3 +95,6 @@ setopt HIST_BEEP
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# source fzf - seems to need to be near the bottom
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
