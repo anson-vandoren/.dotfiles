@@ -53,3 +53,15 @@ Thumbs.db
 .config/BraveSoftware/
 .config/autokey/
 .config/dconf
+.config/htop
+.config/ibus
+.config/pulse
+.config/mimeapps.list
+.wget-hsts
+.near-credentials
+.lesshst
+.config/@trezor
+.virtualenvs
+.vscode
+.config/evolution
+.config/font-manager
