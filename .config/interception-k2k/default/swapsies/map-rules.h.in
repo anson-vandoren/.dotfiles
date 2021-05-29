@@ -1,0 +1,3 @@
+{ .from_key = KEY_LEFTCTRL, .to_key = KEY_LEFTMETA },
+{ .from_key = KEY_LEFTMETA, .to_key = KEY_LEFTALT },
+{ .from_key = KEY_LEFTALT, .to_key = KEY_LEFTCTRL }

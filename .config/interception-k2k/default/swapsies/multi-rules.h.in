@@ -1,0 +1,4 @@
+
+/* make ctrl-left/right act like Home/End, a la macOS */
+{ .keys = { KEY_LEFTCTRL, KEY_LEFT }, PRESS_ON_UP(KEY_HOME), DOWN_IFF_ALL_DOWN(2) },
+{ .keys = { KEY_LEFTCTRL, KEY_RIGHT }, PRESS_ON_UP(KEY_END), DOWN_IFF_ALL_DOWN(2) },
