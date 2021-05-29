@@ -82,6 +82,8 @@ typeset -U path
 
 # vi mode
 bindkey -v
+# get rid of the lag going to normal mode
+export KEYTIMEOUT=1
 
 # clean up history searching
 setopt EXTENDED_HISTORY
