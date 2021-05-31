@@ -1,0 +1,79 @@
+{
+  "405B:884BE70A": {
+    "_modelId": "B33B405B0000",
+    "_name": "Wireless Multi-Device Keyboard K780",
+    "_sensitive": {
+      "fn-swap": true,
+      "multiplatform": false
+    },
+    "_serial": "884BE70A",
+    "_unitId": "A059730F",
+    "disable-keyboard-keys": {
+      "1": false,
+      "16": false,
+      "2": false,
+      "4": false,
+      "8": false
+    },
+    "divert-keys": {
+      "1": 0,
+      "189": 0,
+      "190": 0,
+      "191": 0,
+      "192": 0,
+      "193": 0,
+      "194": 0,
+      "2": 0,
+      "209": 0,
+      "210": 0,
+      "211": 0,
+      "212": 0,
+      "213": 0,
+      "214": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    "fn-swap": false,
+    "multiplatform": 0
+  },
+  "4082:41DE137C": {
+    "_modelId": "B02340820000",
+    "_name": "MX Master 3 Wireless Mouse",
+    "_sensitive": {
+      "divert-keys": true,
+      "mouse-gestures": true,
+      "reprogrammable-keys": true,
+      "smart-shift": true,
+      "thumb-scroll-mode": true
+    },
+    "_serial": "41DE137C",
+    "_unitId": "41DE137C",
+    "divert-keys": {
+      "195": 1,
+      "196": 0,
+      "82": 0,
+      "83": 1,
+      "86": 1
+    },
+    "dpi": 1000,
+    "dpi-sliding": 0,
+    "hires-smooth-invert": false,
+    "hires-smooth-resolution": true,
+    "mouse-gestures": "195",
+    "reprogrammable-keys": {
+      "195": 195,
+      "196": 196,
+      "80": 80,
+      "81": 81,
+      "82": 82,
+      "83": 83,
+      "86": 86
+    },
+    "smart-shift": 10,
+    "thumb-scroll-invert": false,
+    "thumb-scroll-mode": true
+  },
+  "_version": "1.0.6"
+}

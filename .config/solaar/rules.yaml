@@ -1,0 +1,5 @@
+%YAML 1.3
+---
+- Key: Forward Button
+- MouseClick: [middle, 1]
+...
