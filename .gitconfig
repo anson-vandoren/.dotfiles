@@ -8,8 +8,8 @@
 [include]
     path = ~/.gitconfig_private
 
-[url "ssh://git@github.com"]
-    insteadOf = https://github.com
+[url "ssh://github.com/"]
+	pushInsteadOf = https://github.com
 
 [alias]
     # View abbreviated SHA, description, and history graph of the latest 20 commits
@@ -78,3 +78,6 @@
 
 [init]
 	defaultBranch = main
+[pull]
+    rebase = false
+
