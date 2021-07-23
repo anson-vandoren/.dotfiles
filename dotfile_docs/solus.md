@@ -71,6 +71,12 @@ $ pip install --user virtualenvwrapper
 $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
+# Install Alacritty terminal emulator
+
+```sh
+$ cargo install alacritty
+```
+
 # Install `zsh` and `oh-my-zsh`
 
 ```sh
