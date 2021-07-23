@@ -16,8 +16,8 @@ $ sudo eopkg install -c system.devel
 ```sh
 $ ssh-keygen -t ecdsa-sk -C "your_email@example.com"
 $ eval "$(ssh-agent -s)"
-$ ssh-add ~/.ssh/id_ecdsa-sk
-$ xclip -sel clipboard < ~/.ssh/id_ecdsa-sk
+$ ssh-add ~/.ssh/id_ecdsa_sk
+$ xclip -sel clipboard < ~/.ssh/id_ecdsa_sk.pub
 ```
 
 # Get rid of global, sudo'ed Node and use NVM instead
