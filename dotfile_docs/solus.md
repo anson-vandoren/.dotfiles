@@ -20,6 +20,8 @@ $ ssh-add ~/.ssh/id_ecdsa_sk
 $ xclip -sel clipboard < ~/.ssh/id_ecdsa_sk.pub
 ```
 
+Add new key to GitHub
+
 # Get rid of global, sudo'ed Node and use NVM instead
 
 ```sh
