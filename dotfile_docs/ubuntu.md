@@ -126,10 +126,22 @@ $ gpg --armor --export 42B317FD4BA89E7A
 
 ...and upload it on GitHub.
 
+# Install Logitech mouse driver (unofficial)
+
+```sh
+sudo apt update && sudo apt install cmake libevdev-dev libudev-dev libconfig++-dev
+cd ~/src && git clone https://github.com/pixlone/logiops
+cd logiops && mkdir build && cd build
+cmake ..
+make
+sudo make install
+sudo systemctl enable --now logid
+```
+
 # Install other useful things
 
 ```sh
-sudo eopkg install hugo
+sudo apt install hugo
 npm install -g diff-so-fancy
 npm install -g tldr
 sudo apt install bat fd ripgrep silver-searcher exa
