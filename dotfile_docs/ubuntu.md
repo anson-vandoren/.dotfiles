@@ -70,9 +70,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # Install `zsh` and `oh-my-zsh`
 
 ```sh
-$ sudo eopkg install zsh
-$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo eopkg install zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
+Log out and log back in again to actually get default shell to change
 
 ## Zsh plugins
 
