@@ -8,7 +8,7 @@
 [include]
     path = ~/.gitconfig_private
 
-[url "ssh://github.com/"]
+[url "ssh://github.com"]
 	pushInsteadOf = https://github.com
 
 [alias]
