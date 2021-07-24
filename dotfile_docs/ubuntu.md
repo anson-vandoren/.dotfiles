@@ -79,9 +79,9 @@ Log out and log back in again to actually get default shell to change
 ## Zsh plugins
 
 ```sh
-$ git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH/custom/plugins/zsh-vi-mode
-$ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
-$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH/custom/plugins/zsh-vi-mode
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
 Then add `plugins+=(zsh-vi-mode zsh-completions zsh-syntax-highlighting)` to `.zshrc`
@@ -95,7 +95,7 @@ Then add `plugins+=(zsh-vi-mode zsh-completions zsh-syntax-highlighting)` to `.z
 # Install Powerlevel10k
 
 ```sh
-$ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
 Then make sure it's enabled in .zshrc, then `exec $SHELL` to get the setup wizard and run through it
@@ -103,7 +103,7 @@ Then make sure it's enabled in .zshrc, then `exec $SHELL` to get the setup wizar
 # Create gpg key
 
 ```sh
-$ gpg --ful-generate-key
+gpg --ful-generate-key
 ```
 
 Make sure key size is >= 4096 bits, use GitHub email address.
@@ -115,7 +115,7 @@ file from the dotfiles repo.
 ## Add gpg key to GitHub
 
 ```sh
-$ gpg --list-secret-keys --keyid-format LONG
+gpg --list-secret-keys --keyid-format LONG
 /Users/hubot/.gnupg/secring.gpg
 ------------------------------------
 sec   4096R/3AA5C34371567BD2 2016-03-10 [expires: 2017-03-10]
@@ -129,19 +129,19 @@ $ gpg --armor --export 42B317FD4BA89E7A
 # Install other useful things
 
 ```sh
-$ sudo eopkg install hugo
-$ npm install -g diff-so-fancy
-$ npm install -g tldr
-$ sudo eopkg install bat fd ripgrep silver-searcher exa
-$ sudo eopkg install httpie jq yarn
-$ cargo install watchexec-cli
+sudo eopkg install hugo
+npm install -g diff-so-fancy
+npm install -g tldr
+sudo apt install bat fd ripgrep silver-searcher exa
+sudo apt install httpie jq yarn
+cargo install watchexec-cli
 ```
 
 ## Install fzf from git to get completions and keybindings
 
 ```sh
-$ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-$ ~/.fzf/install
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 ```
 
 Then let the installer update shell config files
@@ -149,9 +149,9 @@ Then let the installer update shell config files
 ## Install GoTop (graphical process monitor)
 
 ```sh
-$ wget https://github.com/xxxserxxx/gotop/releases/download/v4.1.1/gotop_v4.1.1_linux_amd64.tgz
-$ tar -xzf gotop_v4.1.1_linux_amd64.tgz
-$ mv ./gotop ~/.local/bin
+wget https://github.com/xxxserxxx/gotop/releases/download/v4.1.1/gotop_v4.1.1_linux_amd64.tgz
+tar -xzf gotop_v4.1.1_linux_amd64.tgz
+mv ./gotop ~/.local/bin
 ```
 
 # Install software from Software Center
@@ -171,15 +171,15 @@ $ mv ./gotop ~/.local/bin
 # Tweak Gnome
 
 ```sh
-$ gsettings set org.gnome.desktop.interface cursor-size 32
-$ gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 15
-$ gsettings set org.gnome.desktop.peripherals.keyboard delay 250
+gsettings set org.gnome.desktop.interface cursor-size 32
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 15
+gsettings set org.gnome.desktop.peripherals.keyboard delay 250
 ```
 
 # Enable Trezor wallet
 
 ```sh
-$ sudo curl https://data.trezor.io/udev/51-trezor.rules -o /etc/udev/rules.d/51-trezor.rules
+sudo curl https://data.trezor.io/udev/51-trezor.rules -o /etc/udev/rules.d/51-trezor.rules
 ```
 
 # Setup vim
@@ -187,7 +187,7 @@ $ sudo curl https://data.trezor.io/udev/51-trezor.rules -o /etc/udev/rules.d/51-
 # Install `vim-plug`
 
 ```sh
-$ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
