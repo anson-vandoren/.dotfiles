@@ -18,11 +18,9 @@ _has() {
 export ZSH="/home/anson/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
-    bgnotify
     git
     zsh-completions
     zsh-syntax-highlighting
-    #zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh

@@ -100,6 +100,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 Then make sure it's enabled in .zshrc, then `exec $SHELL` to get the setup wizard and run through it
 
+
 # Create gpg key
 
 ```sh
@@ -126,25 +127,14 @@ $ gpg --armor --export 42B317FD4BA89E7A
 
 ...and upload it on GitHub.
 
-# Install Logitech mouse driver (unofficial)
-
-```sh
-sudo apt update && sudo apt install cmake libevdev-dev libudev-dev libconfig++-dev
-cd ~/src && git clone https://github.com/pixlone/logiops
-cd logiops && mkdir build && cd build
-cmake ..
-make
-sudo make install
-sudo systemctl enable --now logid
-```
-
 # Install other useful things
 
 ```sh
 sudo apt install hugo
-npm install -g diff-so-fancy
-npm install -g tldr
-sudo apt install bat fd ripgrep silver-searcher exa
+npm install -g diff-so-fancy tldr
+sudo apt install bat
+ln -s /usr/bin/batcat ~/.local/bin/bat
+sudo apt install fd-find ripgrep silversearcher-ag exa
 sudo apt install httpie jq yarn
 cargo install watchexec-cli
 ```
@@ -178,6 +168,7 @@ mv ./gotop ~/.local/bin
 - [`logid`](https://xtonousou.xyz/0x1hardware-configure-use-logitech-mx-master-3-wireless-mouse-on-linux), build from source, for MX Master 3
   - Config file needs to be copied from `~/.config/logid.cfg` to `/etc/logid.cfg`
   - After building `logid`, start systemd service with `sudo systemctl enable --now logid`
+  - Will need to log out and back in again for this to take effect
 - [Fix caps lock](https://ansonvandoren.com/posts/capslock-linux-redux/)
 
 # Tweak Gnome
