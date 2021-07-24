@@ -7,25 +7,23 @@ Note that some things may break, so you might want to do this later on instead..
 # Install utilities
 
 ```sh
-$ sudo eopkg install git neovim tmux
-$ sudo eopkg install -c system.devel
+sudo apt install git neovim tmux
 ```
 
 # Create SSH key with YubiKey
 
 ```sh
-$ ssh-keygen -t ecdsa-sk -C "your_email@example.com"
-$ eval "$(ssh-agent -s)"
-$ ssh-add ~/.ssh/id_ecdsa-sk
-$ xclip -sel clipboard < ~/.ssh/id_ecdsa-sk
+ssh-keygen -t ecdsa-sk -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ecdsa-sk
+xclip -sel clipboard < ~/.ssh/id_ecdsa-sk
 ```
 
 # Get rid of global, sudo'ed Node and use NVM instead
 
 ```sh
-$ sudo eopkg remove nodejs
-$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
-$ nvm install stable
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+nvm install stable
 ```
 
 _don't forget to update .zshrc with the required NVM exports_
@@ -33,7 +31,7 @@ _don't forget to update .zshrc with the required NVM exports_
 # Use `pyenv`
 
 ```sh
-$ curl https://pyenv.run | bash
+curl https://pyenv.run | bash
 ```
 
 Add what it suggests to .zshrc (or .path, .profile, whatever)
@@ -41,24 +39,24 @@ Add what it suggests to .zshrc (or .path, .profile, whatever)
 ### Install python build deps
 
 ```sh
-$ sudo eopkg it -c system.devel
-$ sudo eopkg install git gcc make zlib-devel bzip2-devel readline-devel sqlite3-devel openssl-devel tk-devel
+sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 ```
 
 ### Install latest python3
 
 ```sh
 # ...check latest version...
-$ pyenv install 3.10.0b1
-$ pyenv global 3.10.0b1
+pyenv install 3.10.0b4
+pyenv global 3.10.0b4
 ```
 
 ### Install some python packages globally
 
 ```sh
-$ pip install --upgrade pip
-$ pip install --user black
-$ pip install --user virtualenvwrapper
+pip install --upgrade pip
+pip install --user black virtualenvwrapper
 ```
 
 > NOTE: this installs both packages in ~/.local/bin/ which needs to be added to `$PATH`
@@ -66,7 +64,7 @@ $ pip install --user virtualenvwrapper
 # Install rust
 
 ```sh
-$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 # Install `zsh` and `oh-my-zsh`
