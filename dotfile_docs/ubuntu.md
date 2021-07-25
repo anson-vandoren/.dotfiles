@@ -10,6 +10,10 @@ Note that some things may break, so you might want to do this later on instead..
 sudo apt install git neovim tmux
 ```
 
+# Install delta for git diff/show
+
+[From here](https://github.com/dandavison/delta)
+
 # Create SSH key with YubiKey
 
 ```sh

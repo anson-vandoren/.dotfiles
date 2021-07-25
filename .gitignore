@@ -65,3 +65,14 @@ Thumbs.db
 .vscode
 .config/evolution
 .config/font-manager
+.vim/swaps
+snap/
+src/
+.platformio/
+.pyenv/
+.ssh/id*
+Downloads/
+.dotfiles/
+.npm/
+.nvm/
+

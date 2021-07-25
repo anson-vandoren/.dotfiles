@@ -25,6 +25,3 @@ alias cat=bat
 
 alias fuckthis='git commit -m "$curl http://whatthecommit.com/index.txt)"'
 alias fuckit=fuckthis
-
-# vscode on Linux
-alias code="code-oss"

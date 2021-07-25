@@ -98,3 +98,4 @@ setopt HIST_BEEP
 
 # source fzf - seems to need to be near the bottom
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fpath+=${ZDOTDIR:-~}/.zsh_functions
