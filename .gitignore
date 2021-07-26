@@ -62,7 +62,6 @@ Thumbs.db
 .lesshst
 .config/@trezor
 .virtualenvs
-.vscode
 .config/evolution
 .config/font-manager
 .vim/swaps
