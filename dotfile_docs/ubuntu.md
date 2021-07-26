@@ -199,3 +199,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```
 
 Start vim and `:PlugInstall`
+
+If `fzf` completions (specifically CTRL-R) break after this, try reinstalling
+`fzf` from git again
