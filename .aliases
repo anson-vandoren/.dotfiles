@@ -4,9 +4,26 @@ if _has nvim; then
     alias vim=nvim
 fi
 
-alias top=gotop
+if _has gotop; then
+    alias top=gotop
+fi
 
-alias ls=exa
+if _has exa; then
+    alias ls=exa
+fi
+
+if _has dog; then
+    alias dig=dog
+fi
+
+if _has curlie; then
+    alias curl=curlie
+fi
+
+if _has fd; then
+    alias find=fd
+fi
+
 alias la="ls -Flah"
 
 # ask before overwriting, and show each file copied
@@ -21,7 +38,9 @@ alias reload="exec ${SHELL} -l"
 # print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-alias cat=bat
+if _has cat; then
+    alias cat=bat
+fi
 
 alias fuckthis='git commit -m "$curl http://whatthecommit.com/index.txt)"'
 alias fuckit=fuckthis

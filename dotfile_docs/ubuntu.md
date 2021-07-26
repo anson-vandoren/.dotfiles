@@ -143,6 +143,13 @@ sudo apt install httpie jq yarn
 cargo install watchexec-cli
 ```
 
+Install [curlie](https://github.com/rs/curlie/releases/tag/v1.6.0) from binary
+
+Install [dog](https://github.com/ogham/dog) from binary, including completions
+& man page.
+
+
+
 ## Install fzf from git to get completions and keybindings
 
 ```sh
