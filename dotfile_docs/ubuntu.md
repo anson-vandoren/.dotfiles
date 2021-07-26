@@ -188,6 +188,7 @@ mv ./gotop ~/.local/bin
 gsettings set org.gnome.desktop.interface cursor-size 32
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 15
 gsettings set org.gnome.desktop.peripherals.keyboard delay 250
+gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 ```
 
 # Enable Trezor wallet
