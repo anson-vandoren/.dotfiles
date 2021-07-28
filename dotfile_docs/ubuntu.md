@@ -191,6 +191,12 @@ gsettings set org.gnome.desktop.peripherals.keyboard delay 250
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 ```
 
+Fix windows moving to different monitors after sleep
+
+```sh
+gsettings set org.gnome.settings-daemon.plugins.xrandr active false
+```
+
 # Enable Trezor wallet
 
 ```sh
