@@ -57,6 +57,7 @@ src/
 .platformio/
 .pyenv/
 .ssh/id*
+.ssh/cribl*
 Downloads/
 .dotfiles/
 .npm/
@@ -64,3 +65,17 @@ Downloads/
 .vscode/
 .vim/.netrwhist
 .dbus/
+
+# config we don't really want to track
+.config/1Password/
+.config/QtProject.conf
+.config/Slack/
+.config/VirtualBox/
+.config/chromium/
+.config/flameshot/
+.config/google-chrome*/
+.config/microsoft-edge-dev/
+.config/vivaldi-*/
+.config/Unknown Organization/
+.config/zoomus.conf
+

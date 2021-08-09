@@ -21,6 +21,9 @@ plugins=(
     git
     zsh-completions
     zsh-syntax-highlighting
+    docker
+    docker-compose
+    zsh-better-npm-completion
 )
 
 source $ZSH/oh-my-zsh.sh
