@@ -1,0 +1,13 @@
+{
+    "window.zoomLevel": 1,
+    "editor.inlineSuggest.enabled": true,
+    "terminal.external.linuxExec": "alacritty",
+    "terminal.integrated.automationShell.linux": "/bin/zsh",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "workbench.colorTheme": "Frontend Delight",
+    "files.autoSave": "onWindowChange",
+    "vim.foldfix": true,
+    "vim.handleKeys":{
+        "<C-k>": false
+    }
+}
