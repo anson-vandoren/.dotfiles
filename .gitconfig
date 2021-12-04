@@ -1,4 +1,4 @@
-[user]
+
     # name = enter your name here
     # email = enter your email here
     # GPG keyId below from `gpg --list-secret-keys --keyid-format LONG`
@@ -48,14 +48,14 @@
     reflog = delta
     show = delta
 
-[delta]
-    plus-style = "syntax #012800"
-    minus-style = "syntax #340001"
-    syntax-theme = Monokai Extended
-    navigate = true
+;[delta]
+    ;plus-style = "syntax #012800"
+    ;minus-style = "syntax #340001"
+    ;syntax-theme = Monokai Extended
+    ;navigate = true
 
-[interactive]
-    diffFilter = delta --color-only
+;[interactive]
+    ;diffFilter = delta --color-only
 
 [color]
     # Use colors in git commands that are capable of colored output
@@ -90,9 +90,10 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
     newHighlight = green bold 22
-
-[init]
-	defaultBranch = main
 [pull]
     rebase = false
-
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = main

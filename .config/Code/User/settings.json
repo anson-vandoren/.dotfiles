@@ -5,9 +5,17 @@
     "terminal.integrated.automationShell.linux": "/bin/zsh",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "workbench.colorTheme": "Frontend Delight",
-    "files.autoSave": "onWindowChange",
     "vim.foldfix": true,
     "vim.handleKeys":{
         "<C-k>": false
-    }
+    },
+    "files.autoSave": "onFocusChange",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.renderWhitespace": "none",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.confirmSync": false
 }
