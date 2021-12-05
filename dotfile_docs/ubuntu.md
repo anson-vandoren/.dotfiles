@@ -20,7 +20,7 @@ sudo apt install git neovim tmux
 ssh-keygen -t ecdsa-sk -C "your_email@example.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ecdsa-sk
-xclip -sel clipboard < ~/.ssh/id_ecdsa-sk
+xclip -sel clipboard < ~/.ssh/id_ecdsa-sk.pub
 ```
 
 # Get rid of global, sudo'ed Node and use NVM instead
