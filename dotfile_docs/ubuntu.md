@@ -88,13 +88,13 @@ Log out and log back in again to actually get default shell to change
 git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH/custom/plugins/zsh-vi-mode
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/lukechilds/zsh-better-npm-completion ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion
 ```
 
 Then add `plugins+=(zsh-vi-mode zsh-completions zsh-syntax-highlighting)` to `.zshrc`
 
 # Install fonts
 
-- Install `font-manager` from Solus Software Center
 - Download MesloLGS fonts from [Powerlevel10k](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) page
 - From page above, set up font in Alacritty or whatever terminal - lots of good instructions
 
@@ -178,7 +178,7 @@ mv ./gotop ~/.local/bin
 
 - [JetBrains Toolbox](https://www.phillipsj.net/posts/jetbrains-toolbox-on-solus/)
   - Install whatever IDEs desired from the Toolbox
-- [`logid`](https://xtonousou.xyz/0x1hardware-configure-use-logitech-mx-master-3-wireless-mouse-on-linux), build from source, for MX Master 3
+- [`logid`](https://xtonousou.xyz/0x1hardware-configure-use-logitech-mx-master-3-wireless-mouse-on-linux), [build from source](https://github.com/PixlOne/logiops#dependencies), for MX Master 3
   - Config file needs to be copied from `~/.config/logid.cfg` to `/etc/logid.cfg`
   - After building `logid`, start systemd service with `sudo systemctl enable --now logid`
   - Will need to log out and back in again for this to take effect
