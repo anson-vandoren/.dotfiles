@@ -178,7 +178,7 @@ mv ./gotop ~/.local/bin
 
 - [JetBrains Toolbox](https://www.phillipsj.net/posts/jetbrains-toolbox-on-solus/)
   - Install whatever IDEs desired from the Toolbox
-- [`logid`](https://xtonousou.xyz/0x1hardware-configure-use-logitech-mx-master-3-wireless-mouse-on-linux), build from source, for MX Master 3
+- [`logid`](https://xtonousou.xyz/0x1hardware-configure-use-logitech-mx-master-3-wireless-mouse-on-linux), [build from source](https://github.com/PixlOne/logiops#dependencies), for MX Master 3
   - Config file needs to be copied from `~/.config/logid.cfg` to `/etc/logid.cfg`
   - After building `logid`, start systemd service with `sudo systemctl enable --now logid`
   - Will need to log out and back in again for this to take effect
