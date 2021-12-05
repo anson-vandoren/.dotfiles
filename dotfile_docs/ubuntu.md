@@ -95,7 +95,6 @@ Then add `plugins+=(zsh-vi-mode zsh-completions zsh-syntax-highlighting)` to `.z
 
 # Install fonts
 
-- Install `font-manager` from Solus Software Center
 - Download MesloLGS fonts from [Powerlevel10k](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) page
 - From page above, set up font in Alacritty or whatever terminal - lots of good instructions
 
