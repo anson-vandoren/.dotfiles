@@ -26,9 +26,11 @@ xclip -sel clipboard < ~/.ssh/id_ecdsa-sk.pub
 # Get rid of global, sudo'ed Node and use NVM instead
 
 ```sh
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 nvm install stable
 ```
+
+>> Check current version and update `curl` command as needed
 
 _don't forget to update .zshrc with the required NVM exports_
 
@@ -52,8 +54,8 @@ libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-d
 
 ```sh
 # ...check latest version...
-pyenv install 3.10.0b4
-pyenv global 3.10.0b4
+pyenv install 3.10.0b
+pyenv global 3.10.0b
 ```
 
 ### Install some python packages globally
@@ -108,7 +110,7 @@ Then make sure it's enabled in .zshrc, then `exec $SHELL` to get the setup wizar
 # Create gpg key
 
 ```sh
-gpg --ful-generate-key
+gpg --full-generate-key
 ```
 
 Make sure key size is >= 4096 bits, use GitHub email address.
