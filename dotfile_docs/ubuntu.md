@@ -30,7 +30,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 nvm install stable
 ```
 
->> Check current version and update `curl` command as needed
+> Check current version and update `curl` command as needed
 
 _don't forget to update .zshrc with the required NVM exports_
 
@@ -54,8 +54,8 @@ libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-d
 
 ```sh
 # ...check latest version...
-pyenv install 3.10.0b
-pyenv global 3.10.0b
+pyenv install 3.10.0
+pyenv global 3.10.0
 ```
 
 ### Install some python packages globally
