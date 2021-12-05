@@ -1,0 +1,24 @@
+{
+  "name": "hyper-frontend-delight",
+  "description": "Frontend Delight theme for Hyper",
+  "homepage": "https://github.com/lardissone/hyper-frontend-delight#readme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": {
+    "email": "leandro@ardissone.com",
+    "name": "Leandro Ardissone",
+    "url": "leandro.ardissone.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lardissone/hyper-frontend-delight.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lardissone/hyper-frontend-delight/issues"
+  },
+  "keywords": [
+    "hyper",
+    "hyper-theme"
+  ],
+  "license": "MIT"
+}
