@@ -53,11 +53,13 @@ Thumbs.db
 .virtualenvs
 .vim/swaps
 snap/
+src/
 .platformio/
 .pyenv/
 .ssh/id*
 .ssh/cribl*
 Downloads/
+Pictures/
 .dotfiles/
 .npm/
 .nvm/
@@ -77,4 +79,4 @@ Downloads/
 .config/vivaldi-*/
 .config/Unknown Organization/
 .config/zoomus.conf
-
+.config/Hyper
