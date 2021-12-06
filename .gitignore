@@ -66,6 +66,9 @@ Pictures/
 .vim/.netrwhist
 .dbus/
 
+# don't commit into any repo
+**/tags
+
 # config we don't really want to track
 .config/1Password/
 .config/QtProject.conf
