@@ -143,6 +143,7 @@ ln -s /usr/bin/batcat ~/.local/bin/bat
 sudo apt install fd-find ripgrep silversearcher-ag exa
 sudo apt install httpie jq yarn
 cargo install watchexec-cli
+sudo apt install rofi
 ```
 
 Install [curlie](https://github.com/rs/curlie/releases/tag/v1.6.0) from binary
@@ -160,6 +161,25 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ```
 
 Then let the installer update shell config files
+
+## Set up Ubuntu auth for Yubikey
+
+See [this guide](https://pages.ubuntu.com/rs/066-EOV-335/images/Canonical_Authentication%20for%20Ubuntu%20Desktop_V6.pdf)
+```sh
+sudo apt install libpam-u2f
+mkdir ~/.config/Yubico
+pamu2fcfd > ~/.config/Yubico/u2f_keys
+```
+
+In `/etc/pam.d/common-auth` (after backing it up), add the line:
+
+> Note: this should be above the line that asks for a password (`...pam_unix.so
+nullok_secure`) and the `success=` value enough to skip that line.
+
+```sh
+auth [success=3 default=ignore] pam_u2f.so cue
+```
+
 
 ## Install GoTop (graphical process monitor)
 
