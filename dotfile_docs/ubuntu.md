@@ -213,6 +213,18 @@ gsettings set org.gnome.desktop.peripherals.keyboard delay 250
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 ```
 
+## Shortcut keys
+
+- `rofi -show` for launcher
+- `flameshot gui` for screenshots
+
+## Gnome shell extensions
+
+```sh
+sudo apt install gnome-shell-extensions gnome-tweaks
+sudo apt install gnome-shell-extension-autohidetopbar
+```
+
 Fix windows moving to different monitors after sleep
 
 ```sh
@@ -225,12 +237,8 @@ gsettings set org.gnome.settings-daemon.plugins.xrandr active false
 sudo curl https://data.trezor.io/udev/51-trezor.rules -o /etc/udev/rules.d/51-trezor.rules
 ```
 
-# Gnome shell extensions
 
-```sh
-sudo apt install gnome-shell-extensions gnome-tweaks
-sudo apt install gnome-shell-extension-autohidetopbar
-```
+
 
 # Setup vim
 
