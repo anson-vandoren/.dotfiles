@@ -229,6 +229,7 @@ sudo curl https://data.trezor.io/udev/51-trezor.rules -o /etc/udev/rules.d/51-tr
 
 ```sh
 sudo apt install gnome-shell-extensions gnome-tweaks
+sudo apt install gnome-shell-extension-autohidetopbar
 ```
 
 # Setup vim
