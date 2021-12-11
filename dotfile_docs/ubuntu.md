@@ -225,6 +225,12 @@ gsettings set org.gnome.settings-daemon.plugins.xrandr active false
 sudo curl https://data.trezor.io/udev/51-trezor.rules -o /etc/udev/rules.d/51-trezor.rules
 ```
 
+# Gnome shell extensions
+
+```sh
+sudo apt install gnome-shell-extensions gnome-tweaks
+```
+
 # Setup vim
 
 # Install `vim-plug`
