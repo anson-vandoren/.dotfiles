@@ -22,3 +22,4 @@ text/x-java=org.gnome.TextEditor.Devel
 text/mathml=org.gnome.TextEditor.Devel
 text/x-python=org.gnome.TextEditor.Devel
 text/x-sql=org.gnome.TextEditor.Devel
+application/xml=org.gnome.TextEditor.Devel.desktop;
