@@ -7,6 +7,7 @@
   "license": "MIT",
   "homepage": "https://hyper.is",
   "dependencies": {
-    "hyper-frontend-delight": "latest"
+    "hyper-frontend-delight": "latest",
+    "hyper-native-window-decoration": "latest"
   }
 }
