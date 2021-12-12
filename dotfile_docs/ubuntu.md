@@ -222,8 +222,19 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 
 ```sh
 sudo apt install gnome-shell-extensions gnome-tweaks
-sudo apt install gnome-shell-extension-autohidetopbar
 ```
+
+## Make things look more Cupertino-ish
+
+Based on [these installation instructions](https://www.omgubuntu.co.uk/2017/03/make-ubuntu-look-like-mac-5-steps)
+
+Install [Mojave Gtk Theme](https://github.com/vinceliuice/Mojave-gtk-theme) and
+enable it.
+
+Install [Numix Circle](https://github.com/numixproject/numix-icon-theme-circle)
+icons and enable.
+
+Install [Dash to Dock](https://micheleg.github.io/dash-to-dock/download.html)
 
 Fix windows moving to different monitors after sleep
 
@@ -236,9 +247,6 @@ gsettings set org.gnome.settings-daemon.plugins.xrandr active false
 ```sh
 sudo curl https://data.trezor.io/udev/51-trezor.rules -o /etc/udev/rules.d/51-trezor.rules
 ```
-
-
-
 
 # Setup vim
 
