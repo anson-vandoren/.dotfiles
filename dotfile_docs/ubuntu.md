@@ -236,6 +236,8 @@ icons and enable.
 
 Install [Dash to Dock](https://micheleg.github.io/dash-to-dock/download.html)
 
+Log into https://extensions.gnome.org and set up installed extensions.
+
 Fix windows moving to different monitors after sleep
 
 ```sh
