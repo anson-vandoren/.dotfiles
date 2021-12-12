@@ -82,3 +82,5 @@ Pictures/
 .config/Unknown Organization/
 .config/zoomus.conf
 .config/Hyper
+.hyper_plugins/cache/
+.hyper_plugins/node_modules

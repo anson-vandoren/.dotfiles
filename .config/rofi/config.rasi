@@ -3,10 +3,9 @@
 configuration {
   modi:         "combi";
   font:         "MesloLGS NF Regular 12";
-  combi-modi:   "window,run,file-browser,drun,ssh";
+  combi-modi:   "window,run,drun,ssh";
   show-icons:   true;
   icon-theme:   "Numix-Circle";
   monitor:      "primary";
-  no-lazy-grab: true;
 }
 @import "./launchers/text/style_3.rasi"
