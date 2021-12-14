@@ -143,7 +143,7 @@ ln -s /usr/bin/batcat ~/.local/bin/bat
 sudo apt install fd-find ripgrep silversearcher-ag exa
 sudo apt install httpie jq yarn
 cargo install watchexec-cli
-sudo apt install rofi
+sudo apt install rofi # unless using uLauncher
 ```
 
 Install [curlie](https://github.com/rs/curlie/releases/tag/v1.6.0) from binary
