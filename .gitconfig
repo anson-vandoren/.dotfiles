@@ -38,6 +38,11 @@
     # Amend the currently staged files to the latest commit
     amend = commit --amend --reuse-message=HEAD
 
+    # Ignore changes to a local file
+    ignore = update-index --skip-worktree
+    unignore = update-index --no-skip-worktree
+    ignored = !git ls-files -v | grep "^S"
+
 [core]
     excludesfile = ~/.gitignore
     ;pager = diff-so-fancy | less --tabs=4 -RFX
@@ -47,15 +52,6 @@
     log = delta
     reflog = delta
     show = delta
-
-;[delta]
-    ;plus-style = "syntax #012800"
-    ;minus-style = "syntax #340001"
-    ;syntax-theme = Monokai Extended
-    ;navigate = true
-
-;[interactive]
-    ;diffFilter = delta --color-only
 
 [color]
     # Use colors in git commands that are capable of colored output
@@ -96,4 +92,4 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [init]
-	defaultBranch = main
+	defaultbranch = main
