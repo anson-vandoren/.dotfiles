@@ -24,6 +24,10 @@ if _has fdfind; then
     alias find=fdfind
 fi
 
+if _has tre; then
+    alias tre=tre -a -l 42
+fi
+
 alias la="ls -Flah"
 
 # ask before overwriting, and show each file copied
