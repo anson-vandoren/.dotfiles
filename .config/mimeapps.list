@@ -7,6 +7,9 @@ x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
 x-scheme-handler/about=brave-browser.desktop
 x-scheme-handler/unknown=brave-browser.desktop
 x-scheme-handler/webcal=brave-browser.desktop
+x-scheme-handler/mailto=brave-browser.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-92J7E1.desktop
+x-scheme-handler/jetbrains-gateway=jetbrains-gateway.desktop
 
 [Added Associations]
 x-scheme-handler/http=brave_brave.desktop;firefox.desktop;brave-browser.desktop;
@@ -23,3 +26,11 @@ text/mathml=org.gnome.TextEditor.Devel
 text/x-python=org.gnome.TextEditor.Devel
 text/x-sql=org.gnome.TextEditor.Devel
 application/xml=org.gnome.TextEditor.Devel.desktop;
+video/mp4=vlc.desktop;vlc_vlc.desktop;
+video/webm=vlc.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-92J7E1.desktop;
+x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
+x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
+application/vnd.tcpdump.pcap=org.gnome.TextEditor.Devel.desktop;
+image/svg+xml=org.gnome.TextEditor.Devel.desktop;
+application/x-x509-ca-cert=org.gnome.TextEditor.Devel.desktop;

@@ -1,21 +1,42 @@
 {
-    "window.zoomLevel": 1,
-    "editor.inlineSuggest.enabled": true,
-    "terminal.external.linuxExec": "alacritty",
-    "terminal.integrated.automationShell.linux": "/bin/zsh",
-    "terminal.integrated.fontFamily": "MesloLGS NF",
-    "workbench.colorTheme": "Frontend Delight",
-    "vim.foldfix": true,
-    "vim.handleKeys":{
-        "<C-k>": false
-    },
-    "files.autoSave": "onFocusChange",
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.renderWhitespace": "none",
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "git.confirmSync": false
+  "telemetry.telemetryLevel": "off",
+  "window.zoomLevel": 1,
+  "editor.inlineSuggest.enabled": true,
+  "terminal.external.linuxExec": "alacritty",
+  "terminal.integrated.automationShell.linux": "/bin/zsh",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "workbench.colorTheme": "Frontend Delight",
+  "vim.foldfix": true,
+  "vim.handleKeys": {
+    "<C-k>": false
+  },
+  "vim.useSystemClipboard": true,
+  "vim.overrideCopy": true,
+  "vim.visualstar": true,
+  "vim.surround": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.renderWhitespace": "none",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.confirmSync": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "files.autoSave": "onFocusChange",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true,
+  "editor.lineNumbers": "relative",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "mochaExplorer.files": "**__tests__/*.ts",
+  "mochaExplorer.require": "ts-node/register",
 }

@@ -29,58 +29,78 @@ Thumbs.db
 # don't need bash files
 .bash_history
 .bash_logout
+.bash_profile
 .bashrc
 
 # don't need plenty of other files in the home folder
-.Xauthority
-.dmrc
-.esd_auth
-.gdbinit
-.zcompdump*
-.xsession-errors*
-.python_history
 .cargo
-.rustup
-.pki
-.local/
-.java/
-.fzf/
-.fzf.zsh
-.vim/plugged/
-.wget-hsts
-.near-credentials
-.lesshst
-.virtualenvs
-.vim/swaps
-snap/
-.platformio/
-.pyenv/
-.ssh/id*
-.ssh/cribl*
-Downloads/
-Pictures/
+.charles
+.dbus/
+.dmrc
 .dotfiles/
+.esd_auth
+.fzf.zsh
+.fzf/
+.gdbinit
+.java/
+.lesshst
+.local/
+.near-credentials
+.node_repl_history
+.mitmproxy/*.pem
+.mitmproxy/*.crt
+.mitmproxy/*.p12
 .npm/
 .nvm/
-.vscode/
+.pki
+.platformio/
+.pyenv/
+.python_history
+.rustup
+.ssh/cribl*
+.ssh/id*
+.tldr/
+.tmux/
 .vim/.netrwhist
-.dbus/
+.vim/plugged/
+.vim/swaps
+.virtualenvs
+.vscode/
+.wget-hsts
+.Xauthority
+.xsession-errors*
+.z/
+.zcompdump*
+.zoom/
+Desktop/
+Documents/
+Downloads/
+go
+Pictures/
+snap/
+Videos/
+VirtualBox\ VMs/
+
 
 # don't commit into any repo
 **/tags
 
 # config we don't really want to track
+.config/.org.chromium*
 .config/1Password/
-.config/QtProject.conf
-.config/Slack/
-.config/VirtualBox/
 .config/chromium/
 .config/flameshot/
 .config/google-chrome*/
-.config/microsoft-edge-dev/
-.config/vivaldi-*/
-.config/Unknown Organization/
-.config/zoomus.conf
 .config/Hyper
+.config/microsoft-edge-dev/
+.config/QDirStat/
+.config/QtProject.conf
+.config/Slack/
+.config/Unknown Organization/
+.config/VirtualBox/
+.config/vivaldi-*/
+.config/zoomus.conf
 .hyper_plugins/cache/
 .hyper_plugins/node_modules
+
+src/cribl/start
