@@ -27,16 +27,17 @@
   "editor.formatOnType": true,
   "files.autoSave": "onFocusChange",
   "editor.tabSize": 2,
-  "editor.detectIndentation": false,
   "prettier.printWidth": 100,
   "prettier.singleQuote": true,
   "editor.lineNumbers": "relative",
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4
   },
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
-  "mochaExplorer.files": "**__tests__/*.ts",
-  "mochaExplorer.require": "ts-node/register",
+  "hungryDelete.keepOneSpace": true,
+  "snyk.yesWelcomeNotification": false,
 }

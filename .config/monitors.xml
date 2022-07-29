@@ -143,7 +143,7 @@
     </logicalmonitor>
     <logicalmonitor>
       <x>0</x>
-      <y>180</y>
+      <y>0</y>
       <scale>1</scale>
       <transform>
         <rotation>left</rotation>

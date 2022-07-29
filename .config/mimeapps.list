@@ -10,6 +10,11 @@ x-scheme-handler/webcal=brave-browser.desktop
 x-scheme-handler/mailto=brave-browser.desktop
 x-scheme-handler/tg=userapp-Telegram Desktop-92J7E1.desktop
 x-scheme-handler/jetbrains-gateway=jetbrains-gateway.desktop
+x-scheme-handler/rdp=org.remmina.Remmina.desktop
+x-scheme-handler/spice=org.remmina.Remmina.desktop
+x-scheme-handler/vnc=org.remmina.Remmina.desktop
+x-scheme-handler/remmina=org.remmina.Remmina.desktop
+application/x-remmina=org.remmina.Remmina.desktop
 
 [Added Associations]
 x-scheme-handler/http=brave_brave.desktop;firefox.desktop;brave-browser.desktop;
@@ -34,3 +39,12 @@ x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
 application/vnd.tcpdump.pcap=org.gnome.TextEditor.Devel.desktop;
 image/svg+xml=org.gnome.TextEditor.Devel.desktop;
 application/x-x509-ca-cert=org.gnome.TextEditor.Devel.desktop;
+text/x-log=nvim.desktop;
+application/json=nvim.desktop;
+x-scheme-handler/rdp=org.remmina.Remmina.desktop;
+x-scheme-handler/spice=org.remmina.Remmina.desktop;
+x-scheme-handler/vnc=org.remmina.Remmina.desktop;
+x-scheme-handler/remmina=org.remmina.Remmina.desktop;
+application/x-remmina=org.remmina.Remmina.desktop;
+application/octet-stream=org.kde.okteta.desktop;
+text/vnd.trolltech.linguist=org.gnome.TextEditor.Devel.desktop;
