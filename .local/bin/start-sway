@@ -1,5 +1,5 @@
 #!/bin/sh
-PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.fzf/bin:$PATH"
 . "$HOME/.cargo/env"
 
 export TERMINAL="alacritty"
