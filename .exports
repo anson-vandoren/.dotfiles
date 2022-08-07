@@ -5,4 +5,4 @@ export EDITOR='nvim'
 
 # let tmux know 256 colors are available
 export TERM="xterm-256color"
-
+export XDG_DATA_DIRS=$XDG_DATA_DIRS:~/.local/share

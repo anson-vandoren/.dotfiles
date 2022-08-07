@@ -15,3 +15,7 @@ config() {
 	/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status
     fi
 }
+
+rr() {
+    $bin=$1 && shift && rustc $bin.rs && ./$bin $@;
+}

@@ -94,6 +94,7 @@ VirtualBox\ VMs/
 .config/Hyper
 .config/microsoft-edge-dev/
 .config/QDirStat/
+.config/gh/hosts.yml
 .config/QtProject.conf
 .config/Slack/
 .config/Unknown Organization/
@@ -102,5 +103,8 @@ VirtualBox\ VMs/
 .config/zoomus.conf
 .hyper_plugins/cache/
 .hyper_plugins/node_modules
+
+# secrets, bad
+.config/op/config
 
 src/cribl/start

@@ -132,3 +132,5 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 eval $(thefuck --alias)
+# 1Password CLI
+#eval $(op signin)

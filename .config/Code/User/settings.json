@@ -4,8 +4,8 @@
   "editor.inlineSuggest.enabled": true,
   "terminal.external.linuxExec": "alacritty",
   "terminal.integrated.automationShell.linux": "/bin/zsh",
+  "diffEditor.ignoreTrimWhitespace": true,
   "terminal.integrated.fontFamily": "MesloLGS NF",
-  "workbench.colorTheme": "Frontend Delight",
   "vim.foldfix": true,
   "vim.handleKeys": {
     "<C-k>": false
@@ -40,4 +40,5 @@
   },
   "hungryDelete.keepOneSpace": true,
   "snyk.yesWelcomeNotification": false,
+  "workbench.colorTheme": "Frontend Delight Enhanced",
 }
