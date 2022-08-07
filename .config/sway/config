@@ -1,7 +1,3 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
@@ -18,19 +14,20 @@ set $term /home/anson/.cargo/bin/alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 # use sway-launcher-desktop
-for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
-set $menu exec $term --class=launcher -e /home/anson/.local/bin/sway-launcher-desktop.sh
-
+#for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+#set $menu exec $term --class=launcher -e /home/anson/.local/bin/sway-launcher-desktop.sh
+# Start your launcher
+bindsym $mod+d exec $menu
 
 include /etc/sway/config-vars.d/*
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/anson/Pictures/backgrounds/mojave-dark.jpg fill
 #
 # Example configuration:
 #
@@ -76,6 +73,37 @@ input "12951:6505:ZSA_Technology_Labs_Moonlander_Mark_I" {
     repeat_rate 35
 }
 
+set {
+  $nag         exec /home/anson/.local/bin/swaynagmode
+  $nag_exit    $nag --exit
+  $nag_confirm $nag --confirm
+  $nag_select  $nag --select
+}
+mode "nag" {
+  bindsym {
+    Ctrl+d    mode "default"
+
+    Ctrl+c    $nag_exit
+    q         $nag_exit
+    Escape    $nag_exit
+
+    Return    $nag_confirm
+
+    Tab       $nag_select prev
+    Shift+Tab $nag_select next
+
+    Left      $nag_select next
+    Right     $nag_select prev
+
+    Up        $nag_select next
+    Down      $nag_select prev
+  }
+}
+bindsym {
+  $mod+Shift+e $nag -t "warning" -m "Exit Sway?" -b "Exit" "swaymsg exit" -b "Reload" "swaymsg reload"
+}
+swaynag_command $nag -R
+
 ### Key bindings
 #
 # Basics:
@@ -85,9 +113,6 @@ input "12951:6505:ZSA_Technology_Labs_Moonlander_Mark_I" {
 
     # Kill focused window
     bindsym $mod+Shift+q kill
-
-    # Start your launcher
-    bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -100,7 +125,7 @@ input "12951:6505:ZSA_Technology_Labs_Moonlander_Mark_I" {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    #bindsym $mod+Shift+e exec swaynagmode -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
