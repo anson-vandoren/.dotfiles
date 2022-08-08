@@ -1,4 +1,4 @@
-" set compatibility to Vim only (not vi backward-compatible
+" set compatibility to Vim only (not vi backward-compatible)
 set nocompatible
 
 " specify directory for plugins
