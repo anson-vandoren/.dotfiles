@@ -105,6 +105,8 @@ swaynag_command $nag -R
 #
 # Basics:
 #
+    # Screenshots
+    bindsym Print exec grim -g "$(slurp)" - | wl-copy
     # Start a terminal
     bindsym $mod+Return exec $term
 
