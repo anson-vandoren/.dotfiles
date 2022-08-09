@@ -19,3 +19,7 @@ config() {
 rr() {
     $bin=$1 && shift && rustc $bin.rs && ./$bin $@;
 }
+
+opget() {
+    op item get $(op item list | fzf | awk '{print $1}')
+}
