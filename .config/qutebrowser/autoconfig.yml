@@ -6,5 +6,22 @@
 
 config_version: 2
 settings:
+  colors.completion.item.selected.bg:
+    global: '#e8c000'
+  colors.completion.item.selected.fg:
+    global: black
+  colors.completion.scrollbar.fg:
+    global: white
+  content.register_protocol_handler:
+    https://calendar.google.com?cid=%25s: true
+    https://mail.google.com?extsrc=mailto&url=%25s: true
+  fonts.messages.error:
+    global: default_size default_family
+  fonts.web.size.minimum:
+    global: 0
+  hints.chars:
+    global: arstdhneiolpmv
+  hints.hide_unmatched_rapid_hints:
+    global: false
   tabs.last_close:
     global: close

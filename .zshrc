@@ -5,6 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# prepare for pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
+eval "$(pyenv init --path)"
+
 ####################
 # Helper functions #
 ####################
@@ -134,3 +140,10 @@ load-nvmrc
 eval $(thefuck --alias)
 # 1Password CLI
 #eval $(op signin)
+
+if ps -p $SSH_AGENT_PID &> /dev/null; then
+    echo "ssh-agent is already running"
+else
+    eval `ssh-agent -s` > /dev/null
+fi
+ssh-add ~/.ssh/cribl &> /dev/null
