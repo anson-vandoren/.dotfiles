@@ -23,5 +23,8 @@ settings:
     global: arstdhneiolpmv
   hints.hide_unmatched_rapid_hints:
     global: false
+  spellcheck.languages:
+    global:
+    - en-US
   tabs.last_close:
     global: close

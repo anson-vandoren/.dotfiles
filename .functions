@@ -21,5 +21,6 @@ rr() {
 }
 
 opget() {
+    op whoami || eval $(op signin)
     op item get $(op item list | fzf | awk '{print $1}')
 }
