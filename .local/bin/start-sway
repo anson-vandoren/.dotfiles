@@ -1,6 +1,7 @@
 #!/bin/sh
 PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.fzf/bin:$PATH"
 . "$HOME/.cargo/env"
+. "$HOME/.zprofile"
 
 export TERMINAL="alacritty"
 export BROWSER="qutebrowser"
