@@ -1,150 +1,79 @@
-/* waybar style.css */
-@define-color bgcolor #9ce2f5;	/* background color */
-@define-color fgcolor #000000;  /* foreground color */
-@define-color charging #07fb05; /* battery charging color */
-@define-color plugged #acfcad;  /* ac plugged color */
-@define-color critical #ff0000; /* critical color */
-@define-color warning #f3f809;  /* warning color */
-@define-color hover #94a6e3;    /* mouse hover over workspace color */ 
-
-/* Reset all styles */
 * {
-	border: none;
-	border-radius: 0;
-	min-height: 0;
-	margin: 0;
-	padding: 0;
+    font-family: "MesloLGS NF";
+    font-size: 16px;
 }
 
-#waybar {
-	background: transparent;
-	font-family: JetBrainsMono;
-	font-size: large;
-	color: @fgcolor;
+window#waybar {
+    background: #292b2e;
+    color: #fdf6e3;
 }
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+  color: #5aaa5a;
+}
+
+#window {
+    font-weight: bold;
+    font-family: "MesloLGS NF";
+}
+/*
+#workspaces {
+    padding: 0 5px;
+}
+*/
 
 #workspaces button {
-	padding-left: 10px;
-	padding-right: 10px;
-	color: @bgcolor;
+    padding: 0 4px;
+    color: #fdf6e3;
 }
 
 #workspaces button.focused {
-	background: @bgcolor;
-	color: @fgcolor;
+    color: #268bd2;
 }
 
 #workspaces button:hover {
-	background: @hover;
-	color: @fgcolor;
-	transition: none;
-	box-shadow: inherit;
-	text-shadow: inherit;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: #5aaa5a;
+  border: #1a1a1a;
+  padding: 0 4px;
 }
 
-#custom-cap-left, #custom-cap-right {
-	color: @bgcolor;
-	font-size: 24px;
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
 }
 
-#idle_inhibitor {
-	background: @bgcolor;
-	padding-left: 20px;
-	padding-right: 10px;
+#clock, #network, #pulseaudio, #tray, #mode {
+    padding: 0 10px;
 }
 
-#custom-offswitch {
-	background: @bgcolor;
-	padding-right: 20px;
-	padding-left: 10px;
+#custom-storage.warning {
+  color: rgba(255, 210, 4, 1);
+}
+#curtom-storage.critical {
+  color: rgba(238, 46, 36, 1);
 }
 
-#custom-weather,
-#cpu, 
-#temperature, 
-#memory, 
-#pulseaudio, 
-#disk,
-#battery, 
-#clock, 
+#clock {
+    font-weight: bold;
+}
+
 #network {
-	background: @bgcolor;
-	padding-left: 10px;
-	padding-right: 10px;
+  color: #a1982a;
 }
 
-#disk.critical {
-		color: @critical;
+#network.disconnected {
+    background: #f53c3c;
 }
 
-#temperature.critical {                                                           
-		color: @critical;                                                    
+#pulseaudio {
+  color: #268bd2;
 }
 
-#cpu.critical {                                                           
-		color: @critical;                                                    
+#pulseaudio.muted {
 }
 
-#memory.critical {                                                           
-		color: @critical;                                                    
-}
-
-@keyframes blink1 {                                                                
-	to {
-		color: @plugged;
-	}
-}
-
-#battery.plugged {
-background-color: @bgcolor;
-		animation-name: blink1;                                                          
-		animation-duration: 0.5s;                                                       
-		animation-timing-function: linear;                                              
-		animation-iteration-count: infinite;                                            
-		animation-direction: alternate;
-}
-
-@keyframes blink2 {
-	to {
-		background-color: @charging;
-	}
-}
-
-#battery.charging {
-/*  background-color: @bgcolor; */
-		animation-name: blink2;                                                          
-		animation-duration: 2.0s;                                                       
-		animation-timing-function: ease-in-out;                                              
-		animation-iteration-count: infinite;                                            
-		animation-direction: alternate;
-}
-
-@keyframes blink3 {
-	to {
-		background-color: @warning;
-	}
-}
-
-#battery.warning:not(.charging) {
-/*  background-color: @bgcolor; */
-  	animation-name: blink3;
-  	animation-duration: 0.7s;
-  	animation-timing-function: ease-in-out;
-  	animation-iteration-count: infinite;
-  	animation-direction: alternate;
-}
-
-@keyframes blink4 {
-	to {
-		background-color: @critical;
-	}
-}
-
-#battery.critical:not(.charging) {
- /* background-color: @bgcolor; */
-  	animation-name: blink4;
-  	animation-duration: 0.8s;
-  	animation-timing-function: ease-in-out;
-  	animation-iteration-count: infinite;
-  	animation-direction: alternate;
+#tray {
 }
