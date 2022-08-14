@@ -10,26 +10,26 @@ window#waybar {
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-  color: #5aaa5a;
+  color: #4fbce6;
+  padding: 0 4px;
 }
 
 #window {
     font-weight: bold;
     font-family: "MesloLGS NF";
 }
-/*
-#workspaces {
-    padding: 0 5px;
-}
-*/
 
 #workspaces button {
     padding: 0 4px;
+    margin: 0 2px;
     color: #fdf6e3;
+    background: transparent;
+    border-radius: 10px;
+    border: 1px solid #5e5e5e;
 }
 
 #workspaces button.focused {
-    color: #268bd2;
+    color: #e75e4f;
 }
 
 #workspaces button:hover {
@@ -49,6 +49,10 @@ window#waybar {
     padding: 0 10px;
 }
 
+#custom-storage {
+  color: #8c735b;
+}
+
 #custom-storage.warning {
   color: rgba(255, 210, 4, 1);
 }
@@ -61,7 +65,7 @@ window#waybar {
 }
 
 #network {
-  color: #a1982a;
+  color: #fdc325;
 }
 
 #network.disconnected {
@@ -69,7 +73,7 @@ window#waybar {
 }
 
 #pulseaudio {
-  color: #268bd2;
+  color: #3393ca;
 }
 
 #pulseaudio.muted {

@@ -1,13 +1,15 @@
-{
+[{
     "layer": "top",
     "position": "top",
     "height": 24,
+    "output": "DP-1",
     "modules-left": ["custom/left-arrow-dark", "sway/workspaces", "custom/right-arrow-dark", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "custom/storage" ,"tray", "clock#1", "clock#2", "clock#3"],
+    "modules-right": ["pulseaudio", "network", "custom/storage", "clock#1", "clock#2", "clock#3", "tray"],
     "sway/workspaces": {
         "disable-scroll": true,
-        "format": "{name}"
+        "format": "{name}",
+        "all-outputs": true
     },
     "sway/mode": {
         "format": " {}"
@@ -22,7 +24,7 @@
     },
     "clock#2": {
         "interval": 1,
-        "format": "{:%T%z}",
+        "format": "{:%T %z}",
         "tooltip": false
     },
     "clock#3": {
@@ -65,4 +67,35 @@
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh"
     }
-}
+},
+
+{
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "output": ["HDMI-A-2", "DP-3"],
+    "modules-left": ["custom/left-arrow-dark", "sway/workspaces", "custom/right-arrow-dark", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["clock#2"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": "{name}",
+        "all-outputs": false
+    },
+    "sway/mode": {
+        "format": " {}"
+    },
+    "clock#2": {
+        "interval": 1,
+        "format": "{:%T %z}",
+        "tooltip": false
+    },
+    "custom/left-arrow-dark": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right-arrow-dark": {
+        "format": "",
+        "tooltip": false
+    }
+}]
