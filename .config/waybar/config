@@ -4,7 +4,7 @@
     "height": 24,
     "modules-left": ["custom/left-arrow-dark", "sway/workspaces", "custom/right-arrow-dark", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "custom/storage" ,"tray", "clock#1", "clock#2"],
+    "modules-right": ["pulseaudio", "network", "custom/storage" ,"tray", "clock#1", "clock#2", "clock#3"],
     "sway/workspaces": {
         "disable-scroll": true,
         "format": "{name}"
@@ -23,6 +23,12 @@
     "clock#2": {
         "interval": 1,
         "format": "{:%T%z}",
+        "tooltip": false
+    },
+    "clock#3": {
+        "interval": 1,
+        "format": "{:%s}",
+        "on-click": "date +%s | wl-copy",
         "tooltip": false
     },
     "network": {
