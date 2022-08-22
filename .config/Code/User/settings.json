@@ -43,4 +43,5 @@
   "hungryDelete.keepOneSpace": true,
   "snyk.yesWelcomeNotification": false,
   "workbench.colorTheme": "Frontend Delight Enhanced",
+  "npm.keybindingsChangedWarningShown": true,
 }

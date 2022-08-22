@@ -12,6 +12,8 @@ settings:
     global: black
   colors.completion.scrollbar.fg:
     global: white
+  content.desktop_capture:
+    https://cribl.zoom.us: true
   content.register_protocol_handler:
     https://calendar.google.com?cid=%25s: true
     https://mail.google.com?extsrc=mailto&url=%25s: true

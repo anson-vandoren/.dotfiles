@@ -5,21 +5,21 @@
     "output": "DP-1",
     "modules-left": ["custom/left-arrow-dark", "sway/workspaces", "custom/right-arrow-dark", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "custom/storage", "clock#1", "clock#2", "clock#3", "tray"],
+    "modules-right": ["pulseaudio", "network", "custom/storage", "custom/arrow1", "clock#1", "clock#2", "clock#3"],
     "sway/workspaces": {
         "disable-scroll": true,
         "format": "{name}",
         "all-outputs": true
     },
     "sway/mode": {
-        "format": " {}"
+        "format": "<span style=\"italic\"> {}</span>"
     },
     "tray": {
         "icon-size": 18,
         "spacing": 10
     },
     "clock#1": {
-        "format": "{:%Y-%m-%d}",
+        "format": "{:%Y-%m-%d} ",
         "tooltip": false
     },
     "clock#2": {
@@ -29,7 +29,7 @@
     },
     "clock#3": {
         "interval": 1,
-        "format": "{:%s}",
+        "format": " {:%s}",
         "on-click": "date +%s | wl-copy",
         "tooltip": false
     },
@@ -40,7 +40,7 @@
     },
     "pulseaudio": {
         "format": "{icon} {volume:2}%",
-        "format-bluetooth": "{icon}  {volume}%",
+        "format-bluetooth": "{icon}  {volume}% ",
         "format-muted": "",
 		"format-icons": {
 			"headphones": "",
@@ -66,7 +66,56 @@
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh"
-    }
+    },
+	"custom/arrow1": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow2": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow3": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow4": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow5": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow6": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow7": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow8": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow9": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow10": {
+		"format": "",
+		"tooltip": false
+	}
 },
 
 {

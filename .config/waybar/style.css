@@ -1,16 +1,57 @@
+@keyframes blink-warning {
+  70% {
+    color: @light;
+  }
+
+  to {
+    color: @light;
+    background-color: @warning;
+  }
+}
+
 * {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+@define-color light   #adadad;
+@define-color dark    #242526;
+@define-color warning #f8511b;
+
+#waybar {
+    background: transparent;
+    color: @light;
     font-family: "MesloLGS NF";
     font-size: 16px;
 }
 
-window#waybar {
-    background: #292b2e;
-    color: #fdf6e3;
+#network,
+#pulseaudio,
+#mode,
+#tray {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* all blinking */
+#mode {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* warning-blink modules */
+#mode {
+  animation-name: blink-warning;
+  animation-duration: 0.5s;
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-  color: #4fbce6;
+  color: #565747;
   padding: 0 4px;
 }
 
@@ -20,43 +61,36 @@ window#waybar {
 }
 
 #workspaces button {
-    padding: 0 4px;
-    margin: 0 2px;
-    color: #fdf6e3;
-    background: transparent;
-    border-radius: 10px;
-    border: 1px solid #5e5e5e;
+  padding: 0 4px;
+  margin: 0 2px;
+  color: #adadad;
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid #5e5e5e;
 }
 
 #workspaces button.focused {
-    color: #e75e4f;
+  color: @dark;
+  background: #fa771d;
+  border: 1px solid @dark;
 }
 
 #workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-  background: #5aaa5a;
-  border: #1a1a1a;
+  color: @dark;
+  background: #5fac6d;
+  border: 1px solid #1a1a1a;
   padding: 0 4px;
-}
-
-#mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
-}
-
-#clock, #network, #pulseaudio, #tray, #mode {
-    padding: 0 10px;
 }
 
 #custom-storage {
   color: #8c735b;
+  padding-right: 10px;
 }
 
 #custom-storage.warning {
   color: rgba(255, 210, 4, 1);
 }
-#curtom-storage.critical {
+#custom-storage.critical {
   color: rgba(238, 46, 36, 1);
 }
 
@@ -81,3 +115,11 @@ window#waybar {
 
 #tray {
 }
+
+/* clocks */
+#clock {
+  background: @light;
+  color: @dark;
+}
+
+
