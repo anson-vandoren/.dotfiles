@@ -106,5 +106,6 @@ VirtualBox\ VMs/
 
 # secrets, bad
 .config/op/config
+.npmrc
 
 src/cribl/start
