@@ -2,6 +2,7 @@
 # Unneeded rc/cache/config files
 .bash_profile
 .bashrc
+.histfile
 .lesshst
 .viminfo
 .zcompdump
