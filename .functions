@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+mkd() { mkdir -p "$@" && cd "$_"; }
+
+cdd() { cd "$@" && ls; }
+
+config() {
+  if [[ $# -gt 0 ]]; then
+    /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME $@
+  else
+    /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status
+  fi
+}

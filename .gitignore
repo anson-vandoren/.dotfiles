@@ -1,0 +1,7 @@
+
+
+.cache
+.cargo
+
+# Arch-specific stuff
+yay/
