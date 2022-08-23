@@ -1,7 +1,29 @@
 
+# Unneeded rc/cache/config files
+.bash_profile
+.bashrc
+.lesshst
+.viminfo
+.zcompdump
 
 .cache
 .cargo
+
+# Config dirs
+.config/1Password/
+.config/BraveSoftware/
+.config/Thunar/
+.config/chromium/
+.config/dconf/
+.config/google-chrome-beta/
+.config/google-chrome-unstable/
+.config/google-chrome/
+.config/microsoft-edge-dev/
+.config/op/
+.config/pulse
+.config/vivaldi*
+.config/xcfe4
+
 
 # Arch-specific stuff
 yay/

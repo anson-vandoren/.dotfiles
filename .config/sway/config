@@ -211,5 +211,17 @@ bar {
     }
 }
 
+# sway-fzfify
+bindsym $mod+Ctrl+Shift+w exec ~/.config/sway/scripts/fzfify/sway-new-workspace
+bindsym $mod+Ctrl+w exec ~/.config/sway/scripts/fzfify/sway-workspace-switcher
+bindsym $mod+Ctrl+Shift+m exec ~/.config/sway/scripts/fzfify/sway-mark
+bindsym $mod+Ctrl+m exec ~/.config/sway/scripts/fzfify/sway-marks-switcher
+bindsym $mod+Ctrl+c exec ~/.config/sway/scripts/fzfify/sway-tree-switcher
+bindsym $mod+Ctrl+Shift+o exec ~/.config/sway/scripts/fzfify/sway-window-move
+bindsym $mod+Ctrl+o exec ~/.config/sway/scripts/fzfify/sway-workspace-move
+bindsym $mod+Ctrl+r exec ~/.config/sway/scripts/fzfify/sway-rename
+bindsym $mod+Ctrl+n exec ~/.config/sway/scripts/fzfify/sway-new-workspace
+
+
 include /etc/sway/config.d/*
 include ~/.config/sway/scripts/fzfify/fzfify_config
