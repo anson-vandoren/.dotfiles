@@ -142,8 +142,8 @@ eval $(thefuck --alias)
 #eval $(op signin)
 
 if ps -p $SSH_AGENT_PID &> /dev/null; then
-    echo "ssh-agent is already running"
+    echo "ssh-agent is already running" >&2
 else
-    eval `ssh-agent -s` > /dev/null
+    eval `ssh-agent -s` >/dev/null
 fi
 ssh-add ~/.ssh/cribl &> /dev/null

@@ -49,3 +49,4 @@ application/x-remmina=org.remmina.Remmina.desktop;
 application/octet-stream=org.kde.okteta.desktop;
 text/vnd.trolltech.linguist=org.gnome.TextEditor.Devel.desktop;
 text/markdown=code.desktop;
+application/x-cd-image=gnome-disk-image-writer.desktop;
