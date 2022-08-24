@@ -1,31 +1,36 @@
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
+# Use the "logo" key as modifier for all Sway commands
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
+
+# Terminal emulator setup
 set $term ~/.config/sway/scripts/alacritty-wrapper.sh
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+bindsym $mod+Return exec $term
+
+# Application launcher setup
 set $menu ~/.config/sway/scripts/fzfify/sway-dmenu
+bindsym $mod+d exec $menu
+
+# Logout screen
 set $logout wlogout
 
+
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
+# Set wallpaper
+output * bg ~/Documents/background1.jpg fill
+# Set up display outputs
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+output HDMI-A-2 pos 0 0 res 1920x1200 transform 270
+output DP-1 pos 1200 0 res 3840x2160
+output DP-3 pos 5040 0 res 2560x1440
+
+workspace 1 output HDMI-A-2
+workspace 2 output DP-1
+workspace 3 output DP-3
 
 ### Idle configuration
 #
@@ -57,15 +62,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 ### Key bindings
 #
 # Basics:
-#
-    # Start a terminal
-    bindsym $mod+Return exec $term
-
     # Kill focused window
     bindsym $mod+Shift+q kill
 
-    # Start your launcher
-    bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
