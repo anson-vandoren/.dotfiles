@@ -1,3 +1,9 @@
+# Random things in ~
+Downloads/
+Documents
+
+# .dotfiles git dir
+.dotfiles
 
 # Unneeded rc/cache/config files
 .bash_profile
@@ -24,7 +30,6 @@
 .config/pulse
 .config/vivaldi*
 .config/xcfe4
-
 
 # Arch-specific stuff
 yay/

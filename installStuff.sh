@@ -1,4 +1,4 @@
-sudo pacman -S neovim exa dog curlie fd bat alacritty qutebrowser jq unzip fzf pv
+sudo pacman -S neovim exa dog curlie fd bat alacritty qutebrowser jq unzip fzf pv hunspell
 yay -S gotop tre-command 1password wlogout
 
 echo "TODO:"
