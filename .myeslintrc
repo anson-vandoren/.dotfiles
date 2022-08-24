@@ -77,6 +77,24 @@
     "class-methods-use-this": 0,
     "no-cond-assign": 0,
     "no-var-requires": 0,
+    "no-invalid-this": 1,
+    "no-unused-expressions": 0,
+    "chai-friendly/no-unused-expressions": 2,
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "ForInStatement",
+        "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+      },
+      {
+        "selector": "LabeledStatement",
+        "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+      },
+      {
+        "selector": "WithStatement",
+        "message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+      }
+    ],
     "camelcase": [
       "error",
       {
@@ -86,6 +104,6 @@
       }
     ]
   },
-  "plugins": ["only-warn","@typescript-eslint"],
+  "plugins": ["only-warn","@typescript-eslint", "chai-friendly"],
   "parser": "@typescript-eslint/parser"
 }
