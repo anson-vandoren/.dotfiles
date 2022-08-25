@@ -6,6 +6,7 @@ _has() {
 # Install bare necessities
 sudo pacman -S --needed sway alacritty waybar xorg-xwayland xorg-xlsclients qt5-wayland swayidle swaylock
 sudo pacman -S --needed man python-pip pulseaudio-alsa pamixer wget atop mpd alsa-utils pavucontrol networkmanager network-manager-applet dhcpcd python-gobject openssh tmux
+sudo pacman -S --needed libfido2
 sudo pacman -S --needed ttf-dejavu ttf-liberation noto-fonts ttf-jetbrains-mono
 sudo pacman -S --needed slurp grim wl-clipboard 
 # Install yay if not present
