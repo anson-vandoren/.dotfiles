@@ -12,3 +12,6 @@ export QT_QPA_PLATFORM=wayland
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
 XDG_CURRENT_DESKTOP=sway dbus-run-session sway
+
+# allow running graphical apps as sudo
+xhost + local:
