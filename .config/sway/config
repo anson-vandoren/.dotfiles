@@ -224,3 +224,5 @@ bindsym $mod+Ctrl+n exec ~/.config/sway/scripts/fzfify/sway-new-workspace
 
 include /etc/sway/config.d/*
 include ~/.config/sway/scripts/fzfify/fzfify_config
+
+exec /usr/bin/lxpolkit

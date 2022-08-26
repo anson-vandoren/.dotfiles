@@ -3,12 +3,39 @@ _has() {
   return $(whence "$1" > /dev/null 2>&1 )
 }
 
+# set terminal font size larger
+echo "Setting the terminal font size larger, use sudo setfont ter-v16b to set it back"
+sudo pacman -Sy
+sudo pacman -S --needed terminus-font
+fc-cache -fv 2>&1 1>/dev/null
+sudo setfont ter-v32b
+
+# install rustup & rust first
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # Install bare necessities
-sudo pacman -S --needed sway alacritty waybar xorg-xwayland xorg-xlsclients qt5-wayland swayidle swaylock
-sudo pacman -S --needed man python-pip pulseaudio-alsa pamixer wget atop mpd alsa-utils pavucontrol networkmanager network-manager-applet dhcpcd python-gobject openssh tmux
-sudo pacman -S --needed libfido2
-sudo pacman -S --needed ttf-dejavu ttf-liberation noto-fonts ttf-jetbrains-mono
-sudo pacman -S --needed slurp grim wl-clipboard 
+sudo pacman -S --needed sway alacritty waybar xorg-xwayland xorg-xlsclients swayidle swaylock swaybg
+sudo pacman -S --needed man python-pip pulseaudio-alsa pamixer wget atop mpd alsa-utils pavucontrol \
+	network-manager-applet python-gobject openssh tmux
+sudo pacman -S --needed libfido2 unzip zip tar unrar htop clang cmake npm linux-headers zsh-completion pkgconfig \
+	autoconf automake p7zip bzip2 zstd xz gzip lsof
+sudo pacman -S --needed libvirt amducode qemu-base lxsession-gtk3 x11-ssh-askpass seahorse
+# fonts
+sudo pacman -S --needed ttf-dejavu ttf-liberation noto-fonts ttf-jetbrains-mono noto-fonts-cjk noto-fonts-extra \
+	noto-fonts-emoji ttf-roboto ttf-inconsolata ttf-font-awesome ttf-ubuntu-font-family
+sudo pacman -S --needed slurp grim wl-clipboard ripgrep
+# programming languages
+sudo pacman -S --needed jre-openjdk jdk-openjdk go docker docker-compose nodejs npm
+sudo systemctl enable docker
+# network
+sudo pacman -S --needed networkmanager dhcpcd
+sudo systemctl enable NetworkManager
+# graphics
+sudo pacman -S --needed mesa libva-mesa-driver mesa-vdpau vulkan-radeon xf86-video-amdgpu glfw-wayland qt5-wayland \
+	glew-wayland 
+# applications
+sudo pacman -S --needed neovim exa dog curlie fd bat alacritty jq unzip fzf pv hunspell ranger thunar tldr code \
+	telegram-desktop
 # Install yay if not present
 if [ ! _has yay ]; then
   echo "Intstalling yay"
@@ -20,8 +47,8 @@ else
   echo "yay already installed, skipping"
 fi
 # Install others
-sudo pacman -S --needed neovim exa dog curlie fd bat alacritty jq unzip fzf pv hunspell ranger thunar tldr
-yay -S --needed --answerclean No --answerdiff n gotop tre-command 1password wlogout qutebrowser-qt6-git slack-desktop
+yay -S --needed --answerclean No --answerdiff n gotop tre-command 1password wlogout qutebrowser-qt6-git \
+	slack-desktop toggldesktop nvm
 
 # Oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
