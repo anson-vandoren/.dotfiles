@@ -1,0 +1,53 @@
+{
+  "telemetry.telemetryLevel": "off",
+  "window.zoomLevel": 1,
+  "editor.inlineSuggest.enabled": true,
+  "terminal.external.linuxExec": "alacritty",
+  "terminal.integrated.automationShell.linux": "/bin/zsh",
+  "editor.experimental.stickyScroll.enabled": true,
+  "editor.experimental.useCustomCodeActionMenu": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "vim.foldfix": true,
+  "vim.handleKeys": {
+    "<C-k>": false
+  },
+  "vim.useSystemClipboard": true,
+  "vim.overrideCopy": true,
+  "vim.visualstar": true,
+  "vim.surround": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.renderWhitespace": "none",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.confirmSync": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "files.autoSave": "onFocusChange",
+  "editor.tabSize": 2,
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true,
+  "editor.lineNumbers": "relative",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "hungryDelete.keepOneSpace": true,
+  "snyk.yesWelcomeNotification": false,
+  "workbench.colorTheme": "Frontend Delight",
+  "npm.keybindingsChangedWarningShown": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true
+  },
+}

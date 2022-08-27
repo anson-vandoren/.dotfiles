@@ -11,3 +11,31 @@ config() {
     /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status
   fi
 }
+
+tre() { command tre "$@" -a -l 42 -e && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
+
+# kill a process
+kp() {
+  local pid=$(ps -ef | sed id | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[kill:process]'" | awk '{print $2}')
+  if [ "x$pid" != "x" ]; then
+    echo $pid | xargs kill -${1:-9}
+    kp
+  fi
+}
+
+# search PATH
+fp() {
+  local loc=$(echo $PATH | sed -e $'s/:/\\\n/g' | eval "fzf ${FZF_DEFAULT_OPTS} --header='[find:path]'")
+  if [[ -d $loc ]]; then
+    echo "$(rg --files $loc | rev | cut -d"/" -f1 | rev)" | eval "fzf ${FZF_DEFAULT_OPTS} --header='[find:exe] => ${loc}' >/dev/null"
+    fp
+  fi
+}
+
+# git checkout with fzf
+gco() {
+  local branch=$(git branch | eval "fzf ${FZF_DEFAULT_OPTS} --header='select a branch'")
+  if [ "x$branch" != "x" ]; then
+    echo $branch | xargs git checkout
+  fi
+}

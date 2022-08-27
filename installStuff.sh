@@ -25,7 +25,10 @@ sudo pacman -S --needed ttf-dejavu ttf-liberation noto-fonts ttf-jetbrains-mono 
 	noto-fonts-emoji ttf-roboto ttf-inconsolata ttf-font-awesome ttf-ubuntu-font-family
 sudo pacman -S --needed slurp grim wl-clipboard ripgrep
 # programming languages
-sudo pacman -S --needed jre-openjdk jdk-openjdk go docker docker-compose nodejs npm
+sudo pacman -S --needed jre-openjdk jdk-openjdk go docker docker-compose nodejs npm python-virtualenv \
+	python-virtualenvwrapper thefuck
+pip install virtualenvwrapper
+source /usr/bin/virtualenvwrapper.sh
 sudo systemctl enable docker
 # network
 sudo pacman -S --needed networkmanager dhcpcd
@@ -55,7 +58,19 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "Installing oh-my-zsh"
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
-  echo "oh-my-zsh already installed, skippind"
+  echo "oh-my-zsh already installed, skipping"
+fi
+if [ ! -d ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions ]; then
+  echo "installing zsh-completions"
+  git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+fi
+if [ ! -d ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-syntax-highlighting ]; then
+  echo "installing zsh-syntax-highlighting"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
+if [ ! -d ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-better-npm-completion ]; then
+  echo "installing zsh-better-npm-completions"
+  git clone https://github.com/lukechilds/zsh-better-npm-completion ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion
 fi
 # Powerlevel10k
 if (( $(fc-list | grep -i meslolgs | uniq | wc -l ) < 4 )); then
@@ -76,6 +91,8 @@ if [ ! -e "$HOME/.p10k.zsh" ]; then
 else
   echo "Powerlevel 10K already installed, skipping"
 fi
+
+
 
 echo "TODO:"
 echo "- Install 1Password CLI: https://developer.1password.com/docs/cli/get-started#install"

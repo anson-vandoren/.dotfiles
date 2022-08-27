@@ -1,0 +1,30 @@
+databases/
+Service Worker/
+Session Storage/
+QuotaManager*
+Local Storage/
+Network Persistent State
+GPUCache/
+fileWatcher/
+logs/
+User/History/
+User/globalStorage
+User/workspaceStorage/
+exthost Crash Reports/
+Code Cache/
+Cookies*
+Crashpad/
+Crash Reports/
+Backups/
+Cache/
+CachedData/
+CachedConfigurations/
+TransportSecurity
+watcherServiceParcelSharedProcess/
+Dictionaries/
+machineid
+User/sync/
+User/snippets/
+Preferences
+languagepacks.json
+CachedExtension*/

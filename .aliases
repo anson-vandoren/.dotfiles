@@ -24,10 +24,6 @@ if _has fd; then
   alias find=fd
 fi
 
-if _has tre-command; then
-  alias tre=tre -a -l 42
-fi
-
 if _has bat; then
   alias cat=bat
 fi
