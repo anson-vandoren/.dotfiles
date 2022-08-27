@@ -1,8 +1,4 @@
 #!/bin/sh
-_has() {
-  return $(whence "$1" > /dev/null 2>&1 )
-}
-
 # set terminal font size larger
 echo "Setting the terminal font size larger, use sudo setfont ter-v16b to set it back"
 sudo pacman -Sy
@@ -11,15 +7,19 @@ fc-cache -fv 2>&1 1>/dev/null
 sudo setfont ter-v32b
 
 # install rustup & rust first
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+if ! command -v rustc &> /dev/null; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+else
+  echo "rustc already installed, skipping rustup"
+fi
 
 # Install bare necessities
 sudo pacman -S --needed sway alacritty waybar xorg-xwayland xorg-xlsclients swayidle swaylock swaybg
 sudo pacman -S --needed man python-pip pulseaudio-alsa pamixer wget atop mpd alsa-utils pavucontrol \
 	network-manager-applet python-gobject openssh tmux
-sudo pacman -S --needed libfido2 unzip zip tar unrar htop clang cmake npm linux-headers zsh-completion pkgconfig \
+sudo pacman -S --needed libfido2 unzip zip tar unrar htop clang cmake npm linux-headers zsh-completions pkgconfig \
 	autoconf automake p7zip bzip2 zstd xz gzip lsof
-sudo pacman -S --needed libvirt amducode qemu-base lxsession-gtk3 x11-ssh-askpass seahorse
+sudo pacman -S --needed libvirt amd-ucode qemu-base lxsession-gtk3 seahorse
 # fonts
 sudo pacman -S --needed ttf-dejavu ttf-liberation noto-fonts ttf-jetbrains-mono noto-fonts-cjk noto-fonts-extra \
 	noto-fonts-emoji ttf-roboto ttf-inconsolata ttf-font-awesome ttf-ubuntu-font-family
@@ -34,10 +34,10 @@ sudo systemctl enable NetworkManager
 sudo pacman -S --needed mesa libva-mesa-driver mesa-vdpau vulkan-radeon xf86-video-amdgpu glfw-wayland qt5-wayland \
 	glew-wayland 
 # applications
-sudo pacman -S --needed neovim exa dog curlie fd bat alacritty jq unzip fzf pv hunspell ranger thunar tldr code \
+sudo pacman -S --needed neovim exa dog curlie fd bat alacritty jq unzip fzf pv hunspell ranger thunar tldr \
 	telegram-desktop
 # Install yay if not present
-if [ ! _has yay ]; then
+if ! command -v yay &> /dev/null; then
   echo "Intstalling yay"
   mkdir -p ~/src
   git clone https://aur.archlinux.org/yay.git ~/src/yay
@@ -47,7 +47,7 @@ else
   echo "yay already installed, skipping"
 fi
 # Install others
-yay -S --needed --answerclean No --answerdiff n gotop tre-command 1password wlogout qutebrowser-qt6-git \
+yay -S --needed --answerclean No --answerdiff N gotop tre-command 1password wlogout qutebrowser-qt6-git \
 	slack-desktop toggldesktop nvm
 
 # Oh-my-zsh
@@ -58,7 +58,7 @@ else
   echo "oh-my-zsh already installed, skippind"
 fi
 # Powerlevel10k
-if [ $(fc-list | grep -i meslolgs | uniq | wc -l) lt 4 ]; then
+if (( $(fc-list | grep -i meslolgs | uniq | wc -l ) < 4 )); then
   echo "Installing MesloLGS NF fonts"
   mkdir -p "$HOME/.local/share/fonts/ttf/MesloLGS"
   wget -nc -P "$HOME/.local/share/fonts/ttf/MesloLGS" \

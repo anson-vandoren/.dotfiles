@@ -1,6 +1,8 @@
 # Random things in ~
 Downloads/
-Documents
+Documents/
+go/
+src/
 
 # .dotfiles git dir
 .dotfiles
@@ -10,7 +12,10 @@ Documents
 .bashrc
 .histfile
 .lesshst
+.rustup/*
 .viminfo
+.oh-my-zsh
+.wget-hsts
 .zcompdump
 
 .cache
@@ -29,7 +34,9 @@ Documents
 .config/op/
 .config/pulse
 .config/vivaldi*
-.config/xcfe4
+.config/xcfe4/*
+.config/qutebrowser/bookmarks
+.config/qutebrowser/quickmarks
 
 # Arch-specific stuff
 yay/

@@ -10,5 +10,7 @@ settings:
     global: access
   hints.chars:
     global: arstneio
+  tabs.last_close:
+    global: close
   window.title_format:
     global: '{perc}{current_title}{title_sep}qutebrowser - [{id}]'
