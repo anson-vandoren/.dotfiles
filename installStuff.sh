@@ -72,6 +72,10 @@ if [ ! -d ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-better-npm-comp
   echo "installing zsh-better-npm-completions"
   git clone https://github.com/lukechilds/zsh-better-npm-completion ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion
 fi
+if [ ! -d ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/fzf-tab ]; then
+  echo "installing fzf-tab"
+  git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/fzf-tab
+fi
 # Powerlevel10k
 if (( $(fc-list | grep -i meslolgs | uniq | wc -l ) < 4 )); then
   echo "Installing MesloLGS NF fonts"

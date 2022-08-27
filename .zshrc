@@ -19,6 +19,7 @@ _has() {
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
+  fzf-tab
   zsh-completions
   zsh-syntax-highlighting
   docker
@@ -77,8 +78,7 @@ fi
 if _has fzf && _has rg; then
     export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/"'
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-    export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-    export FZF_EFAULT_OPTS='
+    export FZF_DEFAULT_OPTS='
     --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
     --color info:108,prompt:109,spinner:108,pointer:168,marker:168
     '
@@ -112,7 +112,9 @@ setopt HIST_BEEP
 
 # source fzf - seems to need to be near the bottom
 if [ -d /usr/share/fzf ]; then
+  # completions below must be sourced to get **-<TAB> auto-completion
   . /usr/share/fzf/completion.zsh
+  # key-bindings below must be sourced to get CTRL-R and CTRL-T and ALT-C behavior
   . /usr/share/fzf/key-bindings.zsh
 fi
 
@@ -136,6 +138,9 @@ load-nvmrc() {
   fi
 }
 add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+load-nvmrc &>/dev/null
+
+# fzf-tab
+zstyle ':fzf-tab:complete:git-checkout:*' fzf-command gbf # show results of git-branch for auto-completing git-checkout
 
 eval $(thefuck --alias)

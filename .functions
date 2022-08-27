@@ -39,3 +39,7 @@ gco() {
     echo $branch | xargs git checkout
   fi
 }
+# fzf git branches
+gbf() {
+  git branch | fzf | sed 's/^\**\s*//' | sed 's:/*$::'
+}
