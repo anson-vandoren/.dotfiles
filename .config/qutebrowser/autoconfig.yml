@@ -8,6 +8,8 @@ config_version: 2
 settings:
   content.javascript.clipboard:
     global: access
+  content.pdfjs:
+    global: true
   hints.chars:
     global: arstneio
   tabs.last_close:

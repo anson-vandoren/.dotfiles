@@ -16,23 +16,21 @@ fi
 # Install bare necessities
 sudo pacman -S --needed sway alacritty waybar xorg-xwayland xorg-xlsclients swayidle swaylock swaybg
 sudo pacman -S --needed man python-pip pulseaudio-alsa pamixer wget atop mpd alsa-utils pavucontrol \
-	network-manager-applet python-gobject openssh tmux
+	python-gobject openssh tmux
 sudo pacman -S --needed libfido2 unzip zip tar unrar htop clang cmake npm linux-headers zsh-completions pkgconfig \
 	autoconf automake p7zip bzip2 zstd xz gzip lsof
 sudo pacman -S --needed libvirt amd-ucode qemu-base lxsession-gtk3 seahorse
 # fonts
 sudo pacman -S --needed ttf-dejavu ttf-liberation noto-fonts ttf-jetbrains-mono noto-fonts-cjk noto-fonts-extra \
 	noto-fonts-emoji ttf-roboto ttf-inconsolata ttf-font-awesome ttf-ubuntu-font-family
-sudo pacman -S --needed slurp grim wl-clipboard ripgrep
+sudo pacman -S --needed slurp grim wl-clipboard ripgrep pdfjs
 # programming languages
 sudo pacman -S --needed jre-openjdk jdk-openjdk go docker docker-compose nodejs npm python-virtualenv \
 	python-virtualenvwrapper thefuck ctags
 pip install virtualenvwrapper neovim
 source /usr/bin/virtualenvwrapper.sh
-sudo systemctl enable docker
 # network
-sudo pacman -S --needed networkmanager dhcpcd
-sudo systemctl enable NetworkManager
+sudo pacman -S --needed NetworkManager network-manager-applet
 # graphics
 sudo pacman -S --needed mesa libva-mesa-driver mesa-vdpau vulkan-radeon xf86-video-amdgpu glfw-wayland \
     qt5-wayland glew-wayland 
@@ -98,6 +96,11 @@ fi
 
 # npm globals
 npm install -g prettier eslint yarn neovim
+
+# start services
+sudo systemctl enable --now docker
+sudo systemctl enable --now NetworkManager
+sudo systemctl enable --now avahi-daemon
 
 echo "TODO:"
 echo "- Install 1Password CLI: https://developer.1password.com/docs/cli/get-started#install"

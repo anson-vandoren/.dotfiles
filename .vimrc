@@ -40,6 +40,7 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 set termguicolors
@@ -56,11 +57,10 @@ imap <silent><expr> <C-L> copilot#Next()
 " ---------------- KEY MAPPING -------------------
 let mapleader = ","
 
-
 nmap <C-n> :NERDTreeFind<CR>
 
 """""""""""""""""""" coc setup """"""""""""""""""""
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-vimlsp']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-vimlsp', 'coc-eslint']
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
@@ -134,11 +134,11 @@ augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-"xmap <leader>a  <Plug>(coc-codeaction-selected)
-"nmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <leader>do  <Plug>(coc-codeaction-selected)
+nmap <leader>do  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>do  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
