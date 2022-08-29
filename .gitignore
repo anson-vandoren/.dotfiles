@@ -24,6 +24,7 @@ src/
 # Config dirs
 .config/1Password/
 .config/BraveSoftware/
+.config/coc/
 .config/Thunar/
 .config/chromium/
 .config/dconf/

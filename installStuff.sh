@@ -26,16 +26,16 @@ sudo pacman -S --needed ttf-dejavu ttf-liberation noto-fonts ttf-jetbrains-mono 
 sudo pacman -S --needed slurp grim wl-clipboard ripgrep
 # programming languages
 sudo pacman -S --needed jre-openjdk jdk-openjdk go docker docker-compose nodejs npm python-virtualenv \
-	python-virtualenvwrapper thefuck
-pip install virtualenvwrapper
+	python-virtualenvwrapper thefuck ctags
+pip install virtualenvwrapper neovim
 source /usr/bin/virtualenvwrapper.sh
 sudo systemctl enable docker
 # network
 sudo pacman -S --needed networkmanager dhcpcd
 sudo systemctl enable NetworkManager
 # graphics
-sudo pacman -S --needed mesa libva-mesa-driver mesa-vdpau vulkan-radeon xf86-video-amdgpu glfw-wayland qt5-wayland \
-	glew-wayland 
+sudo pacman -S --needed mesa libva-mesa-driver mesa-vdpau vulkan-radeon xf86-video-amdgpu glfw-wayland \
+    qt5-wayland glew-wayland 
 # applications
 sudo pacman -S --needed neovim exa dog curlie fd bat alacritty jq unzip fzf pv hunspell ranger thunar tldr \
 	telegram-desktop
@@ -96,7 +96,8 @@ else
   echo "Powerlevel 10K already installed, skipping"
 fi
 
-
+# npm globals
+npm install -g prettier eslint yarn neovim
 
 echo "TODO:"
 echo "- Install 1Password CLI: https://developer.1password.com/docs/cli/get-started#install"
