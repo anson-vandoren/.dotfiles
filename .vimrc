@@ -38,7 +38,8 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'HerringtonDarkholme/yats.vim'
+"Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'easymotion/vim-easymotion'
 Plug 'APZelos/blamer.nvim'
@@ -56,7 +57,7 @@ imap <silent><expr> <C-L> copilot#Next()
 
 " ----------- folding -----------
 set foldmethod=syntax
-
+set foldlevel=99
 
 " ---------------- KEY MAPPING -------------------
 let mapleader = ","
