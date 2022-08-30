@@ -48,7 +48,7 @@ input "12951:6505:ZSA_Technology_Labs_Moonlander_Mark_I" {
 
 ### Swaynag
 set {
-  $nag         exec /usr/bin/swaynagmode
+  $nag         exec swaynagmode
   $nag_exit    $nag --exit
   $nag_confirm $nag --confirm
   $nag_select  $nag --select
@@ -233,6 +233,7 @@ bindsym $mod+Ctrl+n exec ~/.config/sway/scripts/fzfify/sway-new-workspace
 
 
 include /etc/sway/config.d/*
+include ~/.config/sway/config.d/*
 include ~/.config/sway/scripts/fzfify/fzfify_config
 
 exec /usr/bin/lxpolkit

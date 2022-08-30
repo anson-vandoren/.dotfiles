@@ -97,7 +97,6 @@ Thumbs.db
 .config/vivaldi*
 .config/vivaldi-*/
 .config/xfce4/*
-.config/zoomus.conf
 
 # Data direcrories
 Desktop/
