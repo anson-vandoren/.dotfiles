@@ -30,7 +30,7 @@ sudo pacman -S --needed jre-openjdk jdk-openjdk go docker docker-compose nodejs 
 pip install virtualenvwrapper neovim
 source /usr/bin/virtualenvwrapper.sh
 # network
-sudo pacman -S --needed NetworkManager network-manager-applet
+sudo pacman -S --needed dhcpcd
 # graphics
 sudo pacman -S --needed mesa libva-mesa-driver mesa-vdpau vulkan-radeon xf86-video-amdgpu glfw-wayland \
     qt5-wayland glew-wayland 
@@ -99,7 +99,7 @@ npm install -g prettier eslint yarn neovim
 
 # start services
 sudo systemctl enable --now docker
-sudo systemctl enable --now NetworkManager
+sudo systemctl enable --now dhcpcd
 sudo systemctl enable --now avahi-daemon
 
 echo "TODO:"

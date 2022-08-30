@@ -41,6 +41,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'easymotion/vim-easymotion'
+Plug 'APZelos/blamer.nvim'
 
 call plug#end()
 set termguicolors
@@ -52,6 +53,9 @@ let g:copilot_assume_mapped = v:true
 imap <silent><expr> <C-J> copilot#Accept("<CR>")
 imap <silent><expr> <C-H> copilot#Previous()
 imap <silent><expr> <C-L> copilot#Next()
+
+" ----------- folding -----------
+set foldmethod=syntax
 
 
 " ---------------- KEY MAPPING -------------------
