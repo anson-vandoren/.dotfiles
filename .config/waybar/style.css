@@ -1,0 +1,158 @@
+@define-color light      #adadad;
+@define-color dark       #242526;
+@define-color warning    #f8511b;
+@define-color date       #282828;
+@define-color time       #ebdbb2;
+@define-color storage    #fabd2f;
+@define-color mode       #a89984;
+@define-color network    #689d6a;
+@define-color pulseaudio #b16286;
+@define-color workspaces #458588;
+@define-color workspacesfocused #83a598;
+
+@keyframes blink-warning {
+  70% {
+    color: @light;
+  }
+
+  to {
+    color: @light;
+    background-color: @warning;
+  }
+}
+
+
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#waybar {
+  background: rgba(0, 0, 0, 0.8);
+  color: @light;
+  font-family: "MesloLGS NF";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#network,
+#pulseaudio,
+#custom-storage,
+#mode,
+#clock,
+#tray {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#clock.3 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* all blinking */
+#mode {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* warning-blink modules */
+#mode {
+  animation-name: blink-warning;
+  animation-duration: 0.5s;
+  color: @light;
+  background: @mode;
+}
+
+#window {
+  font-weight: bold;
+  font-family: "MesloLGS NF";
+}
+
+#workspaces button {
+  padding-left: 4px;
+  padding-right: 4px;
+  color: @dark;
+  background: @workspaces;
+}
+
+#workspaces button.focused {
+  background: @workspacesfocused;
+}
+
+#custom-arrow_workspace {
+  color: @workspaces;
+  background: transparent;
+  font-size: 18px;
+}
+
+#custom-storage {
+  color: @date;
+  background: @storage;
+}
+#custom-arrow_storage {
+  color: @storage;
+  background: @network;
+  font-size: 18px;
+}
+
+#custom-storage.warning {
+  color: rgba(255, 210, 4, 1);
+}
+#custom-storage.critical {
+  color: rgba(238, 46, 36, 1);
+}
+
+#clock {
+  font-weight: bold;
+}
+
+#network {
+  color: @dark;
+  background: @network;
+}
+#custom-arrow_network {
+  color: @network;
+  background: @pulseaudio;
+  font-size: 18px;
+}
+
+#pulseaudio {
+  color: @dark;
+  background: @pulseaudio;
+}
+#custom-arrow_pulseaudio {
+  color: @pulseaudio;
+  background: transparent;
+  font-size: 18px;
+}
+
+/* clocks */
+#clock.1 {
+  /* date */
+  background: @date;
+  color: @time;
+}
+#custom-arrow_date {
+  color: @date;
+  background: @storage;
+  font-size: 18px;
+}
+#clock.2 {
+  /* time */
+  background: @time;
+  color: @date;
+}
+#custom-arrow_time {
+  color: @time;
+  background: @date;
+  font-size: 18px;
+}
+#custom-arrow_time_2 {
+  color: @time;
+  background: transparent;
+  font-size: 18px;
+}

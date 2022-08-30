@@ -1,0 +1,116 @@
+[{
+    "layer": "top",
+    "position": "top",
+    "output": "DP-1",
+    "modules-left": ["sway/mode", "sway/workspaces", "custom/arrow_workspace"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["custom/arrow_pulseaudio", "pulseaudio", "custom/arrow_network", "network", "custom/arrow_storage", "custom/storage", "custom/arrow_date", "clock#1", "custom/arrow_time", "clock#2", "clock#3"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": "{name}",
+        "all-outputs": false
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\"> {}</span>"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "clock#1": {
+        "format": "{:%Y-%m-%d} ",
+        "tooltip": false
+    },
+    "clock#2": {
+        "interval": 1,
+        "format": "{:%T %z}",
+        "tooltip": false
+    },
+    "clock#3": {
+        "interval": 1,
+        "format": " {:%s}",
+        "on-click": "date +%s | wl-copy",
+        "tooltip": false
+    },
+    "network": {
+        "format-wifi": "直 {essid}",
+        "format-ethernet": " {ifname}: {ipaddr}",
+        "format-disconnected": "⚠ Disconnected"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume:2}%",
+        "format-bluetooth": "{icon}  {volume}% ",
+        "format-muted": "",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+        "on-click": "pavucontrol"
+    },
+    "custom/arrow_workspace": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/storage": {
+        "format": "{percentage}% ",
+        "format-alt": "{} ",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/waybar/modules/storage.sh"
+    },
+	"custom/arrow_time": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow_date": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow_storage": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow_network": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow_pulseaudio": {
+		"format": "",
+		"tooltip": false
+	}
+},
+
+{
+    "layer": "top",
+    "position": "top",
+    "output": ["HDMI-A-2", "DP-3"],
+    "modules-left": ["sway/workspaces", "custom/arrow_workspace"],
+    "modules-center": ["sway/window"],
+    "modules-right": [ "custom/arrow_time_2", "clock#2"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": "{name}",
+        "all-outputs": false
+    },
+    "clock#2": {
+        "interval": 1,
+        "format": "{:%T %z}",
+        "tooltip": false
+    },
+    "custom/arrow_workspace": {
+        "format": "",
+        "tooltip": false
+    },
+	"custom/arrow_time_2": {
+		"format": "",
+		"tooltip": false
+	}
+}]

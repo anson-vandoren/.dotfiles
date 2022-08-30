@@ -23,7 +23,7 @@ sudo pacman -S --needed libvirt amd-ucode qemu-base lxsession-gtk3 seahorse
 # fonts
 sudo pacman -S --needed ttf-dejavu ttf-liberation noto-fonts ttf-jetbrains-mono noto-fonts-cjk noto-fonts-extra \
 	noto-fonts-emoji ttf-roboto ttf-inconsolata ttf-font-awesome ttf-ubuntu-font-family
-sudo pacman -S --needed slurp grim wl-clipboard ripgrep pdfjs
+sudo pacman -S --needed slurp grim swappy wl-clipboard ripgrep pdfjs
 # programming languages
 sudo pacman -S --needed jre-openjdk jdk-openjdk go docker docker-compose nodejs npm python-virtualenv \
 	python-virtualenvwrapper thefuck ctags github-cli
@@ -49,7 +49,7 @@ else
 fi
 # Install others
 yay -S --needed --answerclean No --answerdiff N gotop tre-command 1password wlogout qutebrowser-qt6-git \
-	slack-desktop toggldesktop nvm
+	slack-desktop toggldesktop nvm swaynagmode
 
 # Oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
