@@ -26,7 +26,7 @@ sudo pacman -S --needed ttf-dejavu ttf-liberation noto-fonts ttf-jetbrains-mono 
 sudo pacman -S --needed slurp grim wl-clipboard ripgrep pdfjs
 # programming languages
 sudo pacman -S --needed jre-openjdk jdk-openjdk go docker docker-compose nodejs npm python-virtualenv \
-	python-virtualenvwrapper thefuck ctags
+	python-virtualenvwrapper thefuck ctags github-cli
 pip install virtualenvwrapper neovim
 source /usr/bin/virtualenvwrapper.sh
 # network
@@ -101,6 +101,16 @@ npm install -g prettier eslint yarn neovim
 sudo systemctl enable --now docker
 sudo systemctl enable --now dhcpcd
 sudo systemctl enable --now avahi-daemon
+
+# GPG
+echo "Checking for existing GPG key"
+if gpg --list-secret-keys | grep -q "^sec"; then
+  echo "GPG key already exists"
+else
+  echo "Generating GPG key. Don't forget to use at least 4096 bits RSA"
+  gpg --full-generate-key
+fi
+
 
 echo "TODO:"
 echo "- Install 1Password CLI: https://developer.1password.com/docs/cli/get-started#install"
