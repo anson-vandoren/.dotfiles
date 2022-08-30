@@ -81,6 +81,7 @@ swaynag_command $nag -R
 
 ### Screenshots
 bindsym Print exec grim -g "$(slurp)" - | swappy -f -
+### Screencast
 
 ### Key bindings
 #

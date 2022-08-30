@@ -36,7 +36,7 @@ sudo pacman -S --needed mesa libva-mesa-driver mesa-vdpau vulkan-radeon xf86-vid
     qt5-wayland glew-wayland 
 # applications
 sudo pacman -S --needed neovim exa dog curlie fd bat alacritty jq unzip fzf pv hunspell ranger thunar tldr \
-	telegram-desktop
+	telegram-desktop wf-recorder vlc
 # Install yay if not present
 if ! command -v yay &> /dev/null; then
   echo "Intstalling yay"
@@ -49,7 +49,7 @@ else
 fi
 # Install others
 yay -S --needed --answerclean No --answerdiff N gotop tre-command 1password wlogout qutebrowser-qt6-git \
-	slack-desktop toggldesktop nvm swaynagmode jetbrains-toolbox zoom
+	slack-desktop toggldesktop nvm swaynagmode jetbrains-toolbox zoom wshowkeys-git
 
 # Oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
