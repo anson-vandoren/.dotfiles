@@ -15,11 +15,11 @@ fi
 
 # Install bare necessities
 sudo pacman -S --needed sway alacritty waybar xorg-xwayland xorg-xlsclients swayidle swaylock swaybg
-sudo pacman -S --needed man python-pip pulseaudio-alsa pamixer wget atop mpd alsa-utils pavucontrol \
-	python-gobject openssh tmux
+sudo pacman -S --needed man python-pip  pamixer wget atop mpd alsa-utils pavucontrol \
+	python-gobject openssh tmux pipewire-pulse
 sudo pacman -S --needed libfido2 unzip zip tar unrar htop clang cmake npm linux-headers zsh-completions pkgconfig \
 	autoconf automake p7zip bzip2 zstd xz gzip lsof
-sudo pacman -S --needed libvirt amd-ucode qemu-base lxsession-gtk3 seahorse
+sudo pacman -S --needed libvirt amd-ucode qemu-base lxsession-gtk3 seahorse bluez bluez-utils blueman
 # fonts
 sudo pacman -S --needed ttf-dejavu ttf-liberation noto-fonts ttf-jetbrains-mono noto-fonts-cjk noto-fonts-extra \
 	noto-fonts-emoji ttf-roboto ttf-inconsolata ttf-font-awesome ttf-ubuntu-font-family
@@ -33,10 +33,10 @@ source /usr/bin/virtualenvwrapper.sh
 sudo pacman -S --needed dhcpcd
 # graphics
 sudo pacman -S --needed mesa libva-mesa-driver mesa-vdpau vulkan-radeon xf86-video-amdgpu glfw-wayland \
-    qt5-wayland glew-wayland 
+    qt5-wayland glew-wayland libva-vdpau-driver libvdpau-va-gl libva-utils vdpauinfo
 # applications
 sudo pacman -S --needed neovim exa dog curlie fd bat alacritty jq unzip fzf pv hunspell ranger thunar tldr \
-	telegram-desktop wf-recorder vlc
+	telegram-desktop wf-recorder vlc guvcview
 # Install yay if not present
 if ! command -v yay &> /dev/null; then
   echo "Intstalling yay"
@@ -49,7 +49,7 @@ else
 fi
 # Install others
 yay -S --needed --answerclean No --answerdiff N gotop tre-command 1password wlogout qutebrowser-qt6-git \
-	slack-desktop toggldesktop nvm swaynagmode jetbrains-toolbox zoom wshowkeys-git
+	slack-desktop toggldesktop nvm swaynagmode jetbrains-toolbox zoom wshowkeys-git xawtv
 
 # Oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then

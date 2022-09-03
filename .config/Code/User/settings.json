@@ -42,7 +42,7 @@
   },
   "hungryDelete.keepOneSpace": true,
   "snyk.yesWelcomeNotification": false,
-  "workbench.colorTheme": "Frontend Delight",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "npm.keybindingsChangedWarningShown": true,
   "github.copilot.enable": {
     "*": true,
@@ -50,4 +50,8 @@
     "plaintext": false,
     "markdown": true
   },
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "vim.easymotion": true,
+  "vim.leader": ",",
+  "editor.fontFamily": "'MesloLGS NF'",
 }

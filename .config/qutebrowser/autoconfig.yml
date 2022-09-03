@@ -10,8 +10,16 @@ settings:
     global: true
   content.javascript.clipboard:
     global: access
+  content.media.audio_capture:
+    https://cribl.zoom.us: true
+  content.media.video_capture:
+    https://cribl.zoom.us: true
+  content.notifications.enabled:
+    https://calendar.google.com: true
   content.pdfjs:
     global: true
+  content.register_protocol_handler:
+    https://calendar.google.com?cid=%25s: true
   downloads.location.directory:
     global: ~/Downloads
   hints.chars:

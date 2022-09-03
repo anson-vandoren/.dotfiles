@@ -16,7 +16,7 @@ tre() { command tre "$@" -a -l 42 -e && source "/tmp/tre_aliases_$USER" 2>/dev/n
 
 # kill a process
 kp() {
-  local pid=$(ps -ef | sed id | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[kill:process]'" | awk '{print $2}')
+  local pid=$(ps -ef | sed id | eval "fzf $FZF_DEFAULT_OPTS -m --header='[kill:process]'" | awk '{print $2}')
   if [ "x$pid" != "x" ]; then
     echo $pid | xargs kill -${1:-9}
     kp
@@ -34,12 +34,12 @@ fp() {
 
 # git checkout with fzf
 gco() {
-  local branch=$(git branch | eval "fzf ${FZF_DEFAULT_OPTS} --header='select a branch'")
+  local branch=$(git branch -a | eval "fzf ${FZF_DEFAULT_OPTS} --header='select a branch'")
   if [ "x$branch" != "x" ]; then
     echo $branch | xargs git checkout
   fi
 }
 # fzf git branches
 gbf() {
-  git branch | fzf | sed 's/^\**\s*//' | sed 's:/*$::'
+  git branch -a | fzf | sed 's/^\**\s*//' | sed 's:/*$::'
 }
