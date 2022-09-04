@@ -34,7 +34,7 @@ fp() {
 
 # git checkout with fzf
 gco() {
-  local branch=$(git branch -a | eval "fzf ${FZF_DEFAULT_OPTS} --header='select a branch'")
+  local branch=$(git branch | eval "fzf ${FZF_DEFAULT_OPTS} --header='select a branch'")
   if [ "x$branch" != "x" ]; then
     echo $branch | xargs git checkout
   fi

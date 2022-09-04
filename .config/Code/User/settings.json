@@ -40,17 +40,13 @@
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
-  "hungryDelete.keepOneSpace": true,
-  "snyk.yesWelcomeNotification": false,
   "workbench.colorTheme": "Gruvbox Dark Hard",
-  "npm.keybindingsChangedWarningShown": true,
   "github.copilot.enable": {
     "*": true,
     "yaml": false,
     "plaintext": false,
     "markdown": true
   },
-  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "vim.easymotion": true,
   "vim.leader": ",",
   "editor.fontFamily": "'MesloLGS NF'",

@@ -37,6 +37,8 @@ sudo pacman -S --needed mesa libva-mesa-driver mesa-vdpau vulkan-radeon xf86-vid
 # applications
 sudo pacman -S --needed neovim exa dog curlie fd bat alacritty jq unzip fzf pv hunspell ranger thunar tldr \
 	telegram-desktop wf-recorder vlc guvcview
+# tools from cargo
+cargo install dust grex
 # Install yay if not present
 if ! command -v yay &> /dev/null; then
   echo "Intstalling yay"
