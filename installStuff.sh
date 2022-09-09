@@ -36,7 +36,7 @@ sudo pacman -S --needed mesa libva-mesa-driver mesa-vdpau vulkan-radeon xf86-vid
     qt5-wayland glew-wayland libva-vdpau-driver libvdpau-va-gl libva-utils vdpauinfo
 # applications
 sudo pacman -S --needed neovim exa dog curlie fd bat alacritty jq unzip fzf pv hunspell ranger thunar tldr \
-	telegram-desktop wf-recorder vlc guvcview
+	telegram-desktop wf-recorder vlc guvcview tcpflow okteta
 # tools from cargo
 cargo install dust grex
 # Install yay if not present

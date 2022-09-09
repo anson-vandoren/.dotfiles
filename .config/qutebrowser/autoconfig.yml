@@ -8,14 +8,21 @@ config_version: 2
 settings:
   auto_save.session:
     global: true
+  content.desktop_capture:
+    https://meet.google.com: true
   content.javascript.clipboard:
     global: access
   content.media.audio_capture:
     https://cribl.zoom.us: true
+    https://meet.google.com: true
+  content.media.audio_video_capture:
+    https://meet.google.com: true
   content.media.video_capture:
     https://cribl.zoom.us: true
+    https://meet.google.com: true
   content.notifications.enabled:
     https://calendar.google.com: true
+    https://meet.google.com: true
   content.pdfjs:
     global: true
   content.register_protocol_handler:

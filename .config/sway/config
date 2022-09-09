@@ -43,6 +43,7 @@ exec swayidle -w \
 input "12951:6505:ZSA_Technology_Labs_Moonlander_Mark_I" {
     repeat_delay 250
     repeat_rate 35
+    xkb_options compose:ralt
 }
 
 

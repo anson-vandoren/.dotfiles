@@ -1,0 +1,5 @@
+[Default]
+save_dir=$HOME/Downloads
+show_panel=true
+early_exit=true
+text_font="MesloLGS NF"

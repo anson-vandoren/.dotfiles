@@ -4,7 +4,6 @@
   "editor.inlineSuggest.enabled": true,
   "terminal.external.linuxExec": "alacritty",
   "terminal.integrated.automationShell.linux": "/bin/zsh",
-  "editor.experimental.stickyScroll.enabled": true,
   "editor.experimental.useCustomCodeActionMenu": true,
   "diffEditor.ignoreTrimWhitespace": true,
   "terminal.integrated.fontFamily": "MesloLGS NF",
@@ -49,5 +48,7 @@
   },
   "vim.easymotion": true,
   "vim.leader": ",",
+  "vim.sneak": true,
   "editor.fontFamily": "'MesloLGS NF'",
+  "editor.stickyScroll.enabled": true,
 }
