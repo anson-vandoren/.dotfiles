@@ -19,7 +19,7 @@ sudo pacman -S --needed man python-pip  pamixer wget atop mpd alsa-utils pavucon
 	python-gobject openssh tmux pipewire-pulse
 sudo pacman -S --needed libfido2 unzip zip tar unrar htop clang cmake npm linux-headers zsh-completions pkgconfig \
 	autoconf automake p7zip bzip2 zstd xz gzip lsof
-sudo pacman -S --needed libvirt amd-ucode qemu-base lxsession-gtk3 seahorse bluez bluez-utils blueman
+sudo pacman -S --needed libvirt amd-ucode qemu-base lxsession-gtk3 seahorse bluez bluez-utils blueman usbutils
 # fonts
 sudo pacman -S --needed ttf-dejavu ttf-liberation noto-fonts ttf-jetbrains-mono noto-fonts-cjk noto-fonts-extra \
 	noto-fonts-emoji ttf-roboto ttf-inconsolata ttf-font-awesome ttf-ubuntu-font-family

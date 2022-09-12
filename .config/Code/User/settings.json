@@ -51,4 +51,7 @@
   "vim.sneak": true,
   "editor.fontFamily": "'MesloLGS NF'",
   "editor.stickyScroll.enabled": true,
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
 }

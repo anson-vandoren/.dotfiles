@@ -1,6 +1,7 @@
 [Default Applications]
 x-scheme-handler/tg=userapp-Telegram Desktop-5TYKR1.desktop
 x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+text/x-arduino=arduino-arduinoide.desktop
 
 [Added Associations]
 x-scheme-handler/tg=userapp-Telegram Desktop-5TYKR1.desktop;

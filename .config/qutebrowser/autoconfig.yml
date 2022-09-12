@@ -31,7 +31,15 @@ settings:
     global: ~/Downloads
   hints.chars:
     global: arstneio
+  spellcheck.languages:
+    global:
+    - en-US
   tabs.last_close:
     global: close
+  url.searchengines:
+    global:
+      DEFAULT: https://duckduckgo.com/?q={}
+      g: https://www.google.com/search?hl=en&q={}
+      mdn: https://developer.mozilla.org/en-US/search?q={}
   window.title_format:
     global: '{perc}{current_title}{title_sep}qutebrowser - [{id}]'
