@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+if [ "$GIT_AUTHOR_NAME" != "Anson VanDoren" ]; then
+    echo "Please, fix your git author, it cannot be equal to $GIT_AUTHOR_NAME"
+    exit 1;
+fi

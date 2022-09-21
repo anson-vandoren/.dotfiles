@@ -39,6 +39,7 @@
 [core]
     excludesfile = ~/.gitignore
     pager = delta
+	hooksPath = /home/anson/.config/githooks/
 
 [pager]
     diff = delta
