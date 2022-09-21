@@ -6,3 +6,4 @@ text/x-arduino=arduino-arduinoide.desktop
 [Added Associations]
 x-scheme-handler/tg=userapp-Telegram Desktop-5TYKR1.desktop;
 application/pdf=gv.desktop;org.qutebrowser.qutebrowser.desktop;
+text/x-arduino=nvim.desktop;visual-studio-code.desktop;
