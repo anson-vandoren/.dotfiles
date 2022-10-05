@@ -3,7 +3,26 @@
   "window.zoomLevel": 1,
   "editor.inlineSuggest.enabled": true,
   "terminal.external.linuxExec": "alacritty",
-  "terminal.integrated.automationShell.linux": "/bin/zsh",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
   "editor.experimental.useCustomCodeActionMenu": true,
   "diffEditor.ignoreTrimWhitespace": true,
   "terminal.integrated.fontFamily": "MesloLGS NF",
@@ -24,7 +43,6 @@
   },
   "git.confirmSync": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "files.autoSave": "onFocusChange",
   "editor.tabSize": 2,
@@ -54,4 +72,5 @@
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
+  "terminal.integrated.defaultProfile.linux": "zsh",
 }

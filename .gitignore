@@ -86,6 +86,7 @@ Thumbs.db
 .config/op/config
 .config/.org.chromium*
 .config/pulse
+.config/qalculate
 .config/QDirStat/
 .config/QtProject.conf
 .config/qutebrowser/bookmarks
@@ -96,6 +97,8 @@ Thumbs.db
 .config/VirtualBox/
 .config/vivaldi*
 .config/vivaldi-*/
+.config/ttyper/
+.config/vlc/
 .config/xfce4/*
 
 # Data directories
@@ -108,5 +111,7 @@ snap/
 Videos/
 VirtualBox\ VMs/
 yay/
+Arduino/
+lib64/
 
 

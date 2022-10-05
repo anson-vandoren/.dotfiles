@@ -2,8 +2,11 @@
 x-scheme-handler/tg=userapp-Telegram Desktop-5TYKR1.desktop
 x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
 text/x-arduino=arduino-arduinoide.desktop
+text/html=qutebrowser.desktop
 
 [Added Associations]
 x-scheme-handler/tg=userapp-Telegram Desktop-5TYKR1.desktop;
 application/pdf=gv.desktop;org.qutebrowser.qutebrowser.desktop;
 text/x-arduino=nvim.desktop;visual-studio-code.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=vim.desktop;
+image/png=swappy.desktop;
