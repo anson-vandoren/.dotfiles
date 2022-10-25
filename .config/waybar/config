@@ -4,7 +4,7 @@
     "output": "DP-1",
     "modules-left": ["sway/mode", "sway/workspaces", "custom/arrow_workspace"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/arrow_pulseaudio", "pulseaudio", "custom/arrow_network", "network", "custom/arrow_storage", "custom/storage", "custom/arrow_date", "clock#1", "custom/arrow_time", "clock#2", "clock#3"],
+    "modules-right": ["custom/arrow_pulseaudio", "pulseaudio", "custom/arrow_network", "network", "custom/arrow_storage", "custom/storage", "custom/arrow_date", "clock#1", "custom/arrow_time", "clock#2", "custom/timestamp"],
     "sway/workspaces": {
         "disable-scroll": true,
         "format": "{name}",
@@ -26,11 +26,11 @@
         "format": "{:%T %z}",
         "tooltip": false
     },
-    "clock#3": {
+    "custom/timestamp": {
         "interval": 1,
-        "format": " {:%s}",
         "on-click": "date +%s | wl-copy",
-        "tooltip": false
+        "tooltip": false,
+        "exec": "date +%s"
     },
     "network": {
         "format-wifi": "直 {essid}",

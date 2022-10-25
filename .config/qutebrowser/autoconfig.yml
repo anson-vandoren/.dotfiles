@@ -10,6 +10,9 @@ settings:
     global: true
   content.desktop_capture:
     https://meet.google.com: true
+    https://zoom.us: true
+  content.javascript.can_open_tabs_automatically:
+    global: true
   content.javascript.clipboard:
     global: access
   content.media.audio_capture:
@@ -24,6 +27,7 @@ settings:
     https://cribl.zoom.us: true
     https://meet.google.com: true
   content.notifications.enabled:
+    https://banggood.s5.udesk.cn: true
     https://calendar.google.com: true
     https://meet.google.com: true
   content.pdfjs:
@@ -41,8 +45,8 @@ settings:
     global: close
   url.searchengines:
     global:
-      DEFAULT: https://duckduckgo.com/?q={}
-      g: https://www.google.com/search?hl=en&q={}
+      DEFAULT: https://www.google.com/search?hl=en&q={}
+      dd: https://duckduckgo.com/?q={}
       mdn: https://developer.mozilla.org/en-US/search?q={}
   window.title_format:
     global: '{perc}{current_title}{title_sep}qutebrowser - [{id}]'

@@ -43,13 +43,10 @@
 #custom-storage,
 #mode,
 #clock,
+#custom-timestamp,
 #tray {
   padding-left: 10px;
   padding-right: 10px;
-}
-#clock.3 {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 /* all blinking */
@@ -106,6 +103,7 @@
   color: rgba(238, 46, 36, 1);
 }
 
+#custom-timestamp,
 #clock {
   font-weight: bold;
 }
@@ -136,15 +134,20 @@
   background: @date;
   color: @time;
 }
-#custom-arrow_date {
-  color: @date;
-  background: @storage;
-  font-size: 18px;
-}
 #clock.2 {
   /* time */
   background: @time;
   color: @date;
+}
+#custom-timestamp {
+  /* time */
+  background: @time;
+  color: @date;
+}
+#custom-arrow_date {
+  color: @date;
+  background: @storage;
+  font-size: 18px;
 }
 #custom-arrow_time {
   color: @time;
