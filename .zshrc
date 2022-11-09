@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 #####################
 ## Helper functions #
@@ -17,7 +17,7 @@ _has() {
 # Zsh setup #
 #############
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   fzf-tab
   zsh-completions
@@ -105,7 +105,7 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # source fzf - seems to need to be near the bottom
 if [ -d /usr/share/fzf ]; then
@@ -141,3 +141,4 @@ load-nvmrc &>/dev/null
 zstyle ':fzf-tab:complete:git-checkout:*' fzf-command gbf # show results of git-branch for auto-completing git-checkout
 
 eval $(thefuck --alias)
+eval "$(starship init zsh)"

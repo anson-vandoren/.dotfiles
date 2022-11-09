@@ -13,23 +13,20 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'alvan/vim-closetag'
 Plug 'ambv/black'
-Plug 'andys8/vim-elm-syntax', {'for': ['elm']}
 Plug 'cespare/vim-toml'
-Plug 'elixir-editors/vim-elixir'
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'github/copilot.vim'
-Plug 'lambdalisue/suda.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -42,7 +39,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'easymotion/vim-easymotion'
 Plug 'APZelos/blamer.nvim'
-Plug 'puremourning/vimspector'
+Plug 'preservim/tagbar'
 
 " ---------------- KEY MAPPING -------------------
 let mapleader = ","
@@ -69,7 +66,7 @@ set foldlevel=99
 nmap <C-n> :NERDTreeFind<CR>
 
 """""""""""""""""""" coc setup """"""""""""""""""""
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-vimlsp', 'coc-eslint']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-vimlsp', 'coc-eslint', 'coc-pyright', 'coc-rust-analyzer']
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
@@ -281,7 +278,7 @@ set ruler
 set scrolloff=10
 
 nmap ; :Buffers<CR>
-nmap <Leader>6 :Files<CR>
+nmap <C-p> :Files<CR>
 " show list of commits
 nmap <Leader>gc :Commits<CR>
 " show git status
@@ -308,6 +305,12 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
+" -------------- git blame --------------
+let g:blamer_enabled = 1
+
+" -------------- tagbar --------------
+nmap <F8> :TagbarToggle<CR>
+
 " ------------------------------ NETRW -----------------
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
@@ -330,7 +333,7 @@ if has("autocmd")
     autocmd Filetype javascript setlocal softtabstop=2 shiftwidth=2 expandtab
     autocmd Filetype typescript setlocal softtabstop=2 shiftwidth=2 expandtab
     autocmd Filetype css setlocal softtabstop=2 shiftwidth=2 expandtab
-    autocmd Filetype Python setlocal softtabstop=4 shiftwidth=4 expandtab
+    autocmd Filetype Python setlocal softtabstop=4 shiftwidth=4 expandtab foldmethod=indent
     " get rid of the stupid extra comment on next line
     autocmd FileType * set formatoptions-=r
     " save on lose focus
