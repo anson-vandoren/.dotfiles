@@ -66,7 +66,7 @@ set foldlevel=99
 nmap <C-n> :NERDTreeFind<CR>
 
 """""""""""""""""""" coc setup """"""""""""""""""""
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-vimlsp', 'coc-eslint', 'coc-pyright', 'coc-rust-analyzer']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-vimlsp', 'coc-eslint', 'coc-pyright']
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup

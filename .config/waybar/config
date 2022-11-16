@@ -91,7 +91,7 @@
 {
     "layer": "top",
     "position": "top",
-    "output": ["HDMI-A-2", "DP-3"],
+    "output": ["HDMI-A-1", "DP-4"],
     "modules-left": ["sway/workspaces", "custom/arrow_workspace"],
     "modules-center": ["sway/window"],
     "modules-right": [ "custom/arrow_time_2", "clock#2"],

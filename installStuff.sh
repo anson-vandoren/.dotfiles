@@ -51,7 +51,8 @@ else
 fi
 # Install others
 yay -S --needed --answerclean No --answerdiff N gotop tre-command 1password wlogout qutebrowser-qt6-git \
-	slack-desktop toggldesktop nvm swaynagmode jetbrains-toolbox zoom wshowkeys-git xawtv
+	slack-desktop toggldesktop nvm swaynagmode jetbrains-toolbox zoom wshowkeys-git xawtv lsd starship \
+    xcp zoxide
 
 # Oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then

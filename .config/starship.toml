@@ -124,6 +124,9 @@ symbol = " "
 [rust]
 symbol = " "
 
+[status]
+disabled = false
+
 [sudo]
 disabled = false
 

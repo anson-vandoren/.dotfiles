@@ -9,9 +9,9 @@
 ## Helper functions #
 #####################
 #
-_has() {
-  return $(whence "$1" > /dev/null 2>&1 )
-}
+# _has() {
+#   return $(whence "$1" > /dev/null 2>&1 )
+# }
 
 #############
 # Zsh setup #
@@ -56,12 +56,14 @@ done;
 ################################
 
 # setup nvm
-source /usr/share/nvm/init-nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # setup pyenv
-if _has pyenv; then
+# if _has pyenv; then
   eval "$(pyenv init -)"
-fi
+# fi
 
 # setup virtualenvwrapper
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
@@ -75,11 +77,11 @@ fi
 ###############
 
 # fzf with ripgrep
-if _has fzf && _has rg; then
+# if _has fzf && _has rg; then
     export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/"'
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_DEFAULT_OPTS='--color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108,info:108,prompt:109,spinner:108,pointer:168,marker:168'
-fi
+# fi
 
 # make folders for vim
 for folder in ~/.vim/backups ~/.vim/swaps ~/.vim/undo; do
@@ -115,7 +117,7 @@ if [ -d /usr/share/fzf ]; then
   . /usr/share/fzf/key-bindings.zsh
 fi
 
-# Auto-switch NPM versions when possible
+# Auto-switch NPM versions when possible -- WARNING: slow
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
@@ -142,3 +144,11 @@ zstyle ':fzf-tab:complete:git-checkout:*' fzf-command gbf # show results of git-
 
 eval $(thefuck --alias)
 eval "$(starship init zsh)"
+
+# if _has zoxide; then
+  eval "$(zoxide init zsh)"
+  alias cd='z'
+# fi
+
+
+source /home/anson/.config/broot/launcher/bash/br
