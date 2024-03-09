@@ -26,7 +26,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
-Plug 'github/copilot.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -66,7 +65,7 @@ set foldlevel=99
 nmap <C-n> :NERDTreeFind<CR>
 
 """""""""""""""""""" coc setup """"""""""""""""""""
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-vimlsp', 'coc-eslint', 'coc-pyright']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-vimlsp', 'coc-eslint', 'coc-pyright', 'coc-sh']
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
@@ -349,3 +348,8 @@ let g:plug_window = 'noautocmd vertical topleft new'
 
 " Allow saving of files as sudo when I forget to start vim as sudo
 cmap w!! w !sudo tee > /dev/null %
+
+" close all open buffers except current one
+map <leader>q :%bd\|e#\|bd#<CR>
+" close all open buffers
+map <leader>Q :%bd<CR>

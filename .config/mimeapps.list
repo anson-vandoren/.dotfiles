@@ -1,17 +1,18 @@
 [Default Applications]
-x-scheme-handler/tg=userapp-Telegram Desktop-5TYKR1.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
 x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
 text/x-arduino=arduino-arduinoide.desktop
-text/html=org.qutebrowser.qutebrowser.desktop
-x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
-x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
-x-scheme-handler/about=org.qutebrowser.qutebrowser.desktop
-x-scheme-handler/unknown=org.qutebrowser.qutebrowser.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
 x-scheme-handler/fleet=jetbrains-fleet.desktop
 
 [Added Associations]
-x-scheme-handler/tg=userapp-Telegram Desktop-5TYKR1.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-5TYKR1.desktop;userapp-Telegram Desktop-CVSQW1.desktop;org.telegram.desktop.desktop;
 application/pdf=org.qutebrowser.qutebrowser.desktop;gv.desktop;
 text/x-arduino=nvim.desktop;visual-studio-code.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=vim.desktop;
 image/png=swappy.desktop;
+application/vnd.apple.keynote=openoffice4-impress.desktop;
