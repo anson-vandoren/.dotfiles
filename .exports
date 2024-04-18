@@ -3,4 +3,3 @@
 export EDITOR='nvim'
 export TERM="xterm-256color"
 export XDG_DATA_DIRS=$XDG_DATA_DIRS:~/.local/share
-export BROWSER='google-chrome-stable'
