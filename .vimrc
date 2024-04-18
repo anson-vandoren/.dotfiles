@@ -26,12 +26,10 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
+Plug 'github/copilot.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'sainnhe/gruvbox-material'
-Plug 'ayu-theme/ayu-vim'
-Plug 'joshdick/onedark.vim'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'leafgarland/typescript-vim'
@@ -39,17 +37,22 @@ Plug 'pangloss/vim-javascript'
 Plug 'easymotion/vim-easymotion'
 Plug 'APZelos/blamer.nvim'
 Plug 'preservim/tagbar'
+Plug 'wellle/context.vim'
+Plug 'puremourning/vimspector'
+Plug 'srcery-colors/srcery-vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " ---------------- KEY MAPPING -------------------
 let mapleader = ","
 
 let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_base_dir='/home/anson/.vim/plugged/vimspector'
+nmap <Leader>di <Plug>VimspectorBalloonEval
 
 call plug#end()
 
 set termguicolors
-let ayucolor="dark"
-colorscheme gruvbox-material
+colorscheme srcery
 
 " make Copilot work nicely with another tab-using completion system
 let g:copilot_assume_mapped = v:true
@@ -57,9 +60,13 @@ imap <silent><expr> <C-J> copilot#Accept("<CR>")
 imap <silent><expr> <C-H> copilot#Previous()
 imap <silent><expr> <C-L> copilot#Next()
 
+" ----------- context.vim setup ----------
+let g:context_enabled = 1
+
 " ----------- folding -----------
-set foldmethod=syntax
-set foldlevel=99
+set foldmethod=expr
+set foldlevel=20
+set foldexpr=nvim_treesitter#foldexpr()
 
 
 nmap <C-n> :NERDTreeFind<CR>
@@ -272,6 +279,7 @@ set backupskip=/tmp/*,/private/tmp/*
 
 " ------------------ GENERAL --------------------
 set number
+set norelativenumber
 set nostartofline
 set ruler
 set scrolloff=10

@@ -8,11 +8,14 @@ x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
 x-scheme-handler/fleet=jetbrains-fleet.desktop
+x-scheme-handler/obsidian=obsidian.desktop
 
 [Added Associations]
 x-scheme-handler/tg=userapp-Telegram Desktop-5TYKR1.desktop;userapp-Telegram Desktop-CVSQW1.desktop;org.telegram.desktop.desktop;
 application/pdf=org.qutebrowser.qutebrowser.desktop;gv.desktop;
 text/x-arduino=nvim.desktop;visual-studio-code.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=vim.desktop;
-image/png=swappy.desktop;
+image/png=org.ksnip.ksnip.desktop;swappy.desktop;
 application/vnd.apple.keynote=openoffice4-impress.desktop;
+image/svg+xml=nvim.desktop;google-chrome.desktop;brave-browser.desktop;
+application/json=nvim.desktop;

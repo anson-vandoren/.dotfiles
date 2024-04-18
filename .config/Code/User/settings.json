@@ -28,8 +28,24 @@
   "terminal.integrated.fontFamily": "MesloLGS NF",
   "vim.foldfix": true,
   "vim.handleKeys": {
-    "<C-k>": false
+    "<C-k>": false,
+    "<C-p>": false,
+    "<C-t>": false,
   },
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<C-o>"],
+      "commands": [
+        "workbench.action.navigateBack"
+      ]
+    },
+    {
+      "before": ["<C-i>"],
+      "commands": [
+        "workbench.action.navigateForward"
+      ]
+    }
+  ],
   "vim.useSystemClipboard": true,
   "vim.overrideCopy": true,
   "vim.visualstar": true,
@@ -48,7 +64,7 @@
   "editor.tabSize": 2,
   "prettier.printWidth": 100,
   "prettier.singleQuote": true,
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "on",
   "[python]": {
     "editor.defaultFormatter": "ms-python.python",
     "editor.detectIndentation": false,
@@ -77,14 +93,4 @@
   "yaml.schemas": {
     "file:///home/anson/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
-  "atlascode.jira.jqlList": [
-    {
-      "id": "eaac7df7-6755-4f24-ba09-200ea65f04d2",
-      "enabled": true,
-      "name": "My taktak Issues",
-      "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
-      "siteId": "250bc9c4-1198-4e6c-9166-2249321dd7e7",
-      "monitor": true
-    }
-  ],
 }

@@ -36,6 +36,8 @@
     unignore = update-index --no-skip-worktree
     ignored = !git ls-files -v | grep "^S"
 
+    mm=merge --no-ff --no-edit -X patience -X ignore-all-space
+
 [core]
     excludesfile = ~/.gitignore
     pager = delta

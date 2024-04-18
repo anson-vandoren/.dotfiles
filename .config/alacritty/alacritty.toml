@@ -14,7 +14,7 @@ size = 12.0
 family = "MesloLGS NF"
 
 [scrolling]
-history = 10000
+history = 100000
 
 [window]
 decorations = "none"
@@ -24,3 +24,7 @@ startup_mode = "Windowed"
 [window.dimensions]
 columns = 100
 lines = 30
+
+[bell]
+animation = "Ease"
+duration = 1

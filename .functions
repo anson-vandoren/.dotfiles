@@ -43,3 +43,14 @@ gco() {
 gbf() {
   git branch -a | fzf | sed 's/^\**\s*//' | sed 's:/*$::'
 }
+
+function ssh-into-leader {
+  awsAccountId=$1
+  awsRegion=$2
+  if [ -z "$awsRegion" ]; then awsRegion="us-west-2"; fi
+  export AWS_CONFIG_FILE=$HOME/cribl/cribl-cloud/infrastructure/aws_config
+  . ~/cribl/cribl-cloud/scripts/helper-functions.sh
+  awsproduct-setup
+  assume-aws-account $awsAccountId $awsRegion
+  start-session-leader
+}
