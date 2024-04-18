@@ -1,0 +1,74 @@
+#!/bin/env zsh
+
+# if _has nvim; then
+#   alias vim=nvim
+# fi
+
+# if _has gotop; then
+#   alias top=gotop
+# fi
+
+# if _has exa; then
+#   alias ls=exa
+# fi
+
+# if _has lsd; then
+#   alias ls=lsd
+# fi
+
+# if _has dog; then
+#   alias dig=dog
+# fi
+
+# if _has curlie; then
+#   alias curl=curlie
+# fi
+
+# if _has fd; then
+#   alias find=fd
+# fi
+
+# if _has bat; then
+#   alias cat=bat
+# fi
+
+# if _has xcp; then
+#   alias cp=xcp
+# fi
+
+alias vim=nvim
+
+alias top=gotop
+
+alias ls=exa
+
+alias ls=lsd
+
+alias dig=dog
+
+alias curl=curlie
+
+alias find=fd
+
+alias cat=bat
+
+alias cp=xcp
+
+alias la='ls -Flah'
+
+alias lg=lazygit
+
+# ask before overwriting and show each file copied
+alias cp='cp -iv'
+alias mv='mv -iv'
+
+alias zshrc='$EDITOR ~/.zshrc'
+alias vimrc='$EDITOR ~/.vimrc'
+
+alias reload='exec ${SHELL} -l'
+
+# print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+alias fuckthis='git commit -m "$(curl http://whatthecommit.com/index.txt)"'
+alias fuckit=fuckthis
