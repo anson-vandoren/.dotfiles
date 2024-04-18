@@ -1,0 +1,96 @@
+{
+  "telemetry.telemetryLevel": "off",
+  "window.zoomLevel": 1,
+  "editor.inlineSuggest.enabled": true,
+  "terminal.external.linuxExec": "alacritty",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
+  "editor.experimental.useCustomCodeActionMenu": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "vim.foldfix": true,
+  "vim.handleKeys": {
+    "<C-k>": false,
+    "<C-p>": false,
+    "<C-t>": false,
+  },
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<C-o>"],
+      "commands": [
+        "workbench.action.navigateBack"
+      ]
+    },
+    {
+      "before": ["<C-i>"],
+      "commands": [
+        "workbench.action.navigateForward"
+      ]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+  "vim.overrideCopy": true,
+  "vim.visualstar": true,
+  "vim.surround": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.renderWhitespace": "none",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.confirmSync": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnType": true,
+  "files.autoSave": "onFocusChange",
+  "editor.tabSize": 2,
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true,
+  "editor.lineNumbers": "on",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true
+  },
+  "vim.easymotion": true,
+  "vim.leader": ",",
+  "vim.sneak": true,
+  "editor.fontFamily": "'MesloLGS NF'",
+  "editor.stickyScroll.enabled": true,
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "gitlens.views.fileHistory.avatars": false,
+  "yaml.schemas": {
+    "file:///home/anson/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+}

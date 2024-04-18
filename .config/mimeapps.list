@@ -1,0 +1,7 @@
+
+[Default Applications]
+text/html=open-links-in-last-chrome.desktop
+x-scheme-handler/http=open-links-in-last-chrome.desktop
+x-scheme-handler/https=open-links-in-last-chrome.desktop
+x-scheme-handler/about=open-links-in-last-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop

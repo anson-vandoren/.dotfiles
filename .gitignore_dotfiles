@@ -36,3 +36,12 @@
 src/
 .bleat/
 .dotnet/
+.sudo_as_admin_successful
+.config/ibus
+.config/.gsd-keyboard.settings-ported
+.config/zoom.conf
+.config/zoomus.conf
+.config/monitors.xml
+.config/Code
+.config/evolution/
+.config/gnome-initial-setup-done

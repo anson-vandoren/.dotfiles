@@ -1,0 +1,143 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$fill\
+$time\
+$line_break\
+$jobs\
+$battery\
+$status\
+$container\
+$shell\
+$character"""
+
+[c]
+symbol = " "
+
+[directory]
+read_only = " "
+truncation_symbol = "…/"
+# fish_style_pwd_dir_length = 1
+# truncate_to_repo = true
+
+[fill]
+symbol = "─"
+style = "dimmed green"
+
+[git_branch]
+symbol = " "
+
+[git_status]
+conflicted = "🏳"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕${ahead_count}⇣${behind_count}"
+up_to_date = "✓"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+
+[golang]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nodejs]
+format = "[node ($version )]($style)"
+
+[package]
+symbol = " "
+disabled = true
+
+[python]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[status]
+disabled = false
+
+[sudo]
+disabled = false
+
+[time]
+disabled = false
+format = " [$time]($style) "
+time_format = "%s"
+style = "dimmed green"
+
+[cmd_duration]
+min_time = 1
+show_milliseconds = true
+show_notifications = true
+

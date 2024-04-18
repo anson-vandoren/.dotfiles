@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Custom Chrome Handler
+Exec=/home/anson/.local/bin/open_in_last_chrome.sh %u
+Type=Application
+Terminal=false
+MimeType=x-scheme-handler/unknown;x-scheme-handler/about;text/html;x-scheme-handler/http;x-scheme-handler/https;
