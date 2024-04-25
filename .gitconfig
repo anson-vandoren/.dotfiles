@@ -1,7 +1,7 @@
 [include]
     path = ~/.gitconfig_private
 
-[url "ssh://github.com"]
+[url "git@github.com"]
     pushInsteadOf = https://github.com
 
 [alias]
@@ -37,6 +37,7 @@
     ignored = !git ls-files -v | grep "^S"
 
     mm=merge --no-ff --no-edit -X patience -X ignore-all-space
+    dunk = "!f() { git diff \"$@\" | dunk; }; f"
 
 [core]
     excludesfile = ~/.gitignore
