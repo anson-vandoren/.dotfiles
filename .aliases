@@ -73,3 +73,6 @@ alias path='echo -e ${PATH//:/\\n}'
 alias fuckthis='git commit -m "$(curl http://whatthecommit.com/index.txt)"'
 alias fuckit=fuckthis
 alias gce='gh copilot explain'
+
+alias skip='git update-index --skip-worktree'
+alias unskip='git update-index --no-skip-worktree'
