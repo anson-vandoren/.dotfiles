@@ -28,7 +28,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'github/copilot.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'amiralies/coc-elixir', { 'do': 'yarn install && yarn prepack' }
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'

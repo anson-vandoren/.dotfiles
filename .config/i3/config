@@ -224,4 +224,4 @@ gaps inner 6
 
 # find window classes with `xprop WM_CLASS`
 assign [class=Signal|TelegramDesktop] 3
-for_window [class=Erlang|Blueman-manager] floating enable
+for_window [class=Erlang|Blueman-manager|org.gnome.Nautilus] floating enable

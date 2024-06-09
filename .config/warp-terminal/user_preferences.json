@@ -1,0 +1,23 @@
+{
+  "prefs": {
+    "TelemetryEnabled": "true",
+    "ExperimentId": "7d9a0855-2e20-498c-9fdc-642733c96eab",
+    "OverrideOpacity": "76",
+    "VimKeybindingsBannerState": "\"Dismissed\"",
+    "FontSize": "16.0",
+    "AIRequestLimitInfo": "{\"limit\":40,\"num_requests_used_since_refresh\":0,\"next_refresh_time\":\"2024-07-08T17:59:33.745298575Z\"}",
+    "CrashReportingEnabled": "true",
+    "ReceivedReferralTheme": "\"Inactive\"",
+    "AliasExpansionBannerSeen": "true",
+    "AutosuggestionAcceptedCount": "2",
+    "ChangelogVersions": "{\"v0.2024.03.05.08.02.stable_01\":true,\"v0.2024.05.28.08.02.stable_00\":true,\"v0.2024.06.04.08.02.stable_02\":true}",
+    "Shortcuts": "true",
+    "AIAssistantRequestLimitInfo": "{\"limit\":100,\"num_requests_used_since_refresh\":0,\"next_refresh_time\":\"2024-03-10T23:45:11.318472Z\"}",
+    "VimModeEnabled": "true",
+    "WelcomeTipsFeaturesUsed": "[{\"Action\":\"OpenWarpDrive\"},{\"Action\":\"CommandSearch\"},{\"Action\":\"CommandPalette\"},{\"Hint\":\"BlockSelect\"},{\"Action\":\"ThemePicker\"},{\"Hint\":\"CreateBlock\"},{\"Action\":\"SplitPane\"}]",
+    "AliasExpansionEnabled": "true",
+    "NotebookFontSize": "14.0",
+    "Theme": "\"GruvboxDark\"",
+    "HasAutoOpenedWelcomeFolder": "true"
+  }
+}
