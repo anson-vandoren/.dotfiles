@@ -39,5 +39,5 @@ volume master {
 }
 
 tztime local {
-		format = "<span background='#ff5555'>  </span><span background='#e5e9f0'> %a %-d %b %H:%M </span>"
+		format = "<span background='#8be9fd'>  </span><span background='#e5e9f0'> %a %-d %b %H:%M </span>"
 }

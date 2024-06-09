@@ -62,7 +62,7 @@ bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-bindsym $mod+l exec i3lock -i ~/.wallpaper.jpg
+bindsym $mod+l exec ~/.config/i3/lock.sh
 
 # change focus
 bindsym $mod+Left focus left
@@ -219,3 +219,8 @@ client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.background           #2f343f
+
+gaps inner 6
+
+assign [class=Signal|TelegramDesktop] 3
+for_window [class=Erlang] floating enable
