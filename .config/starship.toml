@@ -124,11 +124,14 @@ symbol = " "
 [rust]
 symbol = " "
 
+[elixir]
+disabled = true
+
 [status]
 disabled = false
 
 [sudo]
-disabled = false
+disabled = true
 
 [time]
 disabled = false

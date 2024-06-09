@@ -4,6 +4,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
+  asdf
   fzf-tab
   zsh-completions
   zsh-syntax-highlighting
@@ -52,9 +53,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # fzf with ripgrep
 # if _has fzf && _has rg; then
-    export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/"'
-    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-    export FZF_DEFAULT_OPTS='--color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108,info:108,prompt:109,spinner:108,pointer:168,marker:168'
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/"'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_DEFAULT_OPTS='--color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108,info:108,prompt:109,spinner:108,pointer:168,marker:168'
 # fi
 
 # make folders for vim
@@ -80,9 +81,6 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # source fzf - seems to need to be near the bottom
 # if [ -d /usr/share/fzf ]; then
   # completions below must be sourced to get **-<TAB> auto-completion
@@ -90,28 +88,6 @@ setopt HIST_BEEP
   # key-bindings below must be sourced to get CTRL-R and CTRL-T and ALT-C behavior
   . /usr/share/fzf/key-bindings.zsh
 # fi
-
-# Auto-switch NPM versions when possible -- WARNING: slow
-# autoload -U add-zsh-hook
-# load-nvmrc() {
-#   local node_version="$(nvm version)"
-#   local nvmrc_path="$(nvm_find_nvmrc)"
-
-#   if [ -n "$nvmrc_path" ]; then
-#     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-#     if [ "$nvmrc_node_version" = "N/A" ]; then
-#       nvm install &>/dev/null
-#     elif [ "$nvmrc_node_version" != "$node_version" ]; then
-#       nvm use &>/dev/null
-#     fi
-#   elif [ "$node_version" != "$(nvm version default)" ]; then
-#     echo "Reverting to nvm default version"
-#     nvm use default
-#   fi
-# }
-# add-zsh-hook chpwd load-nvmrc
-# load-nvmrc &>/dev/null
 
 # fzf-tab
 zstyle ':fzf-tab:complete:git-checkout:*' fzf-command gbf # show results of git-branch for auto-completing git-checkout

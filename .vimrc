@@ -37,8 +37,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'easymotion/vim-easymotion'
 Plug 'APZelos/blamer.nvim'
 Plug 'preservim/tagbar'
+Plug 'elixir-editors/vim-elixir'
 Plug 'wellle/context.vim'
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 Plug 'srcery-colors/srcery-vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
