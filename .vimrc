@@ -28,6 +28,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'github/copilot.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'amiralies/coc-elixir', { 'do': 'yarn install && yarn prepack' }
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
@@ -37,23 +38,21 @@ Plug 'pangloss/vim-javascript'
 Plug 'easymotion/vim-easymotion'
 Plug 'APZelos/blamer.nvim'
 Plug 'preservim/tagbar'
-Plug 'elixir-editors/vim-elixir'
+" Plug 'elixir-editors/vim-elixir'
+Plug 'elixir-tools/elixir-tools.nvim'
 Plug 'wellle/context.vim'
-" Plug 'puremourning/vimspector'
 Plug 'srcery-colors/srcery-vim'
+Plug 'folke/tokyonight.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'kdheepak/lazygit.nvim'
 
 " ---------------- KEY MAPPING -------------------
 let mapleader = ","
 
-let g:vimspector_enable_mappings = 'HUMAN'
-let g:vimspector_base_dir='/home/anson/.vim/plugged/vimspector'
-nmap <Leader>di <Plug>VimspectorBalloonEval
-
 call plug#end()
 
 set termguicolors
-colorscheme srcery
+colorscheme tokyonight
 
 " make Copilot work nicely with another tab-using completion system
 let g:copilot_assume_mapped = v:true
@@ -209,6 +208,8 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
 
 endif
 """"""""""""""""""""""""""""" end coc setup """""""""""""""""""""""""""""
+
+nnoremap <silent> <leader>gg :LazyGit<CR>
 
 " set vimwiki to use Markdown
 let g:vimwiki_list = [{'path': '~/notes', 'syntax': 'markdown', 'ext': 'md'}]

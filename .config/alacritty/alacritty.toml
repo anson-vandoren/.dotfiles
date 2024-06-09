@@ -1,4 +1,4 @@
-import = ["/home/anson/.config/alacritty/FrontEndDelight.toml"]
+import = ["/home/anson/.config/alacritty/tokyonight_night.toml"]
 
 [cursor]
 blink_interval = 500

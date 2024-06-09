@@ -52,11 +52,13 @@ export NVM_DIR="$HOME/.nvm"
 ###############
 
 # fzf with ripgrep
-# if _has fzf && _has rg; then
-  export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/"'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_DEFAULT_OPTS='--color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108,info:108,prompt:109,spinner:108,pointer:168,marker:168'
-# fi
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+--color=fg:#c0caf5,bg:#1a1b26,hl:#ff9e64 \
+--color=fg+:#c0caf5,bg+:#292e42,hl+:#ff9e64 \
+--color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff \
+--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a"
 
 # make folders for vim
 for folder in ~/.vim/backups ~/.vim/swaps ~/.vim/undo; do

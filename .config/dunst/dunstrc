@@ -35,18 +35,19 @@ close_all = ctrl+shift+space
 history = ctrl+grave
 context = ctrl+shift+period
 
+# TokyoNight colors for dunst
+# For more configuration options see https://github.com/dunst-project/dunst/blob/master/dunstrc
 [urgency_low]
-background = "#2f343f"
-foreground = "#d8dee8"
-timeout = 2
+    background = "#16161e"
+    foreground = "#c0caf5"
+    frame_color = "#c0caf5"
 
 [urgency_normal]
-background = "#2f343f"
-foreground = "#d8dee8"
-timeout = 4
+    background = "#1a1b26"
+    foreground = "#c0caf5"
+    frame_color = "#c0caf5"
 
 [urgency_critical]
-background = "#2f343f"
-foreground = "#d8dee8"
-frame_color = "#bf616a"
-timeout = 0
+    background = "#292e42"
+    foreground = "#db4b4b"
+    frame_color = "#db4b4b"
