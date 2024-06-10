@@ -44,6 +44,12 @@
       "commands": [
         "workbench.action.navigateForward"
       ]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": [
+        "editor.action.goToReferences"
+      ]
     }
   ],
   "vim.useSystemClipboard": true,
@@ -93,4 +99,18 @@
     "file:///home/anson/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "workbench.colorTheme": "Gruvbox Dark Hard",
+  "window.titleBarStyle": "custom",
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
+  },
+  "search.exclude":{
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "sdet/**": true
+  },
+  "eslint.options": {
+    "maxWarnings": 2000
+  },
+  "github.copilot.editor.enableAutoCompletions": true
 }

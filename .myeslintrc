@@ -56,7 +56,9 @@
     "@typescript-eslint/no-misused-promises": 2,
     "@typescript-eslint/no-namespace": 1,
     "@typescript-eslint/no-non-null-assertion": 1,
+    "@typescript-eslint/no-redeclare": 2,
     "@typescript-eslint/no-this-alias": 1,
+    "@typescript-eslint/no-unsafe-declaration-merging": 1,
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {
@@ -155,6 +157,7 @@
     "no-plusplus": 0,
     "no-promise-executor-return": 1,
     "no-prototype-builtins": 1,
+    "no-redeclare": 0,
     "no-restricted-globals": 1,
     "no-restricted-properties": 1,
     "no-restricted-syntax": [
@@ -175,7 +178,7 @@
     "no-return-assign": 0,
     "no-return-await": 1,
     "no-self-assign": 1,
-    "no-shadow": 0, // replaced by @typescript-eslint/no-shadow
+    "no-shadow": 0,
     "no-spaced-func": 1,
     "no-tabs": 1,
     "no-template-curly-in-string": 1,
@@ -260,7 +263,7 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": ["./tsconfig.strictChecks.json", "./tsconfig.json"]
   },
   "ignorePatterns": [
     "src/ui",

@@ -38,6 +38,10 @@
 
     mm=merge --no-ff --no-edit -X patience -X ignore-all-space
     dunk = "!f() { git diff \"$@\" | dunk; }; f"
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
 
 [core]
     excludesfile = ~/.gitignore
@@ -81,7 +85,7 @@
     gpgsign = true
 
 [pull]
-    rebase = false
+	rebase = false
 
 [interactive]
     diffFilter = delta --color-only
