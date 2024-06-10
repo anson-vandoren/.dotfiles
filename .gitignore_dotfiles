@@ -131,3 +131,4 @@ src/
 .config/evince/
 .config/nautilus/
 .config/neofetch/
+.data/elixir-tools/nextls/.next-ls-force-update-v1
