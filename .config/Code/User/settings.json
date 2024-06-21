@@ -112,5 +112,7 @@
   "eslint.options": {
     "maxWarnings": 2000
   },
-  "github.copilot.editor.enableAutoCompletions": true
+  "github.copilot.editor.enableAutoCompletions": true,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false
 }
