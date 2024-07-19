@@ -219,4 +219,9 @@ bindsym Print exec flameshot gui
 mouse_warping none
 
 gaps inner 6
-for_window [class=zoom|Blueman-manager|org.gnome.Nautilus] floating enable
+# find window classes with `xprop WM_CLASS`
+assign [class=Slack] 3
+assign [class=google-chrome] 4
+assign [class=TelegramDesktop] 5
+assign [class=Code] 6
+for_window [class=zoom|Blueman-manager|Pavucontrol|org.gnome.Nautilus] floating enable
