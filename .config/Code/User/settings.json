@@ -117,4 +117,5 @@
   "explorer.confirmDelete": false,
   "workbench.startupEditor": "none",
   "debug.allowBreakpointsEverywhere": true,
+  "scm.showHistoryGraph": false,
 }

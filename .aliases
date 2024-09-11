@@ -48,7 +48,7 @@ alias dig=dog
 
 alias curl=curlie
 
-alias find=fd
+# alias find=fd
 
 alias cat=bat
 

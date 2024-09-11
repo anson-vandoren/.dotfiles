@@ -9,6 +9,7 @@ x-scheme-handler/spice=org.remmina.Remmina.desktop
 x-scheme-handler/vnc=org.remmina.Remmina.desktop
 x-scheme-handler/remmina=org.remmina.Remmina.desktop
 application/x-remmina=org.remmina.Remmina.desktop
+x-scheme-handler/tonsite=org.telegram.desktop._5cebcfe9a3a1b3f07ff853dbea619803.desktop
 
 [Added Associations]
 x-scheme-handler/rdp=org.remmina.Remmina.desktop;
@@ -16,3 +17,5 @@ x-scheme-handler/spice=org.remmina.Remmina.desktop;
 x-scheme-handler/vnc=org.remmina.Remmina.desktop;
 x-scheme-handler/remmina=org.remmina.Remmina.desktop;
 application/x-remmina=org.remmina.Remmina.desktop;
+application/octet-stream=org.kde.okteta.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop._5cebcfe9a3a1b3f07ff853dbea619803.desktop;
