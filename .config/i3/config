@@ -36,7 +36,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xset r rate 200 35
 
 # set up displays
-exec --no-startup-id xrandr --output DP-0.8 --auto --left-of HDMI-0 --output HDMI-0 --auto --output DP-3 --auto --right-of HDMI-0
+exec --no-startup-id xrandr --rotate right --output DP-0.8 --auto --left-of HDMI-0 --output HDMI-0 --auto --output DP-3 --auto --right-of HDMI-0
 
 # make links open in the last focused chrome window
 exec --no-startup-id /home/anson/.local/bin/track_chrome_focus.sh &
