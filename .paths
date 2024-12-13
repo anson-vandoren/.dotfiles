@@ -1,0 +1,9 @@
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -e "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
+
+PATH="$PATH:/opt/nvim-linux64/bin"

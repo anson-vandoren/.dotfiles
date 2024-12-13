@@ -1,0 +1,113 @@
+[include]
+    path = ~/.gitconfig_private
+
+[url "git@github.com"]
+    pushInsteadOf = https://github.com
+
+[alias]
+    # View abbreviated SHA, description, and history graph of the latest 20 commits
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+    # View the current working tree status using the short format
+    s = status -s
+
+    # Show the diff between the latest commit and the current state
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+    # Commit all changes
+    ca = !git add -A && git commit -av
+
+    # Switch to a branch, creating it if necessary
+    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+
+    # List aliases
+    aliases = config --get-regexp alias
+
+    # Amend the currently staged files to the latest commit
+    amend = commit --amend --reuse-message=HEAD
+
+    # Ignore changes to a local file
+    ignore = update-index --skip-worktree
+    unignore = update-index --no-skip-worktree
+    ignored = !git ls-files -v | grep "^S"
+
+    mm=merge --no-ff --no-edit -X patience -X ignore-all-space
+    dunk = "!f() { git diff \"$@\" | dunk; }; f"
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+
+[core]
+    excludesfile = ~/.gitignore
+    pager = delta
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[color]
+    ui = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    commit = yellow bold
+    whitespace = red reverse
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+;[color "diff-highlight"]
+    ;oldNormal = red bold
+    ;oldHighlight = red bold 52
+    ;newNormal = green bold
+    ;newHighlight = green bold 22
+
+[commit]
+    gpgsign = true
+
+[pull]
+	rebase = false
+
+[interactive]
+    diffFilter = delta --color-only
+
+[add.interactive]
+    useBuiltin = false
+
+[delta]
+    navigate = true
+    ;side-by-side = true
+    line-numbers = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[init]
+    defaultbranch = main
+
+[credential "https://github.com"]
+    helper = !/usr/bin/gh auth git-credential
+
+[push]
+    autoSetupRemote = true

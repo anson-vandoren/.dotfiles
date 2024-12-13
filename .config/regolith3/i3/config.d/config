@@ -1,0 +1,2 @@
+exec --no-startup-id xset r rate 200 35
+focus_follows_mouse yes
