@@ -12,9 +12,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'alvan/vim-closetag'
-Plug 'ambv/black'
 Plug 'cespare/vim-toml'
-Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -25,25 +23,24 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vimwiki/vimwiki'
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'leafgarland/typescript-vim'
-Plug 'pangloss/vim-javascript'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'pangloss/vim-javascript'
 Plug 'easymotion/vim-easymotion'
 Plug 'APZelos/blamer.nvim'
 Plug 'preservim/tagbar'
-" Plug 'elixir-editors/vim-elixir'
-Plug 'elixir-tools/elixir-tools.nvim'
 Plug 'wellle/context.vim'
-Plug 'srcery-colors/srcery-vim'
-Plug 'folke/tokyonight.nvim'
+Plug 'morhetz/gruvbox'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'kdheepak/lazygit.nvim'
+Plug 'folke/todo-comments.nvim'
+Plug 'folke/trouble.nvim'
+
 
 " ---------------- KEY MAPPING -------------------
 let mapleader = ","
@@ -51,7 +48,8 @@ let mapleader = ","
 call plug#end()
 
 set termguicolors
-colorscheme tokyonight
+" colorscheme srcery
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " make Copilot work nicely with another tab-using completion system
 let g:copilot_assume_mapped = v:true
@@ -101,9 +99,9 @@ endfunction
 
 " Use <c-space> to trigger completion.
 if has('nvim')
-inoremap <silent><expr> <c-space> coc#refresh()
+    inoremap <silent><expr> <c-space> coc#refresh()
 else
-inoremap <silent><expr> <c-@> coc#refresh()
+    inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -362,3 +360,4 @@ cmap w!! w !sudo tee > /dev/null %
 map <leader>q :%bd\|e#\|bd#<CR>
 " close all open buffers
 map <leader>Q :%bd<CR>
+

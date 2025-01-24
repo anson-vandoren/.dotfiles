@@ -1,16 +1,20 @@
+# zmodload zsh/zprof
 #############
 # Zsh setup #
 #############
 export ZSH="$HOME/.oh-my-zsh"
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=false
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
-  asdf
+  # asdf
   fzf-tab
   zsh-completions
+  zsh-nvm
   zsh-syntax-highlighting
-  docker
-  docker-compose
-  zsh-better-npm-completion
+  # docker
+  # docker-compose
+  # zsh-better-npm-completion
 )
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 fpath+=${ZDOTDIR:-~}/.zsh_functions
@@ -42,9 +46,9 @@ done;
 ################################
 
 # setup nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 ###############
@@ -100,3 +104,7 @@ eval "$(zoxide init zsh)"
 alias cd='z'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(/home/anson/.local/bin/mise activate zsh)"
+eval "$(~/.local/bin/mise activate zsh)"
+# zprof
