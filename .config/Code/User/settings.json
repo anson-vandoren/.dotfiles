@@ -96,7 +96,7 @@
   "terminal.integrated.defaultProfile.linux": "zsh",
   "gitlens.views.fileHistory.avatars": false,
   "yaml.schemas": {
-    "file:///home/anson/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/anson/.vscode/extensions/atlassian.atlascode-3.0.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "window.titleBarStyle": "custom",
@@ -112,5 +112,15 @@
   "eslint.options": {
     "maxWarnings": 2000
   },
-  "github.copilot.editor.enableAutoCompletions": true
+  "github.copilot.editor.enableAutoCompletions": true,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "workbench.startupEditor": "none",
+  "debug.allowBreakpointsEverywhere": true,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  }
 }

@@ -132,3 +132,8 @@ src/
 .config/nautilus/
 .config/neofetch/
 .data/elixir-tools/nextls/.next-ls-force-update-v1
+.config/Zulip
+.codeium/
+.config/Windsurf/
+.windsurf/
+.rest-client/
