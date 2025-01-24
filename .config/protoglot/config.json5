@@ -1,0 +1,25 @@
+{
+  "emitter": {
+    "host": "localhost",
+    "port": 4000,
+    "tls": false,
+    "protocol": "tcp",
+    "rate": 10000,
+    "messageType": "ndjson",
+    "numEmitters": 1,
+    "eventsPerCycle": 10000,
+    "numCycles": 1,
+    "cycleDelay": 10
+  },
+  "absorber": {
+    "updateInterval": 1000,
+    "messageType": "ndjson",
+    "listenAddresses": [
+      {
+        "host": "localhost",
+        "port": 4242,
+        "protocol": "tcp"
+      }
+    ]
+  }
+}
