@@ -24,7 +24,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id xset r rate 200 35
 
 # set up displays
-exec --no-startup-id xrandr --output DisplayPort-0 --auto --right-of HDMI-A-0 --output HDMI-A-0 --auto --primary
+exec --no-startup-id xrandr --output DisplayPort-1 --auto --primary --output HDMI-A-0 --auto --left-of DisplayPort-1 --rotate right --output DisplayPort-0 --right-of DisplayPort-1
 
 # make links open in the last focused chrome window
 exec --no-startup-id /home/anson/.local/bin/track_chrome_focus.sh &
@@ -49,7 +49,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -197,10 +197,11 @@ workspace 3 output HDMI-A-0
 workspace 5 output HDMI-A-0
 workspace 7 output HDMI-A-0
 workspace 9 output HDMI-A-0
-workspace 2 output DisplayPort-0
-workspace 4 output DisplayPort-0
-workspace 6 output DisplayPort-0
-workspace 8 output DisplayPort-0
+workspace 2 output DisplayPort-1
+workspace 4 output DisplayPort-1
+workspace 6 output DisplayPort-1
+workspace 8 output DisplayPort-1
+workspace 0 output DisplayPort-0
 
 # scratchpad
 bindsym $mod+Shift+minus move scratchpad
