@@ -1,4 +1,4 @@
-import = ["/home/anson/.config/alacritty/tokyonight_night.toml"]
+import = ["/home/anson/.config/alacritty/gruvbox_dark_hard.toml"]
 
 [cursor]
 blink_interval = 500
