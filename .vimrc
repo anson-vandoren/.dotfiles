@@ -41,15 +41,15 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'folke/trouble.nvim'
 
+call plug#end()
 
 " ---------------- KEY MAPPING -------------------
 let mapleader = ","
 
-call plug#end()
 
 set termguicolors
-" colorscheme srcery
 autocmd vimenter * ++nested colorscheme gruvbox
+
 
 " make Copilot work nicely with another tab-using completion system
 let g:copilot_assume_mapped = v:true
@@ -126,6 +126,7 @@ endfunction
 
 " Symbol renaming.
 nmap <Leader>rn <Plug>(coc-rename)
+
 
 " Formatting selected code.
 xmap <Leader>f  <Plug>(coc-format-selected)
@@ -361,3 +362,4 @@ map <leader>q :%bd\|e#\|bd#<CR>
 " close all open buffers
 map <leader>Q :%bd<CR>
 
+let g:rustfmt_autosave = 1
