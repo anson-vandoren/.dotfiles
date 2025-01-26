@@ -711,6 +711,8 @@ return {
 			"godlygeek/tabular",
 		},
 		config = function()
+			-- folding in markdown is annoying
+			vim.g.vim_markdown_folding_disabled = 1
 			-- support front-matter
 			vim.g.vim_markdown_frontmatter = 1
 			-- 'o' on a list item should insert at same level
