@@ -130,11 +130,43 @@ map("n", "<leader>ft", function()
 	Snacks.terminal()
 end, { desc = "Terminal (cwd)" })
 -- Telescope
-map("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Find Files (Telescope)" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Search help tags (Telescope)" })
-map("n", "<leader>a", "<cmd>Telescope live_grep<cr>", { desc = "Live Grep (Telescope)" })
-map("n", ";", "<cmd>Telescope buffers<cr>", { desc = "Find Buffer (Telescope)" })
-map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find Keymaps (Telescope)" })
+
+-- Find word in files
+-- map("n", "<leader>a", "<cmd>Telescope live_grep<cr>", { desc = "Live Grep (Telescope)" })
+map("n", "<leader>a", function()
+	Snacks.picker.grep()
+end, { desc = "Live Grep (Telescope)" })
+
+map("n", ";", function()
+	Snacks.picker.buffers({ current = false })
+end, { desc = "Find Buffer" })
+map("n", "<leader>fc", function()
+	Snacks.picker.command_history()
+end, { desc = "Command History" })
+
+-- Find Files
+-- map("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Find Files (Telescope)" })
+map("n", "<C-p>", function()
+	Snacks.picker.files()
+end, { desc = "Find Files (Picker)" })
+
+-- Git Branches
+map("n", "<leader>gbr", function()
+	Snacks.picker.git_branches()
+end, { desc = "Git Branches" })
+
+-- Find keymaps
+-- map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find Keymaps (Telescope)" })
+map("n", "<leader>fk", function()
+	Snacks.picker.keymaps()
+end, { desc = "Find Keymaps (Telescope)" })
+
+-- Search lines in buffer
+map("n", "<leader>fl", function()
+	Snacks.picker.lines()
+end, { desc = "Find Lines in Buffer" })
+
 map("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", { desc = "Find Diagnostic (Telescope)" })
 -- TODOs
 map("n", "<leader>tn", function()
@@ -143,7 +175,7 @@ end, { desc = "Next TODO" })
 map("n", "<leader>tp", function()
 	require("todo-comments").jump_next()
 end, { desc = "Previous TODO" })
-map("n", "<leader>tt", "<cmd>TodoTelescope<cr>", { desc = "Previous TODO" })
+map("n", "<leader>tt", "<cmd>TodoTelescope<cr>", { desc = "Toggle TODO list" })
 
 ------------------
 -- autocommands --
@@ -157,7 +189,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- jump to last edit position on opening file
 vim.api.nvim_create_autocmd("BufReadPost", {
 	pattern = "*",
-	callback = function(ev)
+	callback = function()
 		if vim.fn.line("'\"") > 1 and vim.fn.line("'\"") <= vim.fn.line("$") then
 			-- except for in git commit messages
 			-- https://stackoverflow.com/questions/31449496/vim-ignore-specifc-file-in-autocommand

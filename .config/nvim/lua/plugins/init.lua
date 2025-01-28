@@ -132,42 +132,59 @@ return {
 	},
 
 	-- Sidebar for issues and symbols, etc
-	{
-		"folke/trouble.nvim",
-		opts = {},
-		keys = {
-			{
-				"<leader>xx",
-				"<cmd>Trouble diagnostics toggle<cr>",
-				desc = "Diagnostics (Trouble)",
-			},
-			{
-				"<leader>xX",
-				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-				desc = "Buffer Diagnostics (Trouble)",
-			},
-			{
-				"<leader>cs",
-				"<cmd>Trouble symbols toggle focus=false<cr>",
-				desc = "Symbols (Trouble)",
-			},
-			{
-				"<leader>cl",
-				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-				desc = "LSP Definitions / references / ... (Trouble)",
-			},
-			{
-				"<leader>xL",
-				"<cmd>Trouble loclist toggle<cr>",
-				desc = "Location List (Trouble)",
-			},
-			{
-				"<leader>xQ",
-				"<cmd>Trouble qflist toggle<cr>",
-				desc = "Quickfix List (Trouble)",
-			},
-		},
-	},
+	-- {
+	-- 	"folke/trouble.nvim",
+	-- 	opts = {
+	-- 		modes = {
+	-- 			preview_float = {
+	-- 				mode = "diagnostics",
+	-- 				preview = {
+	-- 					type = "float",
+	-- 					relative = "editor",
+	-- 					border = "rounded",
+	-- 					title = "Preview",
+	-- 					title_pos = "center",
+	-- 					position = { 0, -2 },
+	-- 					size = { width = 0.3, height = 0.3 },
+	-- 	          zinder = 200,
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	},
+	-- 	cmd = "Trouble",
+	-- 	keys = {
+	-- 		{
+	-- 			"<leader>xx",
+	-- 			"<cmd>Trouble diagnostics toggle<cr>",
+	-- 			desc = "Diagnostics (Trouble)",
+	-- 		},
+	-- 		{
+	-- 			"<leader>xX",
+	-- 			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+	-- 			desc = "Buffer Diagnostics (Trouble)",
+	-- 		},
+	-- 		{
+	-- 			"<leader>cs",
+	-- 			"<cmd>Trouble symbols toggle focus=false<cr>",
+	-- 			desc = "Symbols (Trouble)",
+	-- 		},
+	-- 		{
+	-- 			"<leader>cl",
+	-- 			"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+	-- 			desc = "LSP Definitions / references / ... (Trouble)",
+	-- 		},
+	-- 		{
+	-- 			"<leader>xL",
+	-- 			"<cmd>Trouble loclist toggle<cr>",
+	-- 			desc = "Location List (Trouble)",
+	-- 		},
+	-- 		{
+	-- 			"<leader>xQ",
+	-- 			"<cmd>Trouble qflist toggle<cr>",
+	-- 			desc = "Quickfix List (Trouble)",
+	-- 		},
+	-- 	},
+	-- },
 
 	-- Misc QoL stuff
 	{
@@ -292,6 +309,7 @@ return {
 		config = function()
 			require("nvim-rooter").setup({
 				fallback_to_parent = true,
+				exclude_filetypes = { "man" },
 			})
 		end,
 	},
@@ -456,13 +474,21 @@ return {
 					end
 					map("gD", vim.lsp.buf.declaration, "Go to Declaration")
 					map("gd", require("telescope.builtin").lsp_definitions, "Go to Definition")
-					map("gr", require("telescope.builtin").lsp_references, "Go to References")
+					map("gr", function()
+						Snacks.picker.lsp_references()
+					end, "Go to References")
 					map("gh", vim.lsp.buf.hover, "Hover Action")
 					map("gi", require("telescope.builtin").lsp_implementations, "Go to Implementation")
 					map("gs", vim.lsp.buf.signature_help, "Signature Help")
 					map("<C-t>", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Search Workspace Symbols")
 					map("<leader>rn", vim.lsp.buf.rename, "Rename")
 					map("<C-.>", vim.lsp.buf.code_action, "Code Action", { "n", "v" })
+					map("<leader>fs", function()
+						Snacks.picker.lsp_symbols()
+					end, "Find Symbols")
+					map("<leader>fsw", function()
+						Snacks.picker.lsp_symbols()
+					end, "Find Symbols (Workspace)")
 					-- Handled by conform.nvim
 					-- map('<leader>f', function() vim.lsp.buf.format { async = true } end, 'Format Buffer')
 
