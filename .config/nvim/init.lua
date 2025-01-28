@@ -156,6 +156,26 @@ map("n", "<leader>gbr", function()
 	Snacks.picker.git_branches()
 end, { desc = "Git Branches" })
 
+-- Man pages
+map("n", "<leader>fm", function()
+	Snacks.picker.man()
+end, { desc = "Search man pages" })
+
+-- Recent files
+map("n", "<leader>fr", function()
+	Snacks.picker.recent()
+end, { desc = "Find Recent Files" })
+
+-- Registers
+map("n", "<leader>fR", function()
+	Snacks.picker.registers()
+end, { desc = "Search Registers" })
+
+-- Undo
+map("n", "<leader>fu", function()
+	Snacks.picker.undo()
+end, { desc = "Search Undos" })
+
 -- Find keymaps
 -- map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find Keymaps (Telescope)" })
 map("n", "<leader>fk", function()
