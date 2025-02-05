@@ -23,7 +23,36 @@ return {
 	},
 
 	-- TODO highlighting and browser
-	"folke/todo-comments.nvim",
+	{
+		"folke/todo-comments.nvim",
+		opts = {
+			keywords = {
+				FIX = {
+					icon = " ", -- icon used for the sign, and in search results
+					color = "error", -- can be a hex color, or a named color (see below)
+					alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
+					-- signs = false, -- configure signs for some keywords individually
+				},
+				TODO = { icon = " ", color = "info" },
+				HACK = { icon = " ", color = "warning" },
+				WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+				PERF = { icon = " ", color = "perf", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE", "BETTER" } },
+				NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+				TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+			},
+			-- list of named colors where we try to extract the guifg from the
+			-- list of highlight groups or use the hex color if hl not found as a fallback
+			colors = {
+				error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
+				warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
+				info = { "DiagnosticInfo", "#2563EB" },
+				hint = { "DiagnosticHint", "#10B981" },
+				default = { "Identifier", "#7C3AED" },
+				test = { "Identifier", "#FF00FF" },
+				perf = { "#BC8191" },
+			},
+		},
+	},
 
 	-- Search and replace
 	{
@@ -314,6 +343,9 @@ return {
 		end,
 	},
 
+	-- highlight other occurrances of a symbol
+	"RRethy/vim-illuminate",
+
 	-- change surrounding containers
 	"tpope/vim-surround",
 
@@ -321,7 +353,8 @@ return {
 	"alvan/vim-closetag",
 
 	-- add closing brace, etc. when opening
-	"jiangmiao/auto-pairs",
+	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
+	-- "jiangmiao/auto-pairs",
 
 	-- show git diff in the sign column
 	"airblade/vim-gitgutter",
@@ -409,6 +442,13 @@ return {
 		},
 	},
 
+	-- Typescript LSP
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
+	},
+
 	-- LSP
 	{
 		"neovim/nvim-lspconfig",
@@ -437,15 +477,30 @@ return {
 						cargo = {
 							allFeatures = true,
 						},
+						check = {
+							command = "clippy",
+							features = "all",
+						},
 						imports = {
 							group = {
 								enable = true,
 							},
 						},
+						inlayHints = {
+							bindingModeHints = { enable = true },
+							chainingHints = { enable = true },
+							closingBraceHints = { enable = true },
+							closureCaptureHints = { enable = true },
+						},
 						completion = {
+							privateEditable = { enable = true },
 							postfix = {
 								enable = false,
 							},
+						},
+						diagnostics = {
+							experimental = { enable = true },
+							styleLints = { enable = true },
 						},
 					},
 				},
@@ -551,6 +606,11 @@ return {
 				-- You can use 'stop_after_first' to run the first available formatter from the list
 				-- javascript = { "prettierd", "prettier", stop_after_first = true },
 			},
+			formatters = {
+				rustfmt = {
+					command = "cargo fmt -- --config-path .rustfmt.stable.toml --config unstable_features=true --config imports_granularity=Crate --config reorder_impl_items=true --config group_imports=StdExternalCrate",
+				},
+			},
 		},
 	},
 
@@ -628,54 +688,54 @@ return {
 	},
 
 	-- LSP-based code-completion
-	{
-		"hrsh7th/nvim-cmp",
-		-- load cmp on InsertEnter
-		event = "InsertEnter",
-		-- these dependencies will only be loaded when cmp loads
-		-- dependencies are always lazy-loaded unless specified otherwise
-		dependencies = {
-			"neovim/nvim-lspconfig",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-		},
-		config = function()
-			local cmp = require("cmp")
-			cmp.setup({
-				snippet = {
-					-- required by nvim-cmp
-					expand = function(args)
-						vim.fn["vsnip#anonymous"](args.body)
-					end,
-				},
-				mapping = cmp.mapping.preset.insert({
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space"] = cmp.mapping.complete(),
-					["<C-e>"] = cmp.mapping.abort(),
-					-- Accept currently selected item
-					-- Set `select` to `false` to only confirm explicitly selected items
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
-				}),
-				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-				}, {
-					{ name = "path" },
-				}),
-				experimental = {
-					ghost_text = true,
-				},
-			})
-
-			-- Enable completing paths in :
-			-- cmp.setup.cmdline(":", {
-			-- 	sources = cmp.config.sources({
-			-- 		{ name = "path" },
-			-- 	}),
-			-- })
-		end,
-	},
+	-- {
+	-- 	"hrsh7th/nvim-cmp",
+	-- 	-- load cmp on InsertEnter
+	-- 	event = "InsertEnter",
+	-- 	-- these dependencies will only be loaded when cmp loads
+	-- 	-- dependencies are always lazy-loaded unless specified otherwise
+	-- 	dependencies = {
+	-- 		"neovim/nvim-lspconfig",
+	-- 		"hrsh7th/cmp-nvim-lsp",
+	-- 		"hrsh7th/cmp-buffer",
+	-- 		"hrsh7th/cmp-path",
+	-- 	},
+	-- 	config = function()
+	-- 		local cmp = require("cmp")
+	-- 		cmp.setup({
+	-- 			snippet = {
+	-- 				-- required by nvim-cmp
+	-- 				expand = function(args)
+	-- 					vim.fn["vsnip#anonymous"](args.body)
+	-- 				end,
+	-- 			},
+	-- 			mapping = cmp.mapping.preset.insert({
+	-- 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
+	-- 				["<C-f>"] = cmp.mapping.scroll_docs(4),
+	-- 				["<C-Space"] = cmp.mapping.complete(),
+	-- 				["<C-e>"] = cmp.mapping.abort(),
+	-- 				-- Accept currently selected item
+	-- 				-- Set `select` to `false` to only confirm explicitly selected items
+	-- 				["<CR>"] = cmp.mapping.confirm({ select = true }),
+	-- 			}),
+	-- 			sources = cmp.config.sources({
+	-- 				{ name = "nvim_lsp" },
+	-- 			}, {
+	-- 				{ name = "path" },
+	-- 			}),
+	-- 			experimental = {
+	-- 				ghost_text = true,
+	-- 			},
+	-- 		})
+	--
+	-- 		-- Enable completing paths in :
+	-- 		-- cmp.setup.cmdline(":", {
+	-- 		-- 	sources = cmp.config.sources({
+	-- 		-- 		{ name = "path" },
+	-- 		-- 	}),
+	-- 		-- })
+	-- 	end,
+	-- },
 
 	-- different code completion
 	{

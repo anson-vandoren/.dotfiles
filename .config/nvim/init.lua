@@ -31,7 +31,7 @@ vim.opt.undofile = true
 -- wildmenu
 -- for completions, when there is more than one match,
 -- list all matches and only complete the longest common match
-vim.opt.wildmode = "list:longest"
+-- vim.opt.wildmode = "list:longest"
 -- when opening a file like with :e, don't suggest these sorts of files:
 vim.opt.wildignore = ".hg,.svn,*~,*.png,*.jpg,*.gif,*.min.js,*.swp,*.o,vendor,dist,_site"
 -- tabs
@@ -57,6 +57,8 @@ vim.opt.diffopt:append("indent-heuristic")
 vim.opt.colorcolumn = "120"
 -- use system clipboard
 vim.api.nvim_set_option("clipboard", "unnamedplus")
+-- current line highlighting
+vim.opt.cursorline = true
 
 -------------
 -- hotkeys --
