@@ -69,7 +69,7 @@ local map = vim.keymap.set
 map("n", "<leader>w", "<cmd>w<cr>")
 -- leader-space to stop searching
 map("v", "<leader> ", "<cmd>nohlsearch<cr>")
-map("n", "<leader> ", "<cmd>nohlsearch<cr>")
+map("n", "<esc>", "<cmd>nohlsearch<cr>")
 -- <leader><leader> toggles between buffers
 -- map('n', '<leader><leader>', '<c-^>')
 -- always center search results
@@ -199,6 +199,9 @@ map("n", "<leader>tp", function()
 end, { desc = "Previous TODO" })
 map("n", "<leader>tt", "<cmd>TodoTelescope<cr>", { desc = "Toggle TODO list" })
 
+-- Git diff view (merge conflict resolution)
+map("n", "<leader>dv", "<cmd>DiffviewOpen<cr>", { desc = "Open Diff View" })
+
 ------------------
 -- autocommands --
 ------------------
@@ -229,3 +232,22 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
 
 -- finally, load plugins via lazyvim
 require("config.lazy")
+
+require("noice").setup({
+	lsp = {
+		-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+		override = {
+			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+			["vim.lsp.util.stylize_markdown"] = true,
+			["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+		},
+	},
+	-- you can enable a preset for easier configuration
+	presets = {
+		bottom_search = true, -- use a classic bottom cmdline for search
+		command_palette = true, -- position the cmdline and popupmenu together
+		long_message_to_split = true, -- long messages will be sent to a split
+		inc_rename = false, -- enables an input dialog for inc-rename.nvim
+		lsp_doc_border = false, -- add a border to hover docs and signature help
+	},
+})

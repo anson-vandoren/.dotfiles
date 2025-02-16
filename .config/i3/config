@@ -29,6 +29,9 @@ exec --no-startup-id xrandr --output DisplayPort-1 --auto --primary --output HDM
 # make links open in the last focused chrome window
 exec --no-startup-id /home/anson/.local/bin/track_chrome_focus.sh &
 
+# floating terminal
+exec --no-startup-id $HOME/.config/i3/toggle-terminal.sh
+
 exec_always --no-startup-id picom --config ~/.config/picom.conf -b
 exec --no-startup-id ~/.fehbg &
 exec --no-startup-id xsettingsd &
@@ -50,6 +53,9 @@ tiling_drag modifier titlebar
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec kitty
+
+# floating terminal
+bindsym F12 exec $HOME/.config/i3/toggle-terminal.sh --startup
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -225,4 +231,4 @@ gaps inner 6
 
 # find window classes with `xprop WM_CLASS`
 assign [class=Signal|TelegramDesktop] 3
-for_window [class=Erlang|Blueman-manager|org.gnome.Nautilus] floating enable
+for_window [class=Erlang|Blueman-manager|org.gnome.Nautilus|quakitty] floating enable
