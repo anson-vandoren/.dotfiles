@@ -491,11 +491,15 @@ return {
 
 			-- Rust
 			lspconfig.rust_analyzer.setup({
+				on_attach = function(_, bufnr)
+					vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+				end,
 				-- server-specific settings
 				settings = {
 					["rust-analyzer"] = {
 						cargo = {
-							allFeatures = true,
+							features = "all",
+							cfg = { "miri " },
 						},
 						check = {
 							command = "clippy",
@@ -519,6 +523,7 @@ return {
 							},
 						},
 						diagnostics = {
+							disabled = { "inactive-code" },
 							experimental = { enable = true },
 							styleLints = { enable = true },
 						},
@@ -780,4 +785,6 @@ return {
 			vim.g.vim_markdown_auto_insert_bullets = 0
 		end,
 	},
+	-- LALRPOP
+	"qnighy/lalrpop.vim",
 }

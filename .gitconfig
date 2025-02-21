@@ -1,8 +1,8 @@
 [include]
     path = ~/.gitconfig_private
 
-[url "git@github.com"]
-    pushInsteadOf = https://github.com
+[url "git@github.com:"]
+    pushInsteadOf = https://github.com/
 
 [alias]
     # View abbreviated SHA, description, and history graph of the latest 20 commits
