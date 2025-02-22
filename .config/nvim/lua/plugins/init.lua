@@ -497,6 +497,9 @@ return {
 				-- server-specific settings
 				settings = {
 					["rust-analyzer"] = {
+						assist = {
+							emitMustUse = true,
+						},
 						cargo = {
 							allFeatures = true,
 						},
@@ -504,7 +507,25 @@ return {
 							command = "clippy",
 							features = "all",
 						},
+						completion = {
+							privateEditable = { enable = true },
+							termSearch = { enable = true, fuel = 2000 },
+							-- postfix = {
+							-- 	enable = false,
+							-- },
+						},
+						diagnostics = {
+							disabled = { "inactive-code" },
+							experimental = { enable = true },
+							styleLints = { enable = true },
+						},
+						hover = {
+							actions = {
+								references = { enable = true },
+							},
+						},
 						imports = {
+							granularity = { enforce = true },
 							group = {
 								enable = true,
 							},
@@ -512,19 +533,21 @@ return {
 						inlayHints = {
 							bindingModeHints = { enable = true },
 							chainingHints = { enable = true },
-							closingBraceHints = { enable = true },
+							closingBraceHints = { enable = true, minLines = 1 },
 							closureCaptureHints = { enable = true },
+							discriminantHints = { enable = true },
+							-- expressionAdjustmentHints = { enable = true },
+							-- implicitDrops = { enable = true },
 						},
-						completion = {
-							privateEditable = { enable = true },
-							postfix = {
-								enable = false,
+						interpret = { tests = true },
+						lens = {
+							enable = true,
+							references = {
+								adt = { enable = true },
+								enumVariant = { enable = true },
+								method = { enable = true },
+								trait = { enable = true },
 							},
-						},
-						diagnostics = {
-							disabled = { "inactive-code" },
-							experimental = { enable = true },
-							styleLints = { enable = true },
 						},
 					},
 				},
@@ -561,7 +584,7 @@ return {
 					map("gs", vim.lsp.buf.signature_help, "Signature Help")
 					map("<C-t>", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Search Workspace Symbols")
 					map("<leader>rn", vim.lsp.buf.rename, "Rename")
-					map("<C-.>", vim.lsp.buf.code_action, "Code Action", { "n", "v" })
+					map("<C-.>", vim.lsp.buf.code_action, "Code Action", { "n", "v", "i" })
 					map("<leader>fs", function()
 						Snacks.picker.lsp_symbols()
 					end, "Find Symbols")
@@ -581,7 +604,7 @@ return {
 
 					-- None of this semantics tokens business.
 					-- https://www.reddit.com/r/neovim/comments/143efmd/is_it_possible_to_disable_treesitter_completely/
-					client.server_capabilities.semanticTokensProvider = nil
+					-- client.server_capabilities.semanticTokensProvider = nil
 				end,
 			})
 		end,
@@ -604,10 +627,9 @@ return {
 		},
 		opts = {
 			notify_on_error = true,
-      format_on_save = {
-        async = true,
-        timeout_ms = 500,
-      },
+			format_on_save = {
+				timeout_ms = 500,
+			},
 			formatters_by_ft = {
 				lua = { "stylua" },
 				rust = { "rustfmt" },
@@ -710,16 +732,66 @@ return {
 		},
 	},
 
+	-- snippets
+	{
+		"L3MON4D3/LuaSnip",
+		version = "v2.*",
+		lazy = false,
+		keys = {
+			{
+				"<leader><leader>;",
+				function()
+					require("luasnip").jump(1)
+				end,
+				desc = "Jump forward a snippet placement",
+				mode = "i",
+				noremap = true,
+				silent = true,
+			},
+		},
+		config = function()
+			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets" })
+		end,
+	},
+
 	-- different code completion
 	{
 		"saghen/blink.cmp",
 		version = "*",
+		dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
 		opts = {
 			keymap = { preset = "super-tab" },
 			appearance = {
 				use_nvim_cmp_as_default = true,
 				nerd_font_variant = "mono",
 			},
+			cmdline = { enabled = false },
+			completion = {
+				accept = { auto_brackets = { enabled = true } },
+				trigger = { show_in_snippet = false },
+				-- documentation = {
+				-- 	auto_show = true,
+				-- 	auto_show_delay_ms = 250,
+				-- 	treesitter_highlighting = true,
+				-- 	window = { border = "rounded" },
+				-- },
+				-- list = {
+				-- 	selection = {
+				-- 		auto_insert = true,
+				-- 		preselect = function(ctx)
+				-- 			return ctx.mode ~= "cmdline"
+				-- 		end,
+				-- 	},
+				-- },
+				-- menu = {
+				-- 	border = "rounded",
+				-- 	draw = {
+				-- 		treesitter = { "lsp" },
+				-- 	},
+				-- },
+				-- ghost_text = { enabled = true },
+			},
+			snippets = { preset = "luasnip" },
 			sources = {
 				default = { "lsp", "path", "snippets", "buffer" },
 			},
