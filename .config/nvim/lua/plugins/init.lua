@@ -498,8 +498,7 @@ return {
 				settings = {
 					["rust-analyzer"] = {
 						cargo = {
-							features = "all",
-							cfg = { "miri " },
+							allFeatures = true,
 						},
 						check = {
 							command = "clippy",
@@ -604,26 +603,11 @@ return {
 			},
 		},
 		opts = {
-			notify_on_error = false,
-			format_on_save = function(bufnr)
-				-- Disable "format_on_save lsp_fallback" for languages that don't
-				-- have a well standardized coding style. You can add additional
-				-- languages here or re-enable it for the disabled ones.
-				local disable_filetypes = { c = true, cpp = true }
-				local lsp_format_opt
-				if disable_filetypes[vim.bo[bufnr].filetype] then
-					lsp_format_opt = "never"
-				else
-					lsp_format_opt = "never"
-				end
-				return {
-					timeout_ms = 500,
-					lsp_format = lsp_format_opt,
-				}
-			end,
-			default_format_opts = {
-				lsp_format = "never",
-			},
+			notify_on_error = true,
+      format_on_save = {
+        async = true,
+        timeout_ms = 500,
+      },
 			formatters_by_ft = {
 				lua = { "stylua" },
 				rust = { "rustfmt" },
@@ -636,7 +620,18 @@ return {
 			},
 			formatters = {
 				rustfmt = {
-					command = "cargo fmt -- --config-path .rustfmt.stable.toml --config unstable_features=true --config imports_granularity=Crate --config reorder_impl_items=true --config group_imports=StdExternalCrate",
+					prepend_args = {
+						"--config-path",
+						".rustfmt.stable.toml",
+						"--config",
+						"unstable_features=true",
+						"--config",
+						"imports_granularity=Crate",
+						"--config",
+						"reorder_impl_items=true",
+						"--config",
+						"group_imports=StdExternalCrate",
+					},
 				},
 			},
 		},
@@ -761,7 +756,6 @@ return {
 		"rust-lang/rust.vim",
 		ft = { "rust" },
 		config = function()
-			vim.g.rustfmt_autosave = 1
 			vim.g.rustfmt_emit_files = 1
 			vim.g.rustfmt_fail_silently = 0
 			vim.g.rust_clip_command = "xclip -sel clip"
