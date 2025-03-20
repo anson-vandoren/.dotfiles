@@ -180,61 +180,6 @@ return {
 		end,
 	},
 
-	-- Sidebar for issues and symbols, etc
-	-- {
-	-- 	"folke/trouble.nvim",
-	-- 	opts = {
-	-- 		modes = {
-	-- 			preview_float = {
-	-- 				mode = "diagnostics",
-	-- 				preview = {
-	-- 					type = "float",
-	-- 					relative = "editor",
-	-- 					border = "rounded",
-	-- 					title = "Preview",
-	-- 					title_pos = "center",
-	-- 					position = { 0, -2 },
-	-- 					size = { width = 0.3, height = 0.3 },
-	-- 	          zinder = 200,
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 	},
-	-- 	cmd = "Trouble",
-	-- 	keys = {
-	-- 		{
-	-- 			"<leader>xx",
-	-- 			"<cmd>Trouble diagnostics toggle<cr>",
-	-- 			desc = "Diagnostics (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>xX",
-	-- 			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-	-- 			desc = "Buffer Diagnostics (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>cs",
-	-- 			"<cmd>Trouble symbols toggle focus=false<cr>",
-	-- 			desc = "Symbols (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>cl",
-	-- 			"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-	-- 			desc = "LSP Definitions / references / ... (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>xL",
-	-- 			"<cmd>Trouble loclist toggle<cr>",
-	-- 			desc = "Location List (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>xQ",
-	-- 			"<cmd>Trouble qflist toggle<cr>",
-	-- 			desc = "Quickfix List (Trouble)",
-	-- 		},
-	-- 	},
-	-- },
-
 	-- Misc QoL stuff
 	{
 		"folke/snacks.nvim",
@@ -340,9 +285,6 @@ return {
 			{ "nvim-lua/plenary.nvim" },
 		},
 	},
-
-	-- easier navigation
-	"easymotion/vim-easymotion",
 
 	-- better % nav
 	{
@@ -732,71 +674,27 @@ return {
 		},
 	},
 
-	-- snippets
-	{
-		"L3MON4D3/LuaSnip",
-		version = "v2.*",
-		lazy = false,
-		keys = {
-			{
-				"<leader><leader>;",
-				function()
-					require("luasnip").jump(1)
-				end,
-				desc = "Jump forward a snippet placement",
-				mode = "i",
-				noremap = true,
-				silent = true,
-			},
-		},
-		config = function()
-			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets" })
-		end,
-	},
-
 	-- different code completion
 	{
 		"saghen/blink.cmp",
 		version = "*",
-		dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
 		opts = {
 			keymap = { preset = "super-tab" },
 			appearance = {
 				use_nvim_cmp_as_default = true,
 				nerd_font_variant = "mono",
 			},
-			cmdline = { enabled = false },
+			cmdline = { enabled = true },
 			completion = {
-				accept = { auto_brackets = { enabled = true } },
+				accept = { auto_brackets = { enabled = false } },
 				trigger = { show_in_snippet = false },
-				-- documentation = {
-				-- 	auto_show = true,
-				-- 	auto_show_delay_ms = 250,
-				-- 	treesitter_highlighting = true,
-				-- 	window = { border = "rounded" },
-				-- },
-				-- list = {
-				-- 	selection = {
-				-- 		auto_insert = true,
-				-- 		preselect = function(ctx)
-				-- 			return ctx.mode ~= "cmdline"
-				-- 		end,
-				-- 	},
-				-- },
-				-- menu = {
-				-- 	border = "rounded",
-				-- 	draw = {
-				-- 		treesitter = { "lsp" },
-				-- 	},
-				-- },
-				-- ghost_text = { enabled = true },
 			},
-			snippets = { preset = "luasnip" },
 			sources = {
 				default = { "lsp", "path", "snippets", "buffer" },
 			},
 		},
 	},
+
 	-- inline function signatures
 	{
 		"ray-x/lsp_signature.nvim",

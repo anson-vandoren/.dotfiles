@@ -108,3 +108,4 @@ alias cd='z'
 eval "$(/home/anson/.local/bin/mise activate zsh)"
 eval "$(~/.local/bin/mise activate zsh)"
 # zprof
+. "$HOME/.cargo/env"

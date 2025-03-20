@@ -51,6 +51,8 @@ else
   if [ "$1" = "--startup" ]; then
     # Wait until kitty window is ready
     xdotool search --sync --onlyvisible --class "$DROPDOWN_CLASS"
+    i3-msg -q "[class=\"quakitty\"] resize set 1900px 800px"
+    i3-msg -q "[class=\"quakitty\"] move window to position 3370px 800px"
     _hide_kitty
   fi
 fi
